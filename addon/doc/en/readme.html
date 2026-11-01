@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GitHub NVDA Add-on User Guide</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    color: #24292f;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h1 {
+    color: #0969da;
+    border-bottom: 2px solid #eaecef;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #1f2328;
+    border-bottom: 1px solid #d0d7de;
+    padding-bottom: 8px;
+    margin-top: 36px;
+  }
+  h3 {
+    color: #32383f;
+    margin-top: 24px;
+  }
+  .meta-box {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+  }
+  .meta-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .meta-box li {
+    margin-bottom: 8px;
+  }
+  .meta-box li:last-child {
+    margin-bottom: 0;
+  }
+  .meta-label {
+    font-weight: 600;
+    color: #24292f;
+    display: inline-block;
+    width: 170px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  th {
+    background-color: #f6f8fa;
+    font-weight: 600;
+  }
+  code {
+    background-color: #f2f4f7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.95em;
+  }
+  .license-box {
+    background-color: #fff8c5;
+    border: 1px solid #d4a72c;
+    border-left: 5px solid #9a6700;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<h1>GitHub NVDA Add-on User Guide</h1>
+
+<div class="meta-box" role="region" aria-label="Add-on Identity Information">
+  <ul>
+    <li><span class="meta-label">Add-on Name:</span> <strong>GitHub</strong></li>
+    <li><span class="meta-label">Version:</span> <strong>2026.11.01</strong></li>
+    <li><span class="meta-label">Repository:</span> <a href="https://github.com/mehmetaykurt/nvda-github" target="_blank" rel="noopener noreferrer">https://github.com/mehmetaykurt/nvda-github</a></li>
+    <li><span class="meta-label">NVDA Compatibility:</span> <strong>2026.2 and later</strong> (Tested with: 2026.3)</li>
+    <li><span class="meta-label">Developer:</span> <a href="https://mehmetaykurt.com.tr" target="_blank" rel="noopener noreferrer"><strong>Mehmet Aykurt</strong></a></li>
+    <li><span class="meta-label">E-mail Address:</span> <a href="mailto:m.aykurt38@gmail.com">m.aykurt38@gmail.com</a></li>
+  </ul>
+</div>
+
+<h2>About and Introduction</h2>
+<p><strong>What is GitHub?</strong><br>
+GitHub is the world's leading cloud platform where software developers, open-source creators, and researchers securely store projects, track code changes step-by-step over time (version control), and collaborate with communities worldwide.</p>
+
+<p><strong>What Does This Add-on Provide for Screen Reader Users?</strong><br>
+Web interfaces, packed with dense visual elements and dynamic layouts, can often be exhausting and cluttered with accessibility hurdles for blind users. Command-line tools, on the other hand, require deep terminal knowledge and memorization.</p>
+
+<p>Developed by Mehmet Aykurt, the <strong>GitHub NVDA Add-on</strong> eliminates these barriers entirely. It embeds GitHub's core, essential capabilities directly inside the NVDA screen reader, wrapped in fast, accessible, desktop dialogs controlled effortlessly with the keyboard. Browse repositories with a single shortcut, inspect code line-by-line, edit and commit files in-addon, create files and upload local documents, create and delete branches, inspect commit history with unified diffs, manage and merge pull requests, publish and manage releases with downloadable binaries, search public GitHub repositories to star and fork them, configure repository settings safely, and review notifications without ever leaving NVDA.</p>
+
+<h2>Account Connection and Security Architecture</h2>
+<p>The add-on implements GitHub's official <strong>OAuth Device Authorization Flow</strong> standard:</p>
+<ul>
+  <li><strong>No Password Sharing:</strong> You never type your GitHub password into the add-on.</li>
+  <li><strong>One-Time Verification Code:</strong> The connection dialog provides an 8-character verification code. Copy it using the <em>Copy code</em> button, open the approval page in your browser with <em>Open GitHub approval page</em>, paste the code, and approve. The add-on completes sign-in automatically.</li>
+  <li><strong>Windows Credential Manager Storage:</strong> The granted access token is never stored in plain text on your hard drive. It is encrypted and saved securely inside the <em>Windows Credential Manager</em>.</li>
+  <li><strong>Comprehensive Scopes:</strong> Essential scopes including <code>repo</code> and <code>delete_repo</code> are configured automatically to support repository management, file editing, issues, releases, pull requests, and safe deletion.</li>
+  <li><strong>Disconnect Anytime:</strong> Remove the local saved key anytime via <em>Account &gt; Remove local connection</em> from the main menu. This only logs out your local computer; your GitHub account and repositories remain completely unaffected.</li>
+</ul>
+
+<h3>Step-by-Step Account Connection Walkthrough</h3>
+<p>When the add-on is launched for the first time or after removing a local connection, follow these sequential steps:</p>
+<ol>
+  <li><strong>Account Setup Prompt:</strong> When pressing <code>NVDA + G</code> without an active account, a confirmation dialog appears: <em>"No GitHub account has been added. Would you like to add an account now?"</em>. Focus is directly on the <strong>Yes</strong> button; press <strong>Enter</strong> to open the setup wizard.</li>
+  <li><strong>Obtaining and Copying Device Code:</strong> The <em>"Connect GitHub account"</em> dialog opens. With the public Client ID pre-configured, focus is directly on the <strong>"Start connection"</strong> (Alt+S) button; press <strong>Enter</strong>. The add-on requests an 8-character one-time device code from GitHub, placing focus directly on the code field once received. Press <strong>Tab</strong> once to reach <strong>"Copy code"</strong> (Alt+Y) and press <strong>Enter</strong> to copy it to clipboard. Press <strong>Tab</strong> once more to reach <strong>"Open GitHub approval page"</strong> (Alt+O) and press <strong>Enter</strong> to open GitHub's official verification page in your default browser.</li>
+  <li><strong>Browser: Account Confirmation and Entering Code:</strong> If you are already signed in to GitHub in your browser, the <em>Device Activation</em> screen displays your profile; click <strong>"Continue as &lt;Username&gt;"</strong> (or sign in if prompted). Next, the <em>Authorize device</em> page appears with focus in the input box; press <code>Ctrl + V</code> to paste the 8-character code, press <strong>Tab</strong> to reach <strong>"Continue"</strong>, and press <strong>Enter</strong>.</li>
+  <li><strong>Authorizing Application Permissions:</strong> The authorization page displays the requested permissions (repository management, file and branch operations, releases, pull requests, and repository deletion). Navigate with <strong>Tab</strong> and click <strong>"Authorize &lt;Username&gt;"</strong>.</li>
+  <li><strong>GitHub Security Confirmation (Sudo Mode / 2FA):</strong> Because elevated permissions are requested, GitHub enforces elevated security (sudo mode) displaying <em>Confirm access</em>. Enter your two-factor authentication code (Authenticator app, SMS, or email) or account password and click <strong>"Confirm"</strong>.</li>
+  <li><strong>Setup Complete and Repositories Loaded:</strong> The browser announces <em>"Congratulations, you're all set! Your device is now connected."</em> and can be closed. In the background, the add-on immediately detects the authorization and automatically closes the connection dialog. The main window title bar updates to <em>"GitHub — Connected account: &lt;Username&gt;"</em>. NVDA announces <em>"Loading repositories…"</em> followed by <em>"X repositories listed."</em>, and focus lands directly in the instant search box. The add-on is fully operational.</li>
+</ol>
+
+<h2>Main Window and General Navigation</h2>
+<p>Open or focus the add-on from anywhere in Windows with:</p>
+<p><code>NVDA + G</code> (or <em>NVDA Menu &gt; Tools &gt; GitHub…</em>)</p>
+
+<p>When the main window opens, the title bar announces your connected GitHub username. The interface is engineered for optimal screen reader ergonomics and keyboard efficiency, arranged in the following Tab order:</p>
+<ol>
+  <li><strong>Search Repositories (Ctrl+F):</strong> An instant search input to filter your repositories by name.</li>
+  <li><strong>Repositories Tree (Left Pane):</strong> A tree view listing all repositories you own or contribute to. Navigate with Up/Down arrow keys.</li>
+  <li><strong>Branch Selector (Ctrl+B):</strong> A choice dropdown to switch between repository branches.</li>
+  <li><strong>Contents List (Right Pane):</strong> A detailed list displaying the files and folders (Name, Type) of the selected repository and branch.</li>
+  <li><strong>Menu Button (Alt+M):</strong> Opens the main menu organized into 5 clean submenus (<strong>Account</strong>, <strong>Repository</strong>, <strong>Branch</strong>, <strong>File</strong>, and <strong>Tools</strong>).</li>
+  <li><strong>Close Button (Alt+K or Alt+C):</strong> Safely closes the main window.</li>
+</ol>
+
+<p><strong>Essential Navigation Keys:</strong></p>
+<ul>
+  <li><strong>Tab / Shift+Tab:</strong> Cycles smoothly between Search box, Repository tree, Branch selector, Contents list, Menu, and Close buttons.</li>
+  <li><strong>Enter (on Folder):</strong> Enters folder and displays its contents.</li>
+  <li><strong>Backspace:</strong> Navigates up to parent directory and refocuses on the exited folder.</li>
+  <li><strong>F5:</strong> Refreshes repositories or folder contents directly from GitHub.</li>
+  <li><strong>Alt+M:</strong> Opens the full actions menu.</li>
+  <li><strong>Alt+K (or Alt+C):</strong> Safely closes the dialog. (Escape is guarded in the main window to prevent accidental closure).</li>
+  <li><strong>Applications Key (or Shift+F10):</strong> Opens a clean, context-specific menu scoped to the current focus (repository actions on repositories, branch operations on the branch selector, file/folder actions on contents).</li>
+</ul>
+
+<h2>Chapter 1: Repository, Branch, and Settings Management</h2>
+<p>Manage your repositories with complete control from the tree view or the main menu:</p>
+
+<h3>1. Instant Repository Search (Ctrl+F)</h3>
+<p>Press <code>Ctrl+F</code> to focus the search box. Typing keywords filters your repositories in real time, announcing the matching count. Case-insensitive and Unicode-friendly search ensures seamless matching. Press Down Arrow or Enter to enter the results, or Escape to clear.</p>
+
+<h3>2. Creating a New Repository (Ctrl+Shift+N)</h3>
+<p>Open the creation dialog with <code>Ctrl+Shift+N</code>. Set repository name (e.g. <code>my-new-project</code>), optional description, visibility (<strong>Public</strong> or <strong>Private</strong>), choose whether to initialize with a README, and optionally choose an open-source license from the dropdown selector (such as <strong>GNU General Public License v2.0 (GPL-2.0)</strong>, <strong>GNU GPL v3.0</strong>, <strong>MIT License</strong>, <strong>Apache 2.0</strong>, <strong>BSD</strong>, or <strong>The Unlicense</strong>; default is <em>None</em>). Once submitted, the repository is created on GitHub within seconds and highlighted in your tree.</p>
+
+<h3>3. Repository Settings, Archiving, and Safe Deletion</h3>
+<p>Manage and delete repositories via the <em>Repository</em> menu or context menu (Shift+F10):</p>
+<ul>
+  <li><strong>Description and Visibility:</strong> Update repository summary and switch between <strong>Public</strong> and <strong>Private</strong> in <em>Repository settings…</em>.</li>
+  <li><strong>Archive Repository:</strong> Check <em>Archive this repository (make it read-only)</em> to lock changes.</li>
+  <li><strong>Safe Deletion:</strong> You can delete a repository either directly via <strong>Delete repository…</strong> in the <em>Repository</em> and context menus, or via the <em>Danger Zone</em> button in <em>Repository settings…</em>. The confirmation dialog requests the repository name to prevent accidental loss; you can type the name and press <strong>Enter</strong> or click <em>I understand, delete this repository</em>. Name matching is case-insensitive, immediately unlocking the delete action.</li>
+</ul>
+
+<h3>4. Inspecting Repository Details</h3>
+<p>Select <em>Repository details…</em> from the menu or context menu to review repository name, owner, description, default branch, visibility, archive state, star count, fork count, open issues count, web URL, and Git clone URL. Copy all metadata to your clipboard with <em>Copy details</em>.</p>
+
+<h3>5. Copy Repository Address and Open on GitHub</h3>
+<p>Choose <em>Copy repository address</em> to copy the HTTPS URL directly to clipboard, or choose <em>Open repository on GitHub</em> to view the project in your default web browser.</p>
+
+<h3>6. Downloading Repository as ZIP</h3>
+<p>Choose <em>Download repository (ZIP)…</em> to download the entire repository tree of the current branch as a clean ZIP archive.</p>
+
+<h3>7. Branch Management (Ctrl+B, Create Branch, Delete Branch)</h3>
+<p>Selecting a repository automatically loads all its branches in the background. Press <strong>Tab</strong> from the repositories tree or press <code>Ctrl+B</code> directly to reach the branch selection dropdown and switch branches using Up/Down arrow keys; the contents list and file operations immediately update for that branch.</p>
+<ul>
+  <li><strong>Branch Context Menu (Shift+F10):</strong> While focused on the Branch selector, press <strong>Shift+F10</strong> or the Applications key to access branch-specific actions: <em>New branch…</em>, <em>Delete current branch…</em>, and <em>Refresh branches</em>.</li>
+  <li><strong>Create Branch:</strong> Select <em>New branch…</em> from the branch context menu (Shift+F10) or from the <em>Branch</em> menu to branch off from any existing branch. Full Git ref rules are enforced.</li>
+  <li><strong>Delete Branch:</strong> Select <em>Delete current branch…</em> from the branch context menu (Shift+F10) or from the <em>Branch</em> menu to remove a branch. The default repository branch is strictly protected from deletion.</li>
+</ul>
+
+<h2>Chapter 2: File and Folder Operations</h2>
+<p>Perform direct file management on the selected repository branch:</p>
+
+<h3>1. Viewing and Reading File Content (Enter)</h3>
+<p>Pressing <strong>Enter</strong> on any code, script, or text document opens its full content in a native accessible text viewer. Read line-by-line with arrow keys, copy all content to clipboard with <strong>Alt+A</strong>, click <em>Edit file…</em> to switch into editor mode, or close with <strong>Alt+C</strong> (or <strong>Alt+K</strong>) or <strong>Escape</strong>. Binary files prompt you with an option to download directly.</p>
+
+<h3>2. Editing Files In-Addon (Ctrl+E)</h3>
+<p>Press <code>Ctrl+E</code> on any file in the contents list (or click <em>Edit file…</em> in the file viewer) to edit the file directly within NVDA. Make changes in the multiline accessible editor, enter a custom commit message, and press <code>Ctrl+S</code> or click <strong>Save</strong> to commit the updated file to GitHub immediately. Features a 5 MB file size safeguard and automatic SHA synchronization across consecutive edits.</p>
+
+<h3>3. Downloading Files and Folders (Ctrl+S)</h3>
+<p>Pressing <code>Ctrl+S</code> on any item in the contents list:</p>
+<ul>
+  <li><strong>If a file is selected:</strong> Saves the file directly to your computer with its original name.</li>
+  <li><strong>If a folder is selected:</strong> The add-on recursively packages all files and directories into a single <em>folder-name.zip</em> archive.</li>
+</ul>
+
+<h3>4. Creating a New File (Ctrl+N)</h3>
+<p>Press <code>Ctrl+N</code> to enter file name (e.g. <code>notes.txt</code>), commit message, and content, committing the new file directly to GitHub.</p>
+
+<h3>5. Uploading Files from Computer (Single or Multiple - Ctrl+U)</h3>
+<p>Press <code>Ctrl+U</code>, open the context menu (Shift+F10), or select <em>File &gt; Upload file(s) from computer…</em> to upload a single file or select <strong>multiple files</strong> at once using standard Windows selection keys. The upload window remains open with a live progress bar, file counters, speech announcements, and a Cancel button. Upon completion, a summary report confirms the upload destination and count, and closing the dialog refreshes the directory listing.</p>
+
+<h3>6. Uploading Folders from Computer (Ctrl+Shift+U)</h3>
+<p>To upload an entire directory with all its subfolders and nested files to your GitHub repository, press <code>Ctrl+Shift+U</code> or choose <em>File &gt; Upload folder from computer…</em>. Select the target folder from your PC; the add-on scans the full directory tree and confirms the total file count. During upload, the window displays live progress, speaks current file paths to your screen reader, and provides a Cancel button to abort anytime. When finished, a completion dialog summarizes how many folders and files were uploaded, and pressing Close automatically updates your repository contents.</p>
+
+<h3>7. Renaming and Moving Files or Folders (F2)</h3>
+<p>Press <strong>F2</strong> on any file or folder in the contents list, open the context menu (Shift+F10), or select <em>File &gt; Rename or move…</em> to rename the item or move it to a different directory in the repository:</p>
+<ul>
+  <li><strong>Renaming a File or Folder:</strong> To change only the item name (e.g. from <code>notes.txt</code> to <code>notes-v2.txt</code>, or folder <code>addon</code> to <code>extraSettingsAddon</code>), edit the name in the prompt and submit. When renaming a folder, all nested files and subdirectories are automatically moved to the new location.</li>
+  <li><strong>Moving to Another Folder:</strong> To move the file or folder into a new or existing directory, prepend the target directory path (e.g. <code>archive/notes.txt</code> or moving folder <code>addon</code> to <code>src/addon</code>). Moving a folder into itself or a subfolder of itself is safely guarded and disallowed.</li>
+</ul>
+<p>The add-on preserves the exact file contents and directory hierarchy at the new destination, cleanly removes the old path, and refreshes the directory listing upon completion.</p>
+
+<h3>8. Copying Files and Folders (Ctrl+Shift+C)</h3>
+<p>To duplicate an existing repository file or folder to a new path without removing the original source, press <code>Ctrl+Shift+C</code>, open the context menu (Shift+F10), or choose <em>File &gt; Copy file or folder…</em>:</p>
+<ul>
+  <li><strong>Copying a File:</strong> Select a file (e.g. <code>notes.txt</code>) and copy it to a new location (e.g. <code>addon/notes.txt</code>) or simply enter a destination folder with a trailing slash (e.g. <code>addon/</code>). The original file remains untouched while an exact duplicate is created at the target path.</li>
+  <li><strong>Copying a Folder:</strong> Duplicate an entire folder (e.g. <code>doc</code>) with all its nested files and subdirectories to a new directory (e.g. <code>addon/doc</code>). The source folder is preserved intact. Copying a folder into itself or a subfolder of itself is disallowed for safety.</li>
+</ul>
+<p>Live progress is reported to your screen reader as each file is copied, and the contents list refreshes once the operation finishes.</p>
+
+<h3>9. Copying Item Path to Clipboard</h3>
+<p>Choose <em>Copy item path</em> from the context menu to copy the repository-relative path (e.g. <code>src/utils/helper.py</code>) to your clipboard.</p>
+
+<h3>10. Deleting a File (Delete)</h3>
+<p>Press <strong>Delete</strong> on any file to open the deletion confirmation dialog and commit its removal.</p>
+
+<h2>Chapter 3: Commit History and Unified Diff Review (Ctrl+H)</h2>
+<p>Track all code changes and project history directly inside NVDA:</p>
+<ul>
+  <li><strong>Browsing Commits (Ctrl+H):</strong> Press <code>Ctrl+H</code> or select <em>Tools &gt; Commit history…</em> to list commits on the selected branch with short SHA, commit message, author, and date. Press <strong>F5</strong> to refresh.</li>
+  <li><strong>Commit Details and Diffs (Enter):</strong> Pressing <strong>Enter</strong> on a commit displays the full message, modified files, addition/deletion line statistics (+/-), and full unified diff patches in an accessible text box.</li>
+  <li><strong>Copy Details:</strong> Click <em>Copy details</em> to copy the entire diff patch and metadata to your clipboard.</li>
+</ul>
+
+<h2>Chapter 4: Pull Requests Hub and Merging (Ctrl+P)</h2>
+<p>Complete collaboration workflow without a web browser:</p>
+<ul>
+  <li><strong>Listing Pull Requests (Ctrl+P):</strong> Press <code>Ctrl+P</code> or select <em>Tools &gt; Pull requests…</em> to view pull requests with status (Open, Closed, Merged), author, branches, and creation date. Filter by Open, Closed, or All. Press <strong>F5</strong> to refresh.</li>
+  <li><strong>Opening a New Pull Request (Ctrl+N):</strong> Select source branch (head) and target branch (base), specify title and description, and submit the PR in seconds. Automatically verifies that at least two branches exist in the repository.</li>
+  <li><strong>Reviewing PR Details and Code Diffs (Enter):</strong> Pressing <strong>Enter</strong> displays the PR body, changed files with full patch diffs, and chronological comment history.</li>
+  <li><strong>Discussion and State:</strong> Post comments, close, or reopen pull requests directly from the dialog.</li>
+  <li><strong>Merging Pull Requests:</strong> Click <em>Merge pull request…</em> on any open PR to merge contributions directly into your target branch with user-friendly conflict detection.</li>
+</ul>
+
+<h2>Chapter 5: Issues and Task Tracking (Ctrl+I)</h2>
+<p>Track issues, feedback, and milestones:</p>
+<ul>
+  <li><strong>Listing Issues (Ctrl+I):</strong> Press <code>Ctrl+I</code> or select <em>Tools &gt; Issues…</em> to list open or closed issues with instant filtering. Press <strong>F5</strong> to refresh.</li>
+  <li><strong>Opening a New Issue (Ctrl+Shift+I or Ctrl+N in dialog):</strong> Quickly submit a new task or bug report with a title and body.</li>
+  <li><strong>Viewing Issue Details and Comments (Enter):</strong> View author info, creation date, issue description, and complete comment history.</li>
+  <li><strong>Adding Comments and Toggling State:</strong> Post new comments, close open issues, or reopen resolved issues directly.</li>
+</ul>
+
+<h2>Chapter 6: Releases and Package Distribution (Ctrl+R)</h2>
+<p>Designed for NVDA add-on authors and open-source releases:</p>
+<ul>
+  <li><strong>Browsing Releases (Ctrl+R):</strong> Press <code>Ctrl+R</code> or select <em>Tools &gt; Releases…</em> to inspect published releases, release tags, and changelogs. Press <strong>F5</strong> to refresh.</li>
+  <li><strong>Publishing a New Release (Ctrl+Shift+R or Ctrl+N in dialog):</strong> Specify release tag, title, description notes, and attach an add-on bundle (e.g. <code>.nvda-addon</code>) to publish on GitHub in a single step.</li>
+  <li><strong>Release Details, Asset Downloads, and SHA256 Copy (Enter):</strong> Read full changelog notes, download compiled packages directly to your PC with <em>Download file…</em>, copy the direct file download URL with <em>Copy download link</em> (Ctrl+C), or compute and copy the file's SHA256 checksum in seconds with <em>Copy SHA256 hash</em> (Alt+S or Ctrl+Shift+S) without needing to download the file to disk—essential for registering add-ons in JSON submission manifests. A context menu (<strong>Shift+F10</strong>) is also available directly on the downloadable files list.</li>
+  <li><strong>Editing and Deleting Releases:</strong> Update tag, title, and release notes via <em>Edit release…</em>, or delete obsolete releases via <em>Delete release…</em>.</li>
+</ul>
+
+<h2>Chapter 7: Explore GitHub Repositories, Starring, and Forking (Ctrl+Shift+F)</h2>
+<p>Explore the entire public GitHub universe:</p>
+<ul>
+  <li><strong>Global Repository Search (Ctrl+Shift+F):</strong> Search all public GitHub repositories by keywords via <em>Tools &gt; Explore GitHub repositories…</em> or <code>Ctrl+Shift+F</code>.</li>
+  <li><strong>Inspecting Repositories (Enter):</strong> Review repository names, star counts, fork counts, primary programming languages, and descriptions. Press Enter to view full details and clone URLs.</li>
+  <li><strong>Star / Unstar:</strong> Star interesting projects or toggle star status with one click.</li>
+  <li><strong>Forking:</strong> Click <em>Fork to my account…</em> to clone any open-source project directly to your GitHub profile.</li>
+</ul>
+
+<h2>Chapter 8: GitHub Notifications (Ctrl+Shift+B)</h2>
+<p>Stay updated with all activity on your repositories:</p>
+<ul>
+  <li><strong>Opening Notifications (Ctrl+Shift+B):</strong> Select <em>Tools &gt; Notifications…</em> or press <code>Ctrl+Shift+B</code> to list incoming notifications with filters for <em>Only unread</em> or <em>All</em>. Press <strong>F5</strong> to refresh.</li>
+  <li><strong>Intelligent In-Addon Routing (Enter):</strong> Pressing <strong>Enter</strong> or clicking <strong>View notification…</strong> opens pull requests directly in the Pull Requests hub, issues in the Issues dialog, and releases in the Releases dialog, automatically marking them as read.</li>
+  <li><strong>Marking as Read:</strong> Press <strong>Space</strong> to mark a notification as read, or click <strong>Mark all as read</strong> to clear the list.</li>
+  <li><strong>Open on Web:</strong> Open the discussion on GitHub in your web browser if desired.</li>
+</ul>
+
+<h2>Keyboard Shortcuts Summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shortcut Key</th>
+      <th>Function and Description</th>
+      <th>Context</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>NVDA + G</strong></td>
+      <td>Opens or focuses the GitHub add-on</td>
+      <td>Global (Everywhere)</td>
+    </tr>
+    <tr>
+      <td><strong>Alt + M</strong></td>
+      <td>Opens the main menu</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Alt + K (or Alt + C)</strong></td>
+      <td>Safely closes the active dialog</td>
+      <td>All Windows</td>
+    </tr>
+    <tr>
+      <td><strong>F5</strong></td>
+      <td>Refreshes repositories, folder contents, commits, issues, releases, or notifications from GitHub</td>
+      <td>Main Window / Issues / Releases / Notifications / Pull Requests / Commit History</td>
+    </tr>
+    <tr>
+      <td><strong>Tab / Shift + Tab</strong></td>
+      <td>Navigates between panes and controls</td>
+      <td>All Windows</td>
+    </tr>
+    <tr>
+      <td><strong>Enter</strong></td>
+      <td>Enters folder / Views file / Opens notification or detail</td>
+      <td>Lists and Trees</td>
+    </tr>
+    <tr>
+      <td><strong>Backspace</strong></td>
+      <td>Navigates up to the parent directory</td>
+      <td>Contents List</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + F</strong></td>
+      <td>Focuses repository search box</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + B</strong></td>
+      <td>Focuses branch selection dropdown</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + N</strong></td>
+      <td>Opens new repository creation dialog</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + E</strong></td>
+      <td>Edits selected file directly inside the add-on</td>
+      <td>Contents List / File Viewer</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + S</strong></td>
+      <td>Downloads selected file / folder (as ZIP) or saves editor changes</td>
+      <td>Contents List / File Editor</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + N</strong></td>
+      <td>Creates a new file (or PR / Issue / Release in sub-dialogs)</td>
+      <td>Main Window / Contents / PRs / Issues / Releases</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + U</strong></td>
+      <td>Uploads selected file or multiple files from computer to current folder</td>
+      <td>Main Window / Contents List</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + U</strong></td>
+      <td>Uploads an entire folder with all nested files to repository</td>
+      <td>Main Window / Contents List</td>
+    </tr>
+    <tr>
+      <td><strong>F2</strong></td>
+      <td>Renames or moves selected file or folder to another path</td>
+      <td>Contents List</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + C</strong></td>
+      <td>Copies selected file or folder to another path in repository</td>
+      <td>Contents List</td>
+    </tr>
+    <tr>
+      <td><strong>Delete</strong></td>
+      <td>Deletes selected file from repository</td>
+      <td>Contents List</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + H</strong></td>
+      <td>Opens Commit history and code diffs hub</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + P</strong></td>
+      <td>Opens Pull Requests hub</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + I</strong></td>
+      <td>Opens Issues hub</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + I</strong></td>
+      <td>Opens New Issue dialog directly</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + R</strong></td>
+      <td>Opens Releases hub</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + R</strong></td>
+      <td>Opens New Release publishing dialog directly</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + B</strong></td>
+      <td>Opens GitHub notifications</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + F</strong></td>
+      <td>Opens Global GitHub repository search and exploration</td>
+      <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Applications (or Shift + F10)</strong></td>
+      <td>Opens context-specific menu for selected repository, branch selector, or file/folder</td>
+      <td>Repositories Tree / Contents List</td>
+    </tr>
+    <tr>
+      <td><strong>Space</strong></td>
+      <td>Marks selected notification as read</td>
+      <td>Notifications List</td>
+    </tr>
+    <tr>
+      <td><strong>Escape</strong></td>
+      <td>Clears search box or closes sub-dialogs safely</td>
+      <td>Search Box / Sub-Dialogs</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="license-box" role="region" aria-label="Copyright and License Notice">
+  <h2>Copyright and License</h2>
+  <p>Developed by Mehmet Aykurt.</p>
+  <p><strong>Copyright &copy; 2026 Mehmet Aykurt &lt;m.aykurt38@gmail.com&gt;. All rights reserved.</strong></p>
+</div>
+
+</body>
+</html>
