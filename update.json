@@ -1,0 +1,6 @@
+{
+  "surum": "2026.11.01",
+  "link": "https://github.com/MehmetAykurt/nvda-github/releases/download/2026.11.01/github-2026.11.01.nvda-addon",
+  "sha256": "9d627740be31a0ffd6f098464bb4ce7ad5dca8fd312bba4801a898f0545998f8",
+  "aciklama": "GitHub İçin NVDA Entegrasyonu ilk kararlı sürümüdür.\n\nBu eklenti:\n- Hesaba Güvenli Bağlanma\n- Depo Yönetimi\n- Çalışma Dalları Yönetimi\n- Dosya ve Klasör İşlemleri\n- Erişilebilir Dahili Dosya Düzenleyici\n- İşleme Geçmişi ve Değişiklik İnceleme\n- Çekme İstekleri ve Kod Birleştirme\n- Sorun, Hata ve Görev Takibi\n- Sürümler ve Kurulum Paketi Dağıtımı ile SHA256 Kopyalama\n- Bildirim Merkezi\n- Açık Kaynak Projeleri Keşfetme ve Arama\nözelliklerini sunar.\n\nNVDA menüsü / Araçlar / GitHub seçeneği veya NVDA+G kısayolu ile eklentiye erişebilirsiniz."
+}
