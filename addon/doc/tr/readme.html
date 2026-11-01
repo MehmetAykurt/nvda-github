@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>GitHub NVDA Eklentisi Kullanım Kılavuzu</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    color: #24292f;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h1 {
+    color: #0969da;
+    border-bottom: 2px solid #eaecef;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #1f2328;
+    border-bottom: 1px solid #d0d7de;
+    padding-bottom: 8px;
+    margin-top: 36px;
+  }
+  h3 {
+    color: #32383f;
+    margin-top: 24px;
+  }
+  .meta-box {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+  }
+  .meta-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .meta-box li {
+    margin-bottom: 8px;
+  }
+  .meta-box li:last-child {
+    margin-bottom: 0;
+  }
+  .meta-label {
+    font-weight: 600;
+    color: #24292f;
+    display: inline-block;
+    width: 170px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  th {
+    background-color: #f6f8fa;
+    font-weight: 600;
+  }
+  code {
+    background-color: #f2f4f7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.95em;
+  }
+  .license-box {
+    background-color: #fff8c5;
+    border: 1px solid #d4a72c;
+    border-left: 5px solid #9a6700;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<h1>GitHub NVDA Eklentisi Kullanım Kılavuzu</h1>
+
+<div class="meta-box" role="region" aria-label="Eklenti Kimlik Bilgileri">
+  <ul>
+    <li><span class="meta-label">Eklentinin Adı:</span> <strong>GitHub</strong></li>
+    <li><span class="meta-label">Sürümü:</span> <strong>2026.11.01</strong></li>
+    <li><span class="meta-label">Depo Adresi:</span> <a href="https://github.com/mehmetaykurt/nvda-github" target="_blank" rel="noopener noreferrer">https://github.com/mehmetaykurt/nvda-github</a></li>
+    <li><span class="meta-label">NVDA Uyumluluğu:</span> <strong>2026.2 ve üzeri</strong> (Test Edilen: 2026.3)</li>
+    <li><span class="meta-label">Geliştirici:</span> <a href="https://mehmetaykurt.com.tr" target="_blank" rel="noopener noreferrer"><strong>Mehmet Aykurt</strong></a></li>
+    <li><span class="meta-label">E-posta Adresi:</span> <a href="mailto:m.aykurt38@gmail.com">m.aykurt38@gmail.com</a></li>
+  </ul>
+</div>
+
+<h2>Hakkında ve Giriş</h2>
+<p><strong>GitHub Nedir?</strong><br>
+GitHub; dünyanın dört bir yanındaki yazılım geliştiricilerin, açık kaynak üreticilerinin ve araştırmacıların projelerini bulutta güvenle sakladığı, her bir kod değişikliğini zaman içinde adım adım takip ettiği (sürüm kontrolü) ve dünya genelindeki topluluklarla ortaklaşa yazılım ürettiği küresel bir bilişim ekosistemidir.</p>
+
+<p><strong>Bu Eklenti Görme Engelli Kullanıcıya Ne Sağlar?</strong><br>
+Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle ekran okuyucu kullanıcıları için kimi zaman yorucu, karmaşık ve erişilebilirlik engelleriyle dolu olabilmektedir. Komut satırı araçları ise derin terminal bilgisi ve ezber gerektirir.</p>
+
+<p>Mehmet Aykurt tarafından geliştirilen <strong>GitHub NVDA Eklentisi</strong>, bu engelleri bütünüyle ortadan kaldırır. GitHub'ın en temel ve güçlü işlevlerini; doğrudan NVDA ekran okuyucusunun içine, sade, klavye ile kusursuz yönetilebilen, duyarlı ve kristal netliğinde masaüstü pencerelerine taşır. Tek bir kısayol tuşuyla depolarınızı gezebilir, kaynak kod ve metin dosyalarını satır satır okuyabilir, doğrudan eklenti içinde dosyaları düzenleyip kaydedebilir, yeni dosyalar oluşturup bilgisayarınızdan dosya yükleyebilir, yeni dallar oluşturup silebilir, deponun işleme (commit) geçmişini ve farklarını (diff) inceleyebilir, çekme isteklerini (Pull Requests) yönetip birleştirebilir (merge), yeni sürümler yayınlayıp var olanları güncelleyebilir veya silebilir, küresel GitHub deposu araması yapıp projeleri yıldızlayabilir ve çatallayabilir (fork), depo ayarlarını yapılandırıp güvenle silebilir ve tüm bildirimlerinizi tarayıcıya muhtaç kalmadan doğrudan eklenti içinde görüntüleyebilirsiniz.</p>
+
+<h2>Hesap Bağlama ve Güvenlik Altyapısı</h2>
+<p>Eklenti, GitHub'ın resmi ve modern <strong>Cihaz Yetkilendirme Akışı (OAuth Device Authorization Flow)</strong> standardını kullanır:</p>
+<ul>
+  <li><strong>Parola Paylaşılmaz:</strong> GitHub kullanıcı adınızı veya şifrenizi asla eklentiye girmeniz gerekmez.</li>
+  <li><strong>Doğrulama Kodu ile Onay:</strong> Bağlantı penceresinde üretilen 8 haneli tek kullanımlık güvenlik kodunu <em>Kodu kopyala</em> düğmesiyle panoya kopyalayıp <em>GitHub onay sayfasını aç</em> düğmesiyle varsayılan internet tarayıcınızda GitHub yetkilendirme sayfasını açabilirsiniz. Kodu yapıştırıp onay verdiğinizde bağlantı kendiliğinden tamamlanır.</li>
+  <li><strong>Windows Güvenli Depolama:</strong> Elde edilen güvenli erişim anahtarı (token), sabit diske açık metin olarak asla kaydedilmez. Microsoft Windows'un veri koruma standardı olan <em>Windows Kimlik Bilgisi Yöneticisi (Windows Credential Manager)</em> içinde şifrelenerek muhafaza edilir.</li>
+  <li><strong>Geniş Yetki Kapsamı:</strong> Depo yönetimi, dosya değişiklikleri, sorunlar, sürümler, çekme istekleri ve depo silme gibi tüm işlemler için gerekli olan <code>repo</code> ve <code>delete_repo</code> kapsamları otomatik olarak tanımlanır.</li>
+  <li><strong>Bağlantıyı Kaldırma:</strong> Dilediğiniz an ana menüdeki <em>Hesap &gt; Bilgisayardaki bağlantıyı kaldır</em> seçeneğiyle yerel anahtarı silebilirsiniz. Bu işlem yalnızca bilgisayarınızdaki oturumu sonlandırır; GitHub hesabınıza veya projelerinize hiçbir zarar vermez.</li>
+</ul>
+
+<h3>Adım Adım Hesap Bağlama ve İlk Kurulum</h3>
+<p>Eklenti ilk kez kurulduğunda veya yerel hesap bağlantısı kaldırıldığında izlenecek adım adım bağlantı süreci şu şekildedir:</p>
+<ol>
+  <li><strong>Hesap Kurulum Onayı:</strong> <code>NVDA + G</code> kısayol tuşuna basıldığında sistemde kayıtlı bir hesap bulunmadığı için kullanıcı doğrudan bir soru iletişim kutusuyla karşılanır: <em>"Henüz bir GitHub hesabı eklenmemiş. Şimdi bir hesap eklemek ister misiniz?"</em>. Odak doğrudan <strong>Evet</strong> düğmesindedir; <strong>Enter</strong> tuşuna basılarak bağlantı sihirbazına geçilir.</li>
+  <li><strong>Cihaz Doğrulama Kodunun Alınması ve Kopyalanması:</strong> Ekrana <em>"GitHub hesabını bağla"</em> başlıklı pencere gelir. Eklentinin genel uygulama kimliği hazır tanımlı olduğundan odak doğrudan <strong>"Bağlantıyı başlat"</strong> (Alt+B) düğmesindedir. <strong>Enter</strong> tuşuna basıldığında GitHub sunucusundan tek kullanımlık 8 haneli bir cihaz doğrulama kodu istenir. Kod üretildiğinde odak doğrudan kod kutusuna geçer. Bir kez <strong>Tab</strong> tuşuna basılarak <strong>"Kodu kopyala"</strong> (Alt+O) düğmesine gelinir ve <strong>Enter</strong> ile kod panoya kopyalanır. Bir kez daha <strong>Tab</strong> yapılarak <strong>"GitHub onay sayfasını aç"</strong> (Alt+G) düğmesine gelinir ve <strong>Enter</strong> tuşuna basılır; varsayılan internet tarayıcısında resmi GitHub cihaz onaylama sayfası açılır.</li>
+  <li><strong>Tarayıcıda Hesap Teyidi ve Kod Girişi:</strong> Açılan internet tarayıcısında açık bir GitHub oturumu varsa, ekrana <em>Cihaz Aktivasyonu (Device Activation)</em> sayfası gelir; <strong>"&lt;Kullanıcı Adı&gt; olarak devam edin"</strong> (<em>Continue as &lt;Username&gt;</em>) düğmesine basılarak hesap teyit edilir (oturum açık değilse standart kullanıcı adı ve parola girişi yapılır). Ardından açılan <em>Cihazınızı yetkilendirin (Authorize device)</em> ekranında odak doğrudan kod giriş kutusundadır; <code>Ctrl + V</code> kısayoluyla panodaki 8 haneli kod yapıştırılır ve <strong>Tab</strong> tuşuyla ilerlenerek <strong>"Devam etmek"</strong> (<em>Continue</em>) düğmesine basılır.</li>
+  <li><strong>Uygulama İzinlerinin Onaylanması:</strong> Ekrana eklentinin talep ettiği yetkileri belirten izin sayfası gelir; projelerin listelenmesi, dosya ve dal yönetimi, sürümler, çekme istekleri ve depo silme izinleri özetlenir. <strong>Tab</strong> tuşuyla ilerlenerek <strong>"&lt;Kullanıcı Adı&gt;'a yetki verin"</strong> (<em>Authorize &lt;Username&gt;</em>) düğmesine basılır.</li>
+  <li><strong>GitHub Güvenlik Teyidi (Sudo Modu / 2FA):</strong> GitHub, depo yönetimi gibi hassas yetkilendirmelerde yüksek güvenlik protokolü (sudo modu) uygular; ekrana <em>Erişimi onaylayın (Confirm access)</em> başlığı gelir. İki aşamalı doğrulama (Authenticator uygulaması, SMS veya e-posta yoluyla gelen güvenlik kodu) veya hesap parolası girilerek <strong>"Doğrulamak"</strong> (<em>Confirm</em>) düğmesine basılır.</li>
+  <li><strong>Kurulumun Tamamlanması ve Depoların Yüklenmesi:</strong> Tarayıcıda <em>"Tebrikler, her şey tamam! Cihazınız artık bağlı."</em> (<em>Congratulations, you're all set!</em>) bildirimi görüntülenir; tarayıcı sekmesi kapatılabilir. Arka planda bekleyen eklenti yetkilendirmeyi anında algılar ve bağlantı penceresini kendiliğinden kapatır. Ana pencere başlığı <em>"GitHub — Bağlı hesap: &lt;Kullanıcı Adınız&gt;"</em> olarak güncellenir. NVDA <em>"Depolar yükleniyor…"</em> anonsunu yapar ve birkaç saniye içinde tüm depolar taranarak <em>"X depo listelendi."</em> uyarısıyla odak doğrudan canlı arama kutusuna yerleşir. Eklenti kullanıma bütünüyle hazır duruma gelir.</li>
+</ol>
+
+<h2>Ana Pencere ve Genel Gezinme</h2>
+<p>Eklentiyi bilgisayarınızın her yerinden başlatmak için tek bir evrensel kısayol kullanılır:</p>
+<p><code>NVDA + G</code> (veya <em>NVDA Menüsü &gt; Araçlar &gt; GitHub…</em>)</p>
+
+<p>Ana pencere açıldığında başlık çubuğunda bağlı GitHub kullanıcı adınız duyurulur. Pencere düzeni ekran okuyucu ergonomisi ve klavye hakimiyeti gözetilerek Tab tuşu sırasıyla şu 6 temel alandan oluşturulmuştur:</p>
+<ol>
+  <li><strong>Depolarda Ara (Ctrl+F):</strong> Depolarınızı adına göre anında filtreleyebileceğiniz canlı arama kutusu.</li>
+  <li><strong>Depolar Ağacı (Sol Panel):</strong> Hesabınızın sahibi olduğu veya katkıda bulunduğu tüm depoların hiyerarşik olarak listelendiği ağaç görünümü. Yukarı/Aşağı yön tuşlarıyla depolar arasında dolaşabilirsiniz.</li>
+  <li><strong>Dal Seçimi (Ctrl+B):</strong> Seçili depoya ait dallar (branches) arasında geçiş yapmanızı sağlayan açılır seçim kutusu.</li>
+  <li><strong>İçerik Listesi (Sağ Panel):</strong> Seçili depo ve daldaki dosya ve klasörleri ayrıntılarıyla (Adı, Türü) listeleyen tablo görünümü.</li>
+  <li><strong>Menü Düğmesi (Alt+M):</strong> Tüm işlemleri organize eden ve 5 düzenli alt menüden (<strong>Hesap</strong>, <strong>Depo</strong>, <strong>Dal</strong>, <strong>Dosya</strong> ve <strong>Araçlar</strong>) oluşan ana komuta menüsü.</li>
+  <li><strong>Kapat Düğmesi (Alt+K veya Alt+C):</strong> Ana pencereyi güvenle kapatan düğme.</li>
+</ol>
+
+<p><strong>Temel Gezinme Tuşları:</strong></p>
+<ul>
+  <li><strong>Tab / Shift+Tab:</strong> Arama kutusu, Depo ağacı, Dal seçimi, İçerik listesi, Menü ve Kapat düğmeleri arasında sırasıyla geçiş yapar.</li>
+  <li><strong>Enter (Klasördeyken):</strong> Seçili klasörün içine girer ve alt ögeleri listeler.</li>
+  <li><strong>Backspace:</strong> Bir üst klasöre döner ve az önce çıkılan klasörün üzerinde odaklanarak takibi kolaylaştırır.</li>
+  <li><strong>F5:</strong> Depo ağacındayken tüm depoları; içerik listesindeyken geçerli klasörü sunucudan anında yeniler.</li>
+  <li><strong>Alt+M:</strong> Tüm işlevlerin yer aldığı ana menüyü açar.</li>
+  <li><strong>Alt+K (veya Alt+C):</strong> Ana pencereyi veya etkin iletişim kutusunu kapatır. (İşlem yaparken yanlışlıkla basmaları önlemek amacıyla ana pencerede Escape tuşu pencereyi kapatmaz, güvenli kapatma için Alt+K kullanılır).</li>
+  <li><strong>Uygulamalar Tuşu (veya Shift+F10):</strong> Bulunduğunuz alana göre (Depolar ağacında depoya özel, Dal seçim kutusunda dala özel, İçerik listesinde dosya/klasöre özel) temiz ve hedefe yönelik bağlam menüsünü açar.</li>
+</ul>
+
+<h2>Bölüm 1: Depo, Dal ve Ayar Yönetimi</h2>
+<p>Depo ağacı üzerinde veya ana menü aracılığıyla depolarınızı tam kontrolle yönetebilirsiniz:</p>
+
+<h3>1. Depolarda Canlı Arama (Ctrl+F)</h3>
+<p><code>Ctrl+F</code> tuşuna bastığınızda odak doğrudan arama kutusuna gider. Birkaç harf yazdığınız anda depolar anında filtrelenir ve NVDA eşleşen depo sayısını seslendirir. Arama motoru Türkçe büyük-küçük harf duyarlılığına (İ/I/ı/i) ve Türkçe karakterlere tam uyumludur; örneğin "İlle" yazıldığında "illede-roman", "ışık" yazıldığında "isik-projesi" kusursuz bulunur. <strong>Aşağı Ok</strong> veya <strong>Enter</strong> ile filtrelenmiş sonuçlar listesine geçebilir, <strong>Escape</strong> ile aramayı temizleyerek tam listeye dönebilirsiniz.</p>
+
+<h3>2. Yeni Depo Oluşturma (Ctrl+Shift+N)</h3>
+<p>Doğrudan masaüstünüzden GitHub üzerinde yepyeni bir depo oluşturabilirsiniz. Açılan pencerede:</p>
+<ul>
+  <li>Depo adı (örn: <code>yeni-projem</code>),</li>
+  <li>Depo açıklaması (isteğe bağlı),</li>
+  <li>Görünürlük türü: <strong>Genel</strong> (herkese açık) veya <strong>Özel</strong> (yalnızca size ve yetkili kişilere görünür),</li>
+  <li>Başlangıçta otomatik README dosyası oluşturma onayı,</li>
+  <li><strong>Lisans Seçimi (İsteğe Bağlı):</strong> Projeniz için doğrudan GitHub tarafından bir <code>LICENSE</code> dosyası oluşturulmasını isterseniz açılır listeden <strong>GNU General Public License v2.0 (GPL-2.0)</strong>, <strong>GNU General Public License v3.0 (GPL-3.0)</strong>, <strong>MIT Lisansı</strong>, <strong>Apache 2.0</strong>, <strong>BSD</strong> veya <strong>The Unlicense</strong> seçeneklerinden birini belirleyebilirsiniz (varsayılan olarak <em>Yok</em> seçilidir).</li>
+</ul>
+<p>belirlenip onaylandığında depo saniyeler içinde GitHub üzerinde açılır ve listenizde seçili olarak yerini alır.</p>
+
+<h3>3. Depo Ayarları, Arşivleme ve Güvenli Silme</h3>
+<p><em>Depo</em> menüsündeki veya içerik menüsündeki (Shift+F10) seçeneklerle projenizi yönetebilir ve güvenle silebilirsiniz:</p>
+<ul>
+  <li><strong>Açıklama ve Görünürlük:</strong> <em>Depo ayarları…</em> penceresinden deponun açıklama metnini güncelleyebilir, görünürlüğünü <strong>Genel</strong> veya <strong>Özel</strong> olarak değiştirebilirsiniz.</li>
+  <li><strong>Depoyu Arşivleme:</strong> Yine ayarlar penceresindeki <em>Bu depoyu arşivle (salt okunur yap)</em> onay kutusuyla projeyi dondurabilir, yeni değişikliklere kapatabilirsiniz.</li>
+  <li><strong>Güvenli Depo Silme:</strong> Hem <em>Depo</em> menüsündeki ve bağlam menüsündeki doğrudan <strong>Depoyu sil…</strong> seçeneğiyle hem de <em>Depo ayarları</em> içindeki <em>Tehlike Bölgesi</em> düğmesiyle projeyi kalıcı olarak silebilirsiniz. Kazara veri kaybını önlemek için güvenlik onay kutusu deponun adını yazmanızı ister; adı yazıp doğrudan <strong>Enter</strong> tuşuna basarak veya <em>Anladım, bu depoyu sil</em> düğmesiyle işlemi onaylayabilirsiniz. Büyük-küçük harf duyarsız kontrol sayesinde depo adı yazıldığı anda silme düğmesi anında açılır.</li>
+</ul>
+
+<h3>4. Depo Ayrıntılarını İnceleme</h3>
+<p><em>Depo</em> menüsünden veya bağlam menüsünden <em>Depo ayrıntıları…</em> seçeneğiyle projenin tam adı, sahibi, açıklaması, varsayılan dalı, görünürlüğü, arşiv durumu, yıldız ve çatal sayıları, açık sorun sayısı, web adresi ve Git klonlama adresi tek bir ekranda incelenebilir; <em>Ayrıntıları kopyala</em> düğmesiyle panoya aktarılabilir.</p>
+
+<h3>5. Depo Adresini Kopyalama ve GitHub'da Açma</h3>
+<p><em>Depo adresini kopyala</em> seçeneğiyle deponun HTTPS web adresini tek hamlede panonuza kopyalayabilir, <em>Depoyu GitHub'da aç</em> seçeneğiyle depoyu varsayılan internet tarayıcınızda görüntüleyebilirsiniz.</p>
+
+<h3>6. Depoyu ZIP Olarak İndirme</h3>
+<p>Menüden veya bağlam menüsünden <em>Depoyu ZIP olarak indir…</em> seçeneğiyle, seçili dalın tüm kaynak kodunu tek bir ZIP arşivi hâlinde bilgisayarınıza kaydedebilirsiniz.</p>
+
+<h3>7. Dallar Arası Geçiş (Ctrl+B), Yeni Dal ve Dal Silme</h3>
+<p>Bir depo seçildiğinde o depoya ait tüm dallar (branches) arka planda otomatik olarak çekilir. Depolar ağaç görünümündeyken bir kez <strong>Tab</strong> tuşuna basarak veya doğrudan <code>Ctrl+B</code> kısayolunu kullanarak dal seçim kutusuna ulaşabilir, Yukarı/Aşağı oklarla dallar arasında gezinebilirsiniz. Dal seçildiği anda içerik listesi, dosya indirme, düzenleme ve yükleme işlemleri bütünüyle o dal üzerinden yürütülür.</p>
+<ul>
+  <li><strong>Dal Bağlam Menüsü (Shift+F10):</strong> Dal seçim kutusundayken <strong>Shift+F10</strong> veya Uygulamalar tuşuna basarak doğrudan dala özgü işlemlere ulaşabilirsiniz: <em>Yeni dal…</em>, <em>Geçerli dalı sil…</em> ve <em>Dalları yenile</em>.</li>
+  <li><strong>Yeni Dal Oluşturma:</strong> Dal bağlam menüsünden (Shift+F10) veya ana menüdeki <em>Dal</em> menüsünden <em>Yeni dal…</em> seçeneğiyle kaynak dalı belirleyip yeni dal adını yazarak hızlıca dal oluşturabilirsiniz. Git ref kurallarına uygunluk eklenti tarafından otomatik denetlenir.</li>
+  <li><strong>Geçerli Dalı Silme:</strong> Dal bağlam menüsünden veya ana menüdeki <em>Dal</em> menüsünden <em>Geçerli dalı sil…</em> seçeneğiyle üzerinde çalıştığınız dalı silebilirsiniz. Yanlışlıkla ana yapının bozulmasını önlemek için GitHub varsayılan dalı (default branch) eklenti tarafından kesin koruma altındadır ve silinemez.</li>
+</ul>
+
+<h2>Bölüm 2: Dosya ve Klasör İşlemleri</h2>
+<p>İçerik listesindeyken deponuzdaki dosyalar üzerinde doğrudan işlem yapabilirsiniz:</p>
+
+<h3>1. Dosya İçeriğini Okuma ve Görüntüleme (Enter)</h3>
+<p>Herhangi bir metin, belge veya kaynak kod dosyası üzerindeyken <strong>Enter</strong> tuşuna basıldığında dosya içeriği yerel ve erişilebilir bir metin penceresinde açılır. Yön tuşlarıyla satır satır okuyabilir, <strong>Alt+O</strong> ile tüm içeriği panoya kopyalayabilir, <em>Dosyayı düzenle…</em> düğmesiyle doğrudan düzenleme moduna geçebilir, <strong>Alt+K</strong> veya <strong>Escape</strong> ile pencereyi kapatabilirsiniz. İkili (binary) bir dosya olduğunda eklenti sizi uyararak dosyayı bilgisayara indirme seçeneği sunar.</p>
+
+<h3>2. Dosyayı Doğrudan Eklenti İçinde Düzenleme (Ctrl+E)</h3>
+<p>İçerik listesinde herhangi bir dosya üzerindeyken <code>Ctrl+E</code> tuşuna basarak veya bağlam menüsünden <em>Dosyayı düzenle…</em> seçeneğini kullanarak dosyayı doğrudan eklenti içinde düzenleyebilirsiniz. Çok satırlı erişilebilir metin düzenleyicide istediğiniz değişiklikleri yaptıktan sonra işleme iletisini (commit message) belirleyip <code>Ctrl+S</code> kısayoluyla veya <strong>Kaydet</strong> düğmesiyle değişiklikleri doğrudan GitHub deponuza gönderebilirsiniz. Düzenleyici 5 MB boyut korumasına ve ardışık kaydetmelerde SHA çakışmasını önleyen otomatik eşzamanlama altyapısına sahiptir.</p>
+
+<h3>3. Dosya ve Klasör İndirme (Ctrl+S)</h3>
+<p>Seçili öge üzerindeyken <code>Ctrl+S</code> tuşuna bastığınızda:</p>
+<ul>
+  <li><strong>Dosya seçiliyse:</strong> Dosya orijinal adıyla bilgisayarınızda dilediğiniz bir klasöre doğrudan kaydedilir.</li>
+  <li><strong>Klasör seçiliyse:</strong> Eklenti klasörün altındaki tüm dosya ağacını tarar, eksiksiz biçimde bir araya getirir ve bilgisayarınızda tek bir <em>klasor-adi.zip</em> arşivine dönüştürerek kaydeder.</li>
+</ul>
+
+<h3>4. Yeni Dosya Oluşturma (Ctrl+N)</h3>
+<p><code>Ctrl+N</code> tuşuna bastığınızda yeni dosya penceresi açılır. Dosya adını (örn: <code>notlar.txt</code>), işleme iletisini ve dosya içeriğini yazıp <strong>Kaydet</strong> düğmesine bastığınızda dosya anında deponuza eklenir.</p>
+
+<h3>5. Bilgisayardan Dosya Yükleme (Tek veya Çoklu - Ctrl+U)</h3>
+<p><code>Ctrl+U</code> kısayolu, bağlam menüsü (Shift+F10) veya ana menüdeki <em>Dosya &gt; Bilgisayardan dosya(lar) yükle…</em> seçeneğiyle bilgisayarınızdan tek bir dosya ya da Shift / Ctrl tuşlarıyla <strong>birden fazla dosya</strong> seçerek depodaki geçerli klasöre tek hamlede yükleyebilirsiniz. Yükleme penceresi işlem süresince açık kalır; ilerleme çubuğu, yüklenen dosya sırası ve İptal butonuyla tam kontrol sağlar. Yükleme tamamlandığında kaç dosyanın nereye yüklendiğini bildiren bir özet mesajı sunulur ve Kapat butonuyla pencere kapatılarak liste güncellenir.</p>
+
+<h3>6. Bilgisayardan Klasör Yükleme (Ctrl+Shift+U)</h3>
+<p>Bilgisayarınızdaki bir klasörü tüm alt klasörleri ve dosyalarıyla birlikte GitHub deponuza aktarmak için <code>Ctrl+Shift+U</code> kısayolunu veya ana menüdeki <em>Dosya &gt; Bilgisayardan klasör yükle…</em> seçeneğini kullanabilirsiniz. Bilgisayarınızdaki klasörü (örneğin <code>addon</code>) seçtiğinizde, eklenti tüm alt hiyerarşiyi otomatik olarak tarar ve toplam dosya sayısını bildirir. Yükleme başladığında pencere açık kalarak ekran okuyucuya anlık ilerlemeyi ve o an yüklenen dosyanın adını seslendirir. Dilediğiniz an İptal butonuna basarak işlemi durdurabilirsiniz. Yükleme bittiğinde klasör ve dosya sayısını içeren onay mesajı görüntülenir ve Kapat butonuna basıldığında deponuzun içeriği yenilenir.</p>
+
+<h3>7. Dosya ve Klasör Adı veya Yolunu Değiştirme (F2)</h3>
+<p>İçerik listesinde seçili herhangi bir dosya veya klasör üzerindeyken <strong>F2</strong> tuşuna basarak, bağlam menüsünden (Shift+F10) veya ana menüdeki <em>Dosya &gt; Ad veya yol değiştir…</em> seçeneğiyle dosya ya da klasörün adını değiştirebilir veya deponun içindeki başka bir konuma taşıyabilirsiniz:</p>
+<ul>
+  <li><strong>Dosya veya Klasörün Adını Değiştirme:</strong> Yalnızca adını değiştirmek istediğinizde (örneğin <code>notlar.txt</code> yerine <code>notlar-yeni.txt</code> veya <code>addon</code> yerine <code>ekAyarlar</code>) kutudaki adı değiştirip onaylamanız yeterlidir. Klasör yeniden adlandırıldığında eklenti klasör altındaki tüm dosyaları otomatik olarak yeni ada aktarır ve eski klasörü temizler.</li>
+  <li><strong>Dosya veya Klasörü Başka Dizine Taşıma:</strong> Öğeyi deponun içindeki başka bir konuma aktarmak için hedef yolu yazabilirsiniz (örneğin <code>arsiv/notlar.txt</code> veya bir klasörü <code>src/addon</code> altına taşımak gibi). Eklenti bir klasörün kendi içine veya bir alt klasörüne taşınmasını güvenlik gereği engeller.</li>
+</ul>
+<p>Eklenti tüm dosya içeriklerini ve klasör hiyerarşisini koruyarak yeni konumunda oluşturur, eski konumundan kaldırır ve işlem bittiğinde listenizi yeniler.</p>
+
+<h3>8. Dosya ve Klasör Kopyalama (Ctrl+Shift+C)</h3>
+<p>Depodaki mevcut bir dosyayı veya bir klasörü kaynak öğeyi silmeden başka bir konuma veya yeni bir adla kopyalamak için <code>Ctrl+Shift+C</code> kısayolunu, bağlam menüsünden (Shift+F10) veya ana menüdeki <em>Dosya &gt; Dosyayı veya klasörü kopyala…</em> seçeneğini kullanabilirsiniz:</p>
+<ul>
+  <li><strong>Dosya Kopyalama:</strong> Seçili bir dosyayı (örneğin <code>deneme.txt</code>) depoda başka bir konuma (örneğin <code>addon/deneme.txt</code>) veya doğrudan klasör adını girip sonuna eğik çizgi koyarak (örneğin <code>addon/</code>) kolayca kopyalayabilirsiniz. Kaynak dosya olduğu gibi korunurken belirtilen yolda birebir kopyası oluşturulur.</li>
+  <li><strong>Klasör Kopyalama:</strong> Bir klasörü (örneğin <code>doc</code>) tüm alt klasör ve dosyalarıyla birlikte deponun başka bir dizinine (örneğin <code>addon/doc</code>) kopyalayabilirsiniz. Eklenti tüm dosyaları hedef yola aktarırken kaynak klasörü aynen muhafaza eder. Bir klasörün kendi içine veya alt klasörüne kopyalanması güvenlik nedeniyle engellenir.</li>
+</ul>
+<p>Kopyalama süresince ekran okuyucuya dosya dosya ilerleme bilgisi seslendirilir ve işlem bittiğinde içerik listesi yenilenir.</p>
+
+<h3>9. Dosya Yolunu Panoya Kopyalama</h3>
+<p>Bağlam menüsündeki <em>Öğe yolunu kopyala</em> seçeneğiyle dosyanın veya klasörün depo köküne göre göreli yolunu (örn: <code>src/utils/helper.py</code>) panonuza kopyalayabilirsiniz.</p>
+
+<h3>10. Dosya Silme (Delete)</h3>
+<p>Seçili dosya üzerindeyken <strong>Delete</strong> tuşuna basıldığında silme onay penceresi açılır. İşleme mesajını onayladığınızda dosya depodan güvenle kaldırılır.</p>
+
+<h2>Bölüm 3: İşleme (Commit) Geçmişi ve Değişiklik İnceleme (Ctrl+H)</h2>
+<p>Depodaki tüm geliştirme adımlarını, kimin ne zaman hangi değişikliği yaptığını adım adım takip edebilirsiniz:</p>
+<ul>
+  <li><strong>İşleme Geçmişini Açma (Ctrl+H):</strong> <code>Ctrl+H</code> kısayolu veya ana menüdeki <em>Araçlar &gt; İşleme geçmişi…</em> seçeneğiyle seçili dalın işleme geçmişini SHA özeti, işleme iletisi, yazar ve tarih bilgileriyle listeler. <strong>F5</strong> tuşuyla liste anında tazelenir.</li>
+  <li><strong>İşleme Ayrıntıları ve Kod Yamaları (Enter):</strong> Listede bir işleme üzerindeyken <strong>Enter</strong> tuşuna basıldığında tam işleme mesajı, değiştirilen dosyalar listesi, eklenen/silinen satır sayıları (+/-) ve standart birleşik kod yamaları (unified diff) erişilebilir bir metin kutusunda sunulur.</li>
+  <li><strong>Panoya Kopyalama:</strong> <em>Ayrıntıları kopyala</em> düğmesiyle tüm işleme bilgisi ve yama metni panoya aktarılabilir.</li>
+</ul>
+
+<h2>Bölüm 4: Çekme İstekleri (Pull Requests) Merkezi (Ctrl+P)</h2>
+<p>Ortak projelerde kod katkılarını incelemek, tartışmak ve ana projeye dahil etmek için eksiksiz PR yönetim merkezi:</p>
+<ul>
+  <li><strong>Çekme İsteklerini Listeleme (Ctrl+P):</strong> <code>Ctrl+P</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Çekme istekleri…</em> seçeneğiyle deponun çekme isteklerini numarası, durumu (Açık, Kapalı, Birleştirildi), başlığı, yazarı ve kaynak/hedef dallarıyla listeler. Filtre kutusuyla <em>Açık</em>, <em>Kapalı</em> veya <em>Tümü</em> seçilebilir. <strong>F5</strong> ile liste sunucudan yenilenir.</li>
+  <li><strong>Yeni Çekme İsteği Açma (Ctrl+N):</strong> Kaynak dal (head) ve hedef dalı (base) seçip başlık ve açıklama girerek yeni bir çekme isteği oluşturabilirsiniz. Eklenti, işlem öncesinde depoda en az iki dal olup olmadığını otomatik doğrular.</li>
+  <li><strong>Ayrıntıları, Kod Farklarını ve Yorumları İnceleme (Enter):</strong> Bir çekme isteğinde <strong>Enter</strong>'a bastığınızda PR açıklaması, değişen dosyaların fark yamaları (diff) ve tüm yorum geçmişi kronolojik olarak görüntülenir.</li>
+  <li><strong>Yorum Ekleme ve Durum Yönetimi:</strong> Çekme isteğine yeni yorum yazabilir, kapatabilir veya tekrar açabilirsiniz.</li>
+  <li><strong>Doğrudan Eklenti İçinden Birleştirme (Merge):</strong> Açık bir çekme isteğinde <em>Çekme isteğini birleştir…</em> düğmesiyle katkıyı güvenle hedef dala birleştirebilirsiniz. Olası birleştirme çakışmaları (conflict) eklenti tarafından kullanıcı dostu biçimde bildirilir.</li>
+</ul>
+
+<h2>Bölüm 5: Sorunlar / Hata ve Görev Takibi (Issues - Ctrl+I)</h2>
+<p>Projelerinizdeki geri bildirimleri, yapılacak işleri ve hata raporlarını takip etmek için:</p>
+<ul>
+  <li><strong>Sorunları Listeleme (Ctrl+I):</strong> <code>Ctrl+I</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Sorunlar…</em> seçeneğiyle deponun açık veya kapalı tüm sorunlarını listeler. Durum filtre kutusuyla açık/kapalı sorunlar arasında filtreleme yapılabilir. <strong>F5</strong> ile liste yenilenir.</li>
+  <li><strong>Yeni Sorun Açma (Ctrl+Shift+I veya diyalogda Ctrl+N):</strong> Başlık ve açıklama girilerek saniyeler içinde yeni bir sorun veya görev kaydı oluşturulur.</li>
+  <li><strong>Sorun Detaylarını İnceleme (Enter):</strong> Sorunun yazarı, açılış tarihi, açıklama metni ve tüm yorum geçmişi kronolojik olarak ayrıntılı bir metin kutusunda okunabilir.</li>
+  <li><strong>Yorum Ekleme ve Durum Değiştirme:</strong> Sorun penceresinden tek tuşla yeni yorum yazabilir, açık bir sorunu kapatabilir veya kapalı bir sorunu tekrar açabilirsiniz.</li>
+</ul>
+
+<h2>Bölüm 6: Sürümler ve Paket Yayınlama (Releases - Ctrl+R)</h2>
+<p>Özellikle NVDA eklentisi veya açık kaynak yazılım geliştiren kullanıcılar için tasarlanan sürüm yönetim merkezi:</p>
+<ul>
+  <li><strong>Sürümleri Listeleme (Ctrl+R):</strong> <code>Ctrl+R</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Sürümler…</em> seçeneğiyle depoda yayınlanmış tüm sürümleri listeler. <strong>F5</strong> ile liste yenilenir.</li>
+  <li><strong>Yeni Sürüm Yayınlama (Ctrl+Shift+R veya diyalogda Ctrl+N):</strong> Sürüm etiketi (tag name, örn: <code>v1.0.0</code>), sürüm başlığı, sürüm açıklaması ve bilgisayarınızdaki kurulum paketi (eklenti dosyası) seçilerek tek tıkla resmi bir GitHub sürümü olarak yayınlanır. Paket dosyası otomatik olarak sürüme ek (asset) olarak yüklenir.</li>
+  <li><strong>Sürüm Detayları, Dosya İndirme ve SHA256 Kopyalama (Enter):</strong> Sürüm notları okunabilir, sürümün altında yer alan hazır indirme paketleri (örneğin <code>.nvda-addon</code> veya kurulum dosyaları) <em>Dosya indir…</em> düğmesiyle doğrudan bilgisayara indirilebilir; <em>İndirme bağlantısını kopyala</em> (Ctrl+C) düğmesiyle dosya indirme bağlantısı panoya kopyalanabilir. Ayrıca özellikle NVDA Eklenti Mağazası (Add-on Store) veya güncelleme bildirimleri JSON dosyalarına eklerken gereken dosya doğrulama özeti, <em>SHA256 değerini kopyala</em> (Alt+S veya Ctrl+Shift+S) düğmesiyle dosyayı bilgisayara indirmeye gerek kalmadan saniyeler içinde hesaplanıp doğrudan panoya kopyalanabilir. İndirilebilir dosyalar listesinde <strong>Shift+F10</strong> ile açılan bağlam menüsünden de tüm bu işlemlere tek hamlede erişilebilir.</li>
+  <li><strong>Sürüm Düzenleme ve Silme:</strong> Sürüm listesindeki <em>Sürümü düzenle…</em> seçeneğiyle sürüm etiketini, başlığını ve notlarını güncelleyebilir; <em>Sürümü sil…</em> seçeneğiyle eski sürümleri onay vererek kaldırabilirsiniz.</li>
+</ul>
+
+<h2>Bölüm 7: GitHub Depolarını Keşfetme, Yıldızlama ve Çatallama (Ctrl+Shift+F)</h2>
+<p>Kendi depolarınızın dışına çıkıp tüm GitHub evrenini keşfedin:</p>
+<ul>
+  <li><strong>Küresel Depo Araması (Ctrl+Shift+F):</strong> Ana menüdeki <em>Araçlar &gt; GitHub depolarını keşfet…</em> seçeneği veya <code>Ctrl+Shift+F</code> kısayoluyla tüm açık GitHub depolarında anahtar sözcüklerle arama yapabilirsiniz.</li>
+  <li><strong>Sonuçları ve Depo Detaylarını İnceleme (Enter):</strong> Arama sonuçlarında depoların adı, yıldız sayısı, çatal (fork) sayısı, birincil yazılım dili ve açıklama metni listelenir. Enter ile tam depo detayları açılır.</li>
+  <li><strong>Yıldızlama (Star / Unstar):</strong> Beğendiğiniz bir projeyi tek tıkla yıldızlayabilir veya daha önce verdiğiniz yıldızı geri alabilirsiniz.</li>
+  <li><strong>Hesabınıza Çatallama (Fork):</strong> Bir açık kaynak projeyi tek tıkla kendi GitHub hesabınıza kopyalayarak (fork ederek) üzerinde özgürce geliştirmeye başlayabilirsiniz.</li>
+</ul>
+
+<h2>Bölüm 8: GitHub Bildirimleri (Notifications - Ctrl+Shift+B)</h2>
+<p>GitHub hesabınıza gelen tüm güncellemelerden anında haberdar olun:</p>
+<ul>
+  <li><strong>Bildirimleri Açma (Ctrl+Shift+B):</strong> <code>Ctrl+Shift+B</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Bildirimler…</em> seçeneğiyle gelen kutunuzdaki bildirimleri listeler. Filtre kutusuyla <em>Sadece okunmamışlar</em> veya <em>Tümü</em> seçilebilir. <strong>F5</strong> ile liste yenilenir.</li>
+  <li><strong>Eklenti İçinde Akıllı Yönlendirme (Enter):</strong> Bir bildirim üzerindeyken <strong>Enter</strong> tuşuna basıldığında veya <strong>Bildirimi görüntüle…</strong> tıklandığında; bildirim bir çekme isteğine aitse doğrudan Çekme İstekleri penceresinde, bir soruna aitse Sorunlar penceresinde, bir sürüme aitse Sürüm penceresinde açılır ve arka planda okundu olarak işaretlenir.</li>
+  <li><strong>Okundu Yapma:</strong> <strong>Boşluk (Space)</strong> tuşuyla seçili bildirim hemen okundu yapılır. <strong>Tümünü okundu yap</strong> düğmesiyle tüm liste tek hamlede temizlenebilir.</li>
+  <li><strong>Web'de Aç:</strong> İhtiyaç duyulursa bildirim web tarayıcısında da görüntülenebilir.</li>
+</ul>
+
+<h2>Kısayol Tuşları Tablosu</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kısayol Tuşu</th>
+      <th>İşlev ve Açıklama</th>
+      <th>Geçerli Olduğu Alan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>NVDA + G</strong></td>
+      <td>GitHub eklentisini açar veya odaklandırır</td>
+      <td>Genel (Her yerde)</td>
+    </tr>
+    <tr>
+      <td><strong>Alt + M</strong></td>
+      <td>Eklenti ana menüsünü açar</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Alt + K (veya Alt + C)</strong></td>
+      <td>Etkin pencereyi veya iletişim kutusunu güvenle kapatır</td>
+      <td>Tüm Pencereler</td>
+    </tr>
+    <tr>
+      <td><strong>F5</strong></td>
+      <td>Depoları, klasör içeriğini, sorunları, sürümleri, işlemeleri veya bildirimleri sunucudan yeniler</td>
+      <td>Ana Pencere / Sorunlar / Sürümler / Bildirimler / Çekme İstekleri / İşleme Geçmişi</td>
+    </tr>
+    <tr>
+      <td><strong>Tab / Shift + Tab</strong></td>
+      <td>Pencere içi paneller ve kontroller arasında dolaşır</td>
+      <td>Tüm Pencereler</td>
+    </tr>
+    <tr>
+      <td><strong>Enter</strong></td>
+      <td>Klasöre girer / Dosyayı görüntüler / Bildirimi veya ayrıntıyı açar</td>
+      <td>Listeler ve Ağaçlar</td>
+    </tr>
+    <tr>
+      <td><strong>Backspace</strong></td>
+      <td>Bir üst klasöre döner</td>
+      <td>İçerik Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + F</strong></td>
+      <td>Depolarda arama kutusuna odaklanır</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + B</strong></td>
+      <td>Dal (Branch) seçim kutusuna odaklanır</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + N</strong></td>
+      <td>Yeni GitHub deposu oluşturma penceresini açar</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + E</strong></td>
+      <td>Seçili dosyayı doğrudan eklenti içinde düzenler</td>
+      <td>İçerik Listesi / Dosya Görüntüleyici</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + S</strong></td>
+      <td>Seçili dosyayı / klasörü (ZIP olarak) indirir ya da dosya düzenleyicide kaydeder</td>
+      <td>İçerik Listesi / Dosya Düzenleyici</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + N</strong></td>
+      <td>Geçerli klasörde yeni dosya (veya PR / sorun / sürüm) oluşturur</td>
+      <td>Ana Pencere / İçerik / PR / Sorunlar / Sürümler</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + U</strong></td>
+      <td>Bilgisayardan seçilen dosya veya birden fazla dosyayı geçerli klasöre yükler</td>
+      <td>Ana Pencere / İçerik Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + U</strong></td>
+      <td>Bilgisayardan bir klasörü tüm içeriği ve alt dosyalarıyla depoya yükler</td>
+      <td>Ana Pencere / İçerik Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>F2</strong></td>
+      <td>Seçili dosya veya klasörü yeniden adlandırır ya da başka bir konuma taşır</td>
+      <td>İçerik Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + C</strong></td>
+      <td>Seçili dosya veya klasörü depoda başka bir yola kopyalar</td>
+      <td>İçerik Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>Delete</strong></td>
+      <td>Seçili dosyayı GitHub deposundan siler</td>
+      <td>İçerik Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + H</strong></td>
+      <td>Deponun işleme (commit) geçmişi ve kod yamaları penceresini açar</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + P</strong></td>
+      <td>Deponun çekme istekleri (Pull Requests) merkezini açar</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + I</strong></td>
+      <td>Deponun sorunlarını (Issues) listeler</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + I</strong></td>
+      <td>Depoda yeni sorun oluşturma penceresini açar</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + R</strong></td>
+      <td>Deponun sürümlerini (Releases) listeler</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + R</strong></td>
+      <td>Yeni sürüm yayınlama ve paket yükleme penceresini açar</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + B</strong></td>
+      <td>GitHub bildirimlerini listeler</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + F</strong></td>
+      <td>Tüm GitHub üzerinde küresel depo arama ve keşif penceresini açar</td>
+      <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Uygulamalar (veya Shift + F10)</strong></td>
+      <td>Bulunulan alana göre (Depo, Dal veya Dosya) bağlam menüsünü açar</td>
+      <td>Depolar Ağacı / İçerik Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>Boşluk (Space)</strong></td>
+      <td>Seçili bildirimi okundu olarak işaretler</td>
+      <td>Bildirimler Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>Escape</strong></td>
+      <td>Arama kutusunu temizler veya açılan alt pencereleri kapatır</td>
+      <td>Arama / Alt Pencereler</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="license-box" role="region" aria-label="Telif Hakkı ve Lisans Bildirimi">
+  <h2>Telif Hakkı ve Lisans</h2>
+  <p>Mehmet Aykurt tarafından geliştirilmiştir.</p>
+  <p><strong>Telif Hakkı &copy; 2026 Mehmet Aykurt &lt;m.aykurt38@gmail.com&gt;. Tüm hakları saklıdır.</strong></p>
+</div>
+
+</body>
+</html>
