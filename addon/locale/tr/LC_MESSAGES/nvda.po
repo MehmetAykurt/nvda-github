@@ -1,0 +1,1785 @@
+msgid ""
+msgstr "Project-Id-Version: GitHub\nLanguage: tr\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+msgid "%s items listed."
+msgstr "%s öğe listelendi."
+
+msgid "%s repositories listed."
+msgstr "%s depo listelendi."
+
+msgid "&Account"
+msgstr "&Hesap"
+
+msgid "&Cancel"
+msgstr "&İptal"
+
+msgid "&Close"
+msgstr "&Kapat"
+
+msgid "&Connect account"
+msgstr "Hesap &bağla"
+
+msgid "&Copy code"
+msgstr "Kodu k&opyala"
+
+msgid "&Copy repository address"
+msgstr "Depo adresini ko&pyala"
+
+msgid "&Go to contents"
+msgstr "İ&çeriğe geç"
+
+msgid "&Menu"
+msgstr "&Menü"
+
+msgid "&No"
+msgstr "&Hayır"
+
+msgid "&OK"
+msgstr "&Tamam"
+
+msgid "&Open GitHub approval page"
+msgstr "&GitHub onay sayfasını aç"
+
+msgid "&Open repository on GitHub"
+msgstr "Depoyu Git&Hub'da aç"
+
+msgid "&Reconnect account"
+msgstr "Hesabı &yeniden bağla"
+
+msgid "&Refresh contents"
+msgstr "İçeriği ye&nile"
+
+msgid "&Refresh repositories"
+msgstr "Depoları &yenile"
+
+msgid "&Remove local connection"
+msgstr "Bilgisayardaki bağlantıyı ka&ldır"
+
+msgid "&Repository"
+msgstr "&Depo"
+
+msgid "&Start connection"
+msgstr "Bağlantıyı &başlat"
+
+msgid "&Yes"
+msgstr "&Evet"
+
+msgid "Client ID (public application identifier)"
+msgstr "Client ID (açık uygulama kimliği)"
+
+msgid "Connect GitHub account"
+msgstr "GitHub hesabı bağla"
+
+msgid "Connected account: %s"
+msgstr "Bağlı hesap: %s"
+
+msgid "Connection cancelled."
+msgstr "Bağlantı iptal edildi."
+
+msgid "Connection status"
+msgstr "Bağlantı durumu"
+
+msgid "Contents"
+msgstr "İçerik"
+
+msgid "Contents: %s"
+msgstr "İçerik: %s"
+
+msgid "Copy the code and enter it on the GitHub approval page. Waiting for your approval. The code is valid for %s minutes."
+msgstr "Kodu kopyalayıp GitHub onay sayfasına girin. Onayınız bekleniyor. Kod %s dakika geçerlidir."
+
+msgid "Could not reach GitHub. Check your internet connection and try again."
+msgstr "GitHub'a ulaşılamadı. İnternet bağlantınızı kontrol edip yeniden deneyin."
+
+msgid "Enable Device Flow in the GitHub application's settings before connecting."
+msgstr "Bağlanmadan önce GitHub uygulama ayarlarında Enable Device Flow (cihaz koduyla yetkilendirme) seçeneğini açın."
+
+msgid "Enter the public Client ID from the GitHub application registration. Do not enter a client secret or access token."
+msgstr "GitHub uygulama kaydındaki Client ID (açık uygulama kimliği) bilgisini girin. Gizli anahtar veya erişim anahtarı girmeyin."
+
+msgid "File"
+msgstr "Dosya"
+
+msgid "Folder"
+msgstr "Klasör"
+
+msgid "GitHub could not complete the request. Try again later."
+msgstr "GitHub isteği tamamlayamadı. Daha sonra yeniden deneyin."
+
+msgid "GitHub did not recognize the application ID. Check the Client ID and try again."
+msgstr "GitHub uygulama kimliğini tanımadı. Client ID (açık uygulama kimliği) bilgisini kontrol edip yeniden deneyin."
+
+msgid "GitHub returned an unexpected response. The operation could not be completed."
+msgstr "GitHub beklenmeyen bir yanıt verdi. İşlem tamamlanamadı."
+
+msgid "GitHub settings could not be read. Check the github folder in your NVDA user configuration. Existing settings have not been changed."
+msgstr "GitHub ayarları okunamadı. NVDA kullanıcı ayarları içindeki github klasörünü kontrol edin. Mevcut ayarlar değiştirilmedi."
+
+msgid "GitHub settings could not be saved or read. Check access to the github configuration folder."
+msgstr "GitHub ayarları kaydedilemedi veya okunamadı. github ayar klasörüne erişimi kontrol edin."
+
+msgid "GitHub temporarily limited this request. Wait a while and try again."
+msgstr "GitHub bu isteği geçici olarak sınırlandırdı. Bir süre bekleyip yeniden deneyin."
+
+msgid "Loading contents: %s"
+msgstr "İçerik yükleniyor: %s"
+
+msgid "Loading repositories…"
+msgstr "Depolar yükleniyor…"
+
+msgid "Name"
+msgstr "Ad"
+
+msgid "No GitHub account has been added. Would you like to add an account now?"
+msgstr "Eklenmiş bir GitHub hesabı yok. Şimdi hesap eklemek ister misiniz?"
+
+msgid "No account is connected."
+msgstr "Bağlı hesap yok."
+
+msgid "No repositories are visible with the current account permissions."
+msgstr "Mevcut hesap izinleriyle görülebilen depo bulunamadı."
+
+msgid "One-time setup: register this add-on as an OAuth application on GitHub and enable Device Flow. Enter its public Client ID below, not a client secret or access token."
+msgstr "Bir defalık hazırlık: Eklentiyi GitHub'da OAuth uygulaması (hesap yetkilendirme kaydı) olarak kaydedip Enable Device Flow (cihaz koduyla yetkilendirme) seçeneğini açın. Aşağıya Client ID (açık uygulama kimliği) bilgisini girin; gizli anahtar veya erişim anahtarı girmeyin."
+
+msgid "Only folders can be opened in this step."
+msgstr "Bu adımda yalnızca klasörler açılabilir."
+
+msgid "Open GitHub"
+msgstr "GitHub'ı aç"
+
+msgid "Open application &registration page"
+msgstr "Uygulama kayıt &sayfasını aç"
+
+msgid "Ready to connect."
+msgstr "Bağlantıya hazır."
+
+msgid "Remove this account and its saved key from this computer? This does not delete the GitHub account or revoke the application's authorization on GitHub."
+msgstr "Bu hesap ve kayıtlı anahtarı bu bilgisayardan kaldırılsın mı? Bu işlem GitHub hesabını silmez ve uygulamanın GitHub üzerindeki yetkisini kaldırmaz."
+
+msgid "Repositories"
+msgstr "Depolar"
+
+msgid "Repository address copied."
+msgstr "Depo adresi kopyalandı."
+
+msgid "Requesting a verification code from GitHub…"
+msgstr "GitHub'dan doğrulama kodu isteniyor…"
+
+msgid "Saved account: %s"
+msgstr "Kayıtlı hesap: %s"
+
+msgid "Submodule"
+msgstr "Alt modül"
+
+msgid "Symbolic link"
+msgstr "Sembolik bağlantı"
+
+msgid "The browser could not be opened. Open this address manually: "
+msgstr "Tarayıcı açılamadı. Şu adresi kendiniz açın: "
+
+msgid "The code could not be copied. Select the verification code field and press Control+C."
+msgstr "Kod kopyalanamadı. Doğrulama kodu alanını seçip Control+C tuşlarına basın."
+
+msgid "The connection could not be completed. Try again."
+msgstr "Bağlantı tamamlanamadı. Yeniden deneyin."
+
+msgid "The connection was declined on GitHub. You can try again."
+msgstr "Bağlantı GitHub'da reddedildi. Yeniden deneyebilirsiniz."
+
+msgid "The local account connection was removed."
+msgstr "Bilgisayardaki hesap bağlantısı kaldırıldı."
+
+msgid "The previously loaded list is still shown."
+msgstr "Önceden yüklenen liste gösterilmeye devam ediyor."
+
+msgid "The repository address could not be copied."
+msgstr "Depo adresi kopyalanamadı."
+
+msgid "The repository or folder was not found, or your account does not have access."
+msgstr "Depo veya klasör bulunamadı ya da hesabınızın erişim izni yok."
+
+msgid "The saved session belongs to a different account. Remove the local connection and sign in again."
+msgstr "Kayıtlı oturum farklı bir hesaba ait. Bilgisayardaki bağlantıyı kaldırıp yeniden giriş yapın."
+
+msgid "The saved session is missing or expired. Connect your account again."
+msgstr "Kayıtlı oturum bulunamadı veya süresi doldu. Hesabınızı yeniden bağlayın."
+
+msgid "The saved session is no longer valid. Connect your account again."
+msgstr "Kayıtlı oturum artık geçerli değil. Hesabınızı yeniden bağlayın."
+
+msgid "The session could not be renewed. Connect your account again."
+msgstr "Oturum yenilenemedi. Hesabınızı yeniden bağlayın."
+
+msgid "The verification code expired. Start the connection again for a new code."
+msgstr "Doğrulama kodunun süresi doldu. Yeni kod almak için bağlantıyı yeniden başlatın."
+
+msgid "This folder is empty."
+msgstr "Bu klasör boş."
+
+msgid "This folder reaches GitHub's 1,000-item listing limit. A complete listing is not supported in this step."
+msgstr "Bu klasör GitHub'ın 1.000 öğelik listeleme sınırına ulaşıyor. Bu adımda eksiksiz listeleme desteklenmiyor."
+
+msgid "This item is not a folder. Refresh its parent folder."
+msgstr "Bu öğe klasör değil. Üst klasörünü yenileyin."
+
+msgid "Type"
+msgstr "Tür"
+
+msgid "Verification code"
+msgstr "Doğrulama kodu"
+
+msgid "Verification code copied."
+msgstr "Doğrulama kodu kopyalandı."
+
+msgid "Windows could not read or save the account key. No key will be saved in a plain text file."
+msgstr "Windows hesap anahtarını okuyamadı veya kaydedemedi. Anahtar düz metin dosyasında saklanmayacak."
+
+msgid "You are already at the repository root."
+msgstr "Zaten deponun kök klasöründesiniz."
+
+msgid "&Download repository (ZIP)…"
+msgstr "Depoyu &ZIP olarak indir…"
+
+msgid "Save repository as ZIP"
+msgstr "Depoyu ZIP olarak kaydet"
+
+msgid "ZIP files (*.zip)|*.zip|All files (*.*)|*.*"
+msgstr "ZIP dosyaları (*.zip)|*.zip|Tüm dosyalar (*.*)|*.*"
+
+msgid "All files (*.*)|*.*"
+msgstr "Tüm dosyalar (*.*)|*.*"
+
+msgid "Downloading repository: %s…"
+msgstr "Depo indiriliyor: %s…"
+
+msgid "Downloading repository %s…"
+msgstr "%s deposu indiriliyor…"
+
+msgid "Repository successfully saved: %s"
+msgstr "Depo başarıyla kaydedildi: %s"
+
+msgid "Repository saved: %s"
+msgstr "Depo kaydedildi: %s"
+
+msgid "Save folder as ZIP"
+msgstr "Klasörü ZIP olarak kaydet"
+
+msgid "Packaging and downloading folder %s…"
+msgstr "%s klasörü paketlenip indiriliyor…"
+
+msgid "Folder successfully saved: %s"
+msgstr "Klasör başarıyla kaydedildi: %s"
+
+msgid "Save file"
+msgstr "Dosyayı kaydet"
+
+msgid "Downloading file %s…"
+msgstr "%s dosyası indiriliyor…"
+
+msgid "File successfully saved: %s"
+msgstr "Dosya başarıyla kaydedildi: %s"
+
+msgid "&Open folder"
+msgstr "Klasörü &aç"
+
+msgid "&Download folder as ZIP…\tCtrl+S"
+msgstr "Klasörü &ZIP olarak indir…\tCtrl+S"
+
+msgid "&Download file…\tCtrl+S"
+msgstr "Dosyayı &indir…\tCtrl+S"
+
+msgid "&Copy item path"
+msgstr "Öğe &yolunu kopyala"
+
+msgid "Path copied: %s"
+msgstr "Yol kopyalandı: %s"
+
+msgid "The path could not be copied."
+msgstr "Yol kopyalanamadı."
+
+msgid "GitHub — %s (%s)"
+msgstr "GitHub — %s (%s)"
+
+msgid "Content of file: %s"
+msgstr "%s dosyasının içeriği:"
+
+msgid "File content"
+msgstr "Dosya içeriği"
+
+msgid "&Copy all content"
+msgstr "Tüm içeriği k&opyala"
+
+msgid "All content copied to clipboard."
+msgstr "Tüm içerik panoya kopyalandı."
+
+msgid "Clipboard could not be opened."
+msgstr "Pano açılamadı."
+
+msgid "Loading file content: %s…"
+msgstr "Dosya içeriği yükleniyor: %s…"
+
+msgid "%s açılıyor…"
+msgstr "%s açılıyor…"
+
+msgid "'%s' is a binary file and cannot be viewed as text. Would you like to download it?"
+msgstr "'%s' ikili (binary) bir dosyadır ve metin olarak görüntülenemez. Dosyayı indirmek ister misiniz?"
+
+msgid "&View file\tEnter"
+msgstr "Dosyayı &görüntüle\tEnter"
+
+msgid "This file is too large to display directly (limit is 5 MB). You can download it instead."
+msgstr "Bu dosya doğrudan görüntülemek için çok büyük (sınır 5 MB). Bunun yerine dosyayı indirebilirsiniz."
+
+msgid "&Download file…"
+msgstr "Dosyayı &indir…"
+
+msgid "&Download folder as ZIP…"
+msgstr "Klasörü &ZIP olarak indir…"
+
+msgid "&View file"
+msgstr "Dosyayı &görüntüle"
+
+msgid "&Commit message:"
+msgstr "İşle&me mesajı:"
+
+msgid "&Delete"
+msgstr "&Sil"
+
+msgid "&Delete file…"
+msgstr "Dosyayı &sil…"
+
+msgid "&File content:"
+msgstr "Dosya i&çeriği:"
+
+msgid "&File name:"
+msgstr "&Dosya adı:"
+
+msgid "&New file…"
+msgstr "Yeni d&osya…"
+
+msgid "&Save"
+msgstr "&Kaydet"
+
+msgid "&Upload"
+msgstr "&Yükle"
+
+msgid "&Upload file from computer…"
+msgstr "&Bilgisayardan dosya yükle…"
+
+msgid "A file with this name already exists or has been modified on GitHub."
+msgstr "Bu ada sahip bir dosya zaten var veya GitHub üzerinde değiştirilmiş."
+
+msgid "Are you sure you want to delete '%s'?"
+msgstr "'%s' dosyasını silmek istediğinizden emin misiniz?"
+
+msgid "Commit message"
+msgstr "İşleme mesajı"
+
+msgid "Could not read local file."
+msgstr "Yerel dosya okunamadı."
+
+msgid "Create new file"
+msgstr "Yeni dosya oluştur"
+
+msgid "Create new file — %s"
+msgstr "Yeni dosya oluştur — %s"
+
+msgid "Creating file %s…"
+msgstr "%s dosyası oluşturuluyor…"
+
+msgid "Creating file: %s…"
+msgstr "Dosya oluşturuluyor: %s…"
+
+msgid "Delete file — %s"
+msgstr "Dosyayı sil — %s"
+
+msgid "Deleting file %s…"
+msgstr "%s dosyası siliniyor…"
+
+msgid "Deleting file: %s…"
+msgstr "Dosya siliniyor: %s…"
+
+msgid "Error"
+msgstr "Hata"
+
+msgid "File created successfully: %s"
+msgstr "Dosya başarıyla oluşturuldu: %s"
+
+msgid "File deleted successfully: %s"
+msgstr "Dosya başarıyla silindi: %s"
+
+msgid "File name"
+msgstr "Dosya adı"
+
+msgid "File name cannot contain slashes."
+msgstr "Dosya adı eğik çizgi içeremez."
+
+msgid "File uploaded successfully: %s"
+msgstr "Dosya başarıyla yüklendi: %s"
+
+msgid "Only files can be deleted in this step."
+msgstr "Bu adımda yalnızca dosyalar silinebilir."
+
+msgid "Please enter a file name."
+msgstr "Lütfen bir dosya adı girin."
+
+msgid "Select file to upload"
+msgstr "Yüklenecek dosyayı seçin"
+
+msgid "Upload file — %s"
+msgstr "Dosya yükle — %s"
+
+msgid "Uploading '%s' to folder: /%s"
+msgstr "'%s' dosyası /%s klasörüne yükleniyor"
+
+msgid "Uploading file %s…"
+msgstr "%s dosyası yükleniyor…"
+
+msgid "Uploading file: %s…"
+msgstr "Dosya yükleniyor: %s…"
+
+msgid "&Create repository"
+msgstr "Depo &oluştur"
+
+msgid "&Description (optional):"
+msgstr "&Açıklama (isteğe bağlı):"
+
+msgid "&Initialize this repository with a README.md"
+msgstr "Bu depoyu bir &README.md ile başlat"
+
+msgid "&New repository…"
+msgstr "&Yeni depo…"
+
+msgid "&New repository…\tCtrl+Shift+N"
+msgstr "&Yeni depo…\tCtrl+Shift+N"
+
+msgid "&Repository name:"
+msgstr "&Depo adı:"
+
+msgid "A repository with this name already exists, or the name contains invalid characters."
+msgstr "Bu ada sahip bir depo zaten mevcut veya depo adı geçersiz karakterler içeriyor."
+
+msgid "Creating repository %s…"
+msgstr "%s deposu oluşturuluyor…"
+
+msgid "Creating repository: %s…"
+msgstr "Depo oluşturuluyor: %s…"
+
+msgid "Description (optional)"
+msgstr "Açıklama (isteğe bağlı)"
+
+msgid "GitHub — Create New Repository"
+msgstr "GitHub — Yeni Depo Oluştur"
+
+msgid "Initialize with README"
+msgstr "README ile başlat"
+
+msgid "Please enter a repository name."
+msgstr "Lütfen bir depo adı girin."
+
+msgid "Private"
+msgstr "Özel"
+
+msgid "Public"
+msgstr "Genel"
+
+msgid "Repository created successfully: %s"
+msgstr "Depo başarıyla oluşturuldu: %s"
+
+msgid "Repository name"
+msgstr "Depo adı"
+
+msgid "Repository name can only contain letters, numbers, hyphens, underscores, and dots."
+msgstr "Depo adı yalnızca harf, rakam, tire, alt çizgi ve nokta içerebilir."
+
+msgid "The repository name is invalid."
+msgstr "Depo adı geçersiz."
+
+msgid "Visibility"
+msgstr "Görünürlük"
+
+msgid "Visibility:"
+msgstr "Görünürlük:"
+
+msgid "%s repositories found."
+msgstr "%s depo bulundu."
+
+msgid "&Search repositories…"
+msgstr "Depolarda &ara…"
+
+msgid "&Search repositories…\tCtrl+F"
+msgstr "Depolarda &ara…\tCtrl+F"
+
+msgid "No repositories match '%s'."
+msgstr "'%s' ile eşleşen depo bulunamadı."
+
+msgid "Search &repositories:"
+msgstr "Depolarda &ara:"
+
+msgid "Search cleared."
+msgstr "Arama temizlendi."
+
+msgid "Search repositories"
+msgstr "Depolarda ara"
+
+msgid "&Branch:"
+msgstr "&Dal:"
+
+msgid "Branch"
+msgstr "Dal"
+
+msgid "Branch switched: %s"
+msgstr "Dal değiştirildi: %s"
+
+msgid "&Go to branch"
+msgstr "&Dala geç"
+
+msgid "Loading branches…"
+msgstr "Dallar yükleniyor…"
+
+msgid "No branches found."
+msgstr "Dal bulunamadı."
+
+msgid "No repository selected."
+msgstr "Seçili depo yok."
+
+msgid "Opening %s…"
+msgstr "%s açılıyor…"
+
+msgid "Create %s"
+msgstr "%s oluştur"
+
+msgid "Delete %s"
+msgstr "%s sil"
+
+msgid "Update %s"
+msgstr "%s güncelle"
+
+msgid "Upload %s"
+msgstr "%s yükle"
+
+msgid "%s issues listed."
+msgstr "%s sorun listelendi."
+
+msgid "&Add comment"
+msgstr "Yorum &ekle"
+
+msgid "&Add comment…"
+msgstr "&Yorum ekle…"
+
+msgid "&Close issue"
+msgstr "&Sorunu kapat"
+
+msgid "&Comment:"
+msgstr "&Yorum:"
+
+msgid "&Copy text"
+msgstr "Metni k&opyala"
+
+msgid "&Filter:"
+msgstr "&Filtre:"
+
+msgid "&Issues…"
+msgstr "&Sorunlar…"
+
+msgid "&New issue…"
+msgstr "Yeni so&run…"
+
+msgid "&Reopen issue"
+msgstr "Sorunu tekrar &aç"
+
+msgid "&Submit new issue"
+msgstr "Yeni sorunu &gönder"
+
+msgid "&Title:"
+msgstr "&Başlık:"
+
+msgid "&View issue…"
+msgstr "Sorunu &görüntüle…"
+
+msgid "(No description provided.)"
+msgstr "(Açıklama belirtilmedi.)"
+
+msgid "Add comment — %s"
+msgstr "Yorum ekle — %s"
+
+msgid "All"
+msgstr "Tümü"
+
+msgid "Author"
+msgstr "Yazar"
+
+msgid "Author:"
+msgstr "Yazar:"
+
+msgid "Closed"
+msgstr "Kapalı"
+
+msgid "Comment"
+msgstr "Yorum"
+
+msgid "Comment #%s"
+msgstr "Yorum #%s"
+
+msgid "Comment added successfully."
+msgstr "Yorum başarıyla eklendi."
+
+msgid "Comments"
+msgstr "Yorumlar"
+
+msgid "Could not load issues."
+msgstr "Sorunlar yüklenemedi."
+
+msgid "Date"
+msgstr "Tarih"
+
+msgid "Failed to add comment."
+msgstr "Yorum eklenemedi."
+
+msgid "Failed to change issue state."
+msgstr "Sorun durumu değiştirilemedi."
+
+msgid "Failed to create issue."
+msgstr "Sorun oluşturulamadı."
+
+msgid "Filter"
+msgstr "Filtre"
+
+msgid "Issue #%s: %s"
+msgstr "Sorun #%s: %s"
+
+msgid "Issue closed."
+msgstr "Sorun kapatıldı."
+
+msgid "Issue created successfully."
+msgstr "Sorun başarıyla oluşturuldu."
+
+msgid "Issue details and comments"
+msgstr "Sorun ayrıntıları ve yorumlar"
+
+msgid "Issue details copied to clipboard."
+msgstr "Sorun ayrıntıları panoya kopyalandı."
+
+msgid "Issue reopened."
+msgstr "Sorun yeniden açıldı."
+
+msgid "Issues"
+msgstr "Sorunlar"
+
+msgid "Issues — %s"
+msgstr "Sorunlar — %s"
+
+msgid "Loading issues…"
+msgstr "Sorunlar yükleniyor…"
+
+msgid "New issue — %s"
+msgstr "Yeni sorun — %s"
+
+msgid "No comments yet."
+msgstr "Henüz yorum yok."
+
+msgid "No issues found."
+msgstr "Sorun bulunamadı."
+
+msgid "Number"
+msgstr "Numara"
+
+msgid "Open"
+msgstr "Açık"
+
+msgid "Please enter an issue title."
+msgstr "Lütfen bir sorun başlığı girin."
+
+msgid "Please enter comment text."
+msgstr "Lütfen yorum metni girin."
+
+msgid "State: %s | Author: %s | Comments: %s"
+msgstr "Durum: %s | Yazar: %s | Yorumlar: %s"
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "&Releases…"
+msgstr "Sür&ümler…"
+
+msgid "Release"
+msgstr "Sürüm"
+
+msgid "Release Details — %s"
+msgstr "Sürüm Ayrıntıları — %s"
+
+msgid "&Release notes:"
+msgstr "Sürüm &notları:"
+
+msgid "Release notes"
+msgstr "Sürüm notları"
+
+msgid "&Downloadable files (%s):"
+msgstr "İndirilebilir &dosyalar (%s):"
+
+msgid "Downloadable files"
+msgstr "İndirilebilir dosyalar"
+
+msgid "Size"
+msgstr "Boyut"
+
+msgid "Downloads"
+msgstr "İndirme sayısı"
+
+msgid "Version:"
+msgstr "Sürüm:"
+
+msgid "Pre-release"
+msgstr "Ön sürüm"
+
+msgid "(No release notes provided.)"
+msgstr "(Sürüm notu belirtilmedi.)"
+
+msgid "Release details copied to clipboard."
+msgstr "Sürüm ayrıntıları panoya kopyalandı."
+
+msgid "Downloading: %s…"
+msgstr "İndiriliyor: %s…"
+
+msgid "File successfully downloaded: %s"
+msgstr "Dosya başarıyla indirildi: %s"
+
+msgid "Download failed."
+msgstr "İndirme başarısız oldu."
+
+msgid "Releases — %s"
+msgstr "Sürümler — %s"
+
+msgid "Releases"
+msgstr "Sürümler"
+
+msgid "Version"
+msgstr "Sürüm"
+
+msgid "Tag"
+msgstr "Etiket"
+
+msgid "Files"
+msgstr "Dosyalar"
+
+msgid "&Release details…"
+msgstr "Sürüm &ayrıntıları…"
+
+msgid "Loading releases…"
+msgstr "Sürümler yükleniyor…"
+
+msgid "%s releases listed."
+msgstr "%s sürüm listelendi."
+
+msgid "No releases found."
+msgstr "Sürüm bulunamadı."
+
+msgid "Could not load releases."
+msgstr "Sürümler yüklenemedi."
+
+msgid "Date:"
+msgstr "Tarih:"
+
+msgid "&New release…"
+msgstr "Yeni sürü&m…"
+
+msgid "Create New Release — %s"
+msgstr "Yeni Sürüm Oluştur — %s"
+
+msgid "&Version tag (e.g. v1.0):"
+msgstr "&Sürüm etiketi (ör. v1.0):"
+
+msgid "Version tag"
+msgstr "Sürüm etiketi"
+
+msgid "&Release title (optional):"
+msgstr "Sürüm &başlığı (isteğe bağlı):"
+
+msgid "Release title"
+msgstr "Sürüm başlığı"
+
+msgid "&Target branch:"
+msgstr "&Hedef dal:"
+
+msgid "Target branch"
+msgstr "Hedef dal"
+
+msgid "&Mark as pre-release"
+msgstr "&Ön sürüm olarak işaretle"
+
+msgid "Mark as pre-release"
+msgstr "Ön sürüm olarak işaretle"
+
+msgid "&Release notes (optional):"
+msgstr "Sürüm &notları (isteğe bağlı):"
+
+msgid "&Attach package file (optional):"
+msgstr "&Paket dosyası ekle (isteğe bağlı):"
+
+msgid "Package file path"
+msgstr "Paket dosyası yolu"
+
+msgid "&Browse…"
+msgstr "&Göz at…"
+
+msgid "&Publish release"
+msgstr "Sürümü &yayınla"
+
+msgid "Select package file"
+msgstr "Paket dosyasını seç"
+
+msgid "All files (*.*)|*.*|NVDA Add-on (*.nvda-addon)|*.nvda-addon|ZIP files (*.zip)|*.zip"
+msgstr "Tüm dosyalar (*.*)|*.*|NVDA Eklentisi (*.nvda-addon)|*.nvda-addon|ZIP dosyaları (*.zip)|*.zip"
+
+msgid "Please enter a version tag."
+msgstr "Lütfen bir sürüm etiketi girin."
+
+msgid "Selected package file does not exist."
+msgstr "Seçilen paket dosyası bulunamadı."
+
+msgid "Release published successfully."
+msgstr "Sürüm başarıyla yayınlandı."
+
+msgid "Failed to publish release."
+msgstr "Sürüm yayınlanamadı."
+
+msgid "&Notifications…"
+msgstr "&Bildirimler…"
+
+msgid "Mention"
+msgstr "Bahsedilme"
+
+msgid "Subscribed"
+msgstr "Abone olunan"
+
+msgid "Assigned"
+msgstr "Görevlendirme"
+
+msgid "State change"
+msgstr "Durum değişikliği"
+
+msgid "Review requested"
+msgstr "İnceleme istendi"
+
+msgid "Automatic activity"
+msgstr "Otomatik işlem"
+
+msgid "Issue"
+msgstr "Sorun"
+
+msgid "Pull Request"
+msgstr "Çekme İsteği"
+
+msgid "Commit"
+msgstr "İşleme"
+
+msgid "GitHub Notifications"
+msgstr "GitHub Bildirimleri"
+
+msgid "Only unread"
+msgstr "Sadece okunmamışlar"
+
+msgid "Notifications"
+msgstr "Bildirimler"
+
+msgid "Repository"
+msgstr "Depo"
+
+msgid "Reason"
+msgstr "Neden"
+
+msgid "&View notification…"
+msgstr "&Bildirimi görüntüle…"
+
+msgid "&Mark as read"
+msgstr "&Okundu olarak işaretle"
+
+msgid "Mark &all as read"
+msgstr "&Tümünü okundu yap"
+
+msgid "&Open on web"
+msgstr "&Web'de aç"
+
+msgid "Loading notifications…"
+msgstr "Bildirimler yükleniyor…"
+
+msgid "%s notifications listed."
+msgstr "%s bildirim listelendi."
+
+msgid "No notifications found."
+msgstr "Bildirim bulunamadı."
+
+msgid "Could not load notifications."
+msgstr "Bildirimler yüklenemedi."
+
+msgid "Notification marked as read."
+msgstr "Bildirim okundu olarak işaretlendi."
+
+msgid "Failed to mark notification as read."
+msgstr "Bildirim okundu olarak işaretlenemedi."
+
+msgid "All notifications marked as read."
+msgstr "Tüm bildirimler okundu olarak işaretlendi."
+
+msgid "Failed to mark all notifications as read."
+msgstr "Tüm bildirimler okundu olarak işaretlenemedi."
+
+msgid "Loading issue…"
+msgstr "Sorun yükleniyor…"
+
+msgid "Loading release…"
+msgstr "Sürüm yükleniyor…"
+
+msgid "Your password stays on GitHub. You will authorize repository access on GitHub's official verification page using a one-time device code."
+msgstr "Parolanız GitHub üzerinde güvende kalır. Tek kullanımlık cihaz koduyla GitHub'ın resmî onay sayfasında depo erişim izni verirsiniz."
+
+msgid "This file is too large to upload through the Contents API (limit is 50 MB)."
+msgstr "Bu dosya içerik arayüzü üzerinden yüklenemeyecek kadar büyük (sınır 50 MB)."
+
+msgid "Release was created on GitHub, but uploading the package file failed."
+msgstr "Sürüm GitHub üzerinde oluşturuldu ancak paket dosyası yüklenemedi."
+
+msgid "'%s' is too large to display directly (over 5 MB). Would you like to download it instead?"
+msgstr "'%s' doğrudan görüntülenemeyecek kadar büyük (5 MB üzeri). Bunun yerine indirmek ister misiniz?"
+
+msgid "Another repository modification is already in progress. Please wait."
+msgstr "Başka bir depo değişiklik işlemi zaten devam ediyor. Lütfen bekleyin."
+
+msgid "Could not open notification address."
+msgstr "Bildirim adresi açılamadı."
+
+msgid "Draft"
+msgstr "Taslak"
+
+msgid "Please wait until folder contents finish loading."
+msgstr "Lütfen klasör içeriğinin yüklenmesini bekleyin."
+
+msgid "Read"
+msgstr "Okundu"
+
+msgid "State"
+msgstr "Durum"
+
+msgid "Submodules cannot be viewed or downloaded directly as files."
+msgstr "Alt modüller doğrudan dosya olarak görüntülenemez veya indirilemez."
+
+msgid "Unread"
+msgstr "Okunmadı"
+
+
+msgid "Creating issue…"
+msgstr "Sorun oluşturuluyor…"
+
+msgid "No downloadable files available."
+msgstr "İndirilebilir dosya bulunmuyor."
+
+msgid "Publishing release: %s…"
+msgstr "Sürüm yayınlanıyor: %s…"
+
+msgid "%s commits listed."
+msgstr "%s işleme listelendi."
+
+msgid "%s pull requests listed."
+msgstr "%s çekme isteği listelendi."
+
+msgid "&Archive this repository (make it read-only)"
+msgstr "Bu depoyu ar&şivle (salt okunur yap)"
+
+msgid "&Close pull request"
+msgstr "Çekme isteğini kapa&t"
+
+msgid "&Commit details…"
+msgstr "İşleme &ayrıntıları…"
+
+msgid "&Commit history…"
+msgstr "İşleme &geçmişi…"
+
+msgid "&Commit information:"
+msgstr "İşleme &bilgisi:"
+
+msgid "&Copy details"
+msgstr "Ayrıntıları k&opyala"
+
+msgid "&Create branch"
+msgstr "Dal &oluştur"
+
+msgid "&Create pull request"
+msgstr "Çekme isteği &oluştur"
+
+msgid "&Delete current branch…"
+msgstr "Geçerli dalı s&il…"
+
+msgid "&Delete release…"
+msgstr "Sürümü &sil…"
+
+msgid "&Delete repository…"
+msgstr "Depoyu &sil…"
+
+msgid "&Edit file…"
+msgstr "Dosyayı &düzenle…"
+
+msgid "&Edit release…"
+msgstr "Sürümü &düzenle…"
+
+msgid "&Explore GitHub repositories…"
+msgstr "GitHub depolarını &keşfet…"
+
+msgid "&File content (%s):"
+msgstr "&Dosya içeriği (%s):"
+
+msgid "&Fork to my account…"
+msgstr "Hesabıma &çatalla (fork et)…"
+
+msgid "&Merge pull request…"
+msgstr "Çekme isteğini &birleştir…"
+
+msgid "&New branch name:"
+msgstr "&Yeni dal adı:"
+
+msgid "&New branch…"
+msgstr "Yeni da&l…"
+
+msgid "&New pull request…"
+msgstr "&Yeni çekme isteği…"
+
+msgid "&Pull request details and changes:"
+msgstr "Çekme isteği &ayrıntıları ve değişiklikler:"
+
+msgid "&Pull requests…"
+msgstr "Ç&ekme istekleri…"
+
+msgid "&Release title:"
+msgstr "Sürüm &başlığı:"
+
+msgid "&Reopen pull request"
+msgstr "Çekme isteğini yenide&n aç"
+
+msgid "&Repository details…"
+msgstr "Depo a&yrıntıları…"
+
+msgid "&Repository information:"
+msgstr "Depo &bilgileri:"
+
+msgid "&Repository settings…"
+msgstr "Depo ayarlar&ı…"
+
+msgid "&Save changes"
+msgstr "Değişiklikleri &kaydet"
+
+msgid "&Search"
+msgstr "A&ra"
+
+msgid "&Search keywords:"
+msgstr "&Arama sözcükleri:"
+
+msgid "&Source branch (Head):"
+msgstr "&Kaynak dal (Head):"
+
+msgid "&Source branch:"
+msgstr "&Kaynak dal:"
+
+msgid "&Star / Unstar"
+msgstr "Yıldız&la / Yıldızı Kaldır"
+
+msgid "&Target branch (Base):"
+msgstr "&Hedef dal (Base):"
+
+msgid "&Version tag:"
+msgstr "&Sürüm etiketi:"
+
+msgid "&View pull request…"
+msgstr "Çekme isteğini &görüntüle…"
+
+msgid "'%s' is a binary file and cannot be edited as text."
+msgstr "'%s' ikili (binary) bir dosyadır ve metin olarak düzenlenemez."
+
+msgid "(No comments yet.)"
+msgstr "(Henüz yorum yok.)"
+
+msgid "(No file changes recorded.)"
+msgstr "(Kayıtlı dosya değişikliği yok.)"
+
+msgid "(No files changed.)"
+msgstr "(Değiştirilen dosya yok.)"
+
+msgid "(Not specified)"
+msgstr "(Belirtilmemiş)"
+
+msgid "A branch with this name already exists."
+msgstr "Bu adda bir dal zaten var."
+
+msgid "Archive repository"
+msgstr "Depoyu arşivle"
+
+msgid "Are you sure you want to delete branch '%s' from repository '%s'?"
+msgstr "'%s' dalını '%s' deposundan silmek istediğinizden emin misiniz?"
+
+msgid "Are you sure you want to delete the release '%s'? This action cannot be undone."
+msgstr "'%s' sürümünü silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."
+
+msgid "Are you sure you want to merge pull request #%s into '%s'?"
+msgstr "#%s numaralı çekme isteğini '%s' dalına birleştirmek istediğinizden emin misiniz?"
+
+msgid "Branch created successfully: %s"
+msgstr "Dal başarıyla oluşturuldu: %s"
+
+msgid "Branch deleted successfully: %s"
+msgstr "Dal başarıyla silindi: %s"
+
+msgid "Branch name contains invalid characters. Use letters, numbers, hyphens, and slashes."
+msgstr "Dal adı geçersiz karakterler içeriyor. Harf, rakam, kısa çizgi ve eğik çizgi kullanın."
+
+msgid "Branches"
+msgstr "Dallar"
+
+msgid "Branches:"
+msgstr "Dallar:"
+
+msgid "Changed Files (%s):"
+msgstr "Değişen Dosyalar (%s):"
+
+msgid "Changed Files:"
+msgstr "Değişen Dosyalar:"
+
+msgid "Changes:"
+msgstr "Değişiklikler:"
+
+msgid "Comments (%s):"
+msgstr "Yorumlar (%s):"
+
+msgid "Commit Details — %s"
+msgstr "İşleme Ayrıntıları — %s"
+
+msgid "Commit History — %s%s"
+msgstr "İşleme Geçmişi — %s%s"
+
+msgid "Commit details copied to clipboard."
+msgstr "İşleme ayrıntıları panoya kopyalandı."
+
+msgid "Commit information"
+msgstr "İşleme bilgisi"
+
+msgid "Commit:"
+msgstr "İşleme:"
+
+msgid "Commits"
+msgstr "İşlemeler"
+
+msgid "Could not load commit details."
+msgstr "İşleme ayrıntıları yüklenemedi."
+
+msgid "Could not load commits."
+msgstr "İşlemeler yüklenemedi."
+
+msgid "Could not load pull requests."
+msgstr "Çekme istekleri yüklenemedi."
+
+msgid "Could not open repository address."
+msgstr "Depo adresi açılamadı."
+
+msgid "Create New Branch — %s"
+msgstr "Yeni Dal Oluştur — %s"
+
+msgid "Creating branch: %s…"
+msgstr "Dal oluşturuluyor: %s…"
+
+msgid "Creating pull request…"
+msgstr "Çekme isteği oluşturuluyor…"
+
+msgid "Danger Zone"
+msgstr "Tehlike Bölgesi"
+
+msgid "Default branch:"
+msgstr "Varsayılan dal:"
+
+msgid "Delete Release"
+msgstr "Sürümü Sil"
+
+msgid "Delete Repository — Confirmation"
+msgstr "Depoyu Sil — Onay"
+
+msgid "Deleting branch: %s…"
+msgstr "Dal siliniyor: %s…"
+
+msgid "Deleting repository: %s…"
+msgstr "Depo siliniyor: %s…"
+
+msgid "Description"
+msgstr "Açıklama"
+
+msgid "Description:"
+msgstr "Açıklama:"
+
+msgid "Do you want to fork '%s' to your GitHub account?"
+msgstr "'%s' deposunu GitHub hesabınıza çatallamak (fork etmek) istiyor musunuz?"
+
+msgid "Edit File — %s (%s)"
+msgstr "Dosyayı Düzenle — %s (%s)"
+
+msgid "Edit Release — %s"
+msgstr "Sürümü Düzenle — %s"
+
+msgid "Explore GitHub Repositories"
+msgstr "GitHub Depolarını Keşfet"
+
+msgid "Failed to change pull request state."
+msgstr "Çekme isteği durumu değiştirilemedi."
+
+msgid "Failed to create pull request."
+msgstr "Çekme isteği oluşturulamadı."
+
+msgid "Failed to delete release."
+msgstr "Sürüm silinemedi."
+
+msgid "Failed to fork repository."
+msgstr "Depo çatallanamadı."
+
+msgid "Failed to merge pull request."
+msgstr "Çekme isteği birleştirilemedi."
+
+msgid "Failed to update release."
+msgstr "Sürüm güncellenemedi."
+
+msgid "File updated successfully: %s"
+msgstr "Dosya başarıyla güncellendi: %s"
+
+msgid "Fork Repository"
+msgstr "Depoyu Çatalla"
+
+msgid "Forking repository: %s…"
+msgstr "Depo çatallanıyor: %s…"
+
+msgid "Forks"
+msgstr "Çatallar"
+
+msgid "Forks:"
+msgstr "Çatallar:"
+
+msgid "I understand, &delete this repository"
+msgstr "Anlıyorum, bu depoyu &sil"
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "Language:"
+msgstr "Dil:"
+
+msgid "Loading commit details…"
+msgstr "İşleme ayrıntıları yükleniyor…"
+
+msgid "Loading commits…"
+msgstr "İşlemeler yükleniyor…"
+
+msgid "Loading pull requests…"
+msgstr "Çekme istekleri yükleniyor…"
+
+msgid "Loading pull request…"
+msgstr "Çekme isteği yükleniyor…"
+
+msgid "Merge Pull Request"
+msgstr "Çekme İsteğini Birleştir"
+
+msgid "Merged"
+msgstr "Birleştirildi"
+
+msgid "Message"
+msgstr "İleti"
+
+msgid "New branch name"
+msgstr "Yeni dal adı"
+
+msgid "No branch selected."
+msgstr "Hiçbir dal seçilmedi."
+
+msgid "No commits found."
+msgstr "İşleme bulunamadı."
+
+msgid "No pull requests found."
+msgstr "Çekme isteği bulunamadı."
+
+msgid "Open New Pull Request — %s"
+msgstr "Yeni Çekme İsteği Aç — %s"
+
+msgid "Please enter a branch name."
+msgstr "Lütfen bir dal adı girin."
+
+msgid "Please enter a commit message."
+msgstr "Lütfen bir işleme iletisi girin."
+
+msgid "Please enter a search keyword."
+msgstr "Lütfen bir arama sözcüğü girin."
+
+msgid "Please enter a title for the pull request."
+msgstr "Lütfen çekme isteği için bir başlık girin."
+
+msgid "Please select a file to edit."
+msgstr "Lütfen düzenlemek için bir dosya seçin."
+
+msgid "Pull Request #%s — %s"
+msgstr "Çekme İsteği #%s — %s"
+
+msgid "Pull Request:"
+msgstr "Çekme İsteği:"
+
+msgid "Pull Requests"
+msgstr "Çekme İstekleri"
+
+msgid "Pull Requests — %s"
+msgstr "Çekme İstekleri — %s"
+
+msgid "Pull request closed."
+msgstr "Çekme isteği kapatıldı."
+
+msgid "Pull request created successfully."
+msgstr "Çekme isteği başarıyla oluşturuldu."
+
+msgid "Pull request details"
+msgstr "Çekme isteği ayrıntıları"
+
+msgid "Pull request details copied to clipboard."
+msgstr "Çekme isteği ayrıntıları panoya kopyalandı."
+
+msgid "Pull request merged successfully."
+msgstr "Çekme isteği başarıyla birleştirildi."
+
+msgid "Pull request reopened."
+msgstr "Çekme isteği yeniden açıldı."
+
+msgid "Release deleted successfully."
+msgstr "Sürüm başarıyla silindi."
+
+msgid "Release updated successfully."
+msgstr "Sürüm başarıyla güncellendi."
+
+msgid "Repository Details — %s"
+msgstr "Depo Ayrıntıları — %s"
+
+msgid "Repository Settings — %s"
+msgstr "Depo Ayarları — %s"
+
+msgid "Repository confirmation name"
+msgstr "Depo onay adı"
+
+msgid "Repository deleted successfully: %s"
+msgstr "Depo başarıyla silindi: %s"
+
+msgid "Repository details copied to clipboard."
+msgstr "Depo ayrıntıları panoya kopyalandı."
+
+msgid "Repository information"
+msgstr "Depo bilgileri"
+
+msgid "Repository settings updated successfully."
+msgstr "Depo ayarları başarıyla güncellendi."
+
+msgid "Repository starred: %s"
+msgstr "Depo yıldızlandı: %s"
+
+msgid "Repository successfully forked: %s"
+msgstr "Depo başarıyla çatallandı: %s"
+
+msgid "Repository:"
+msgstr "Depo:"
+
+msgid "Repository: %s"
+msgstr "Depo: %s"
+
+msgid "Saving file: %s…"
+msgstr "Dosya kaydediliyor: %s…"
+
+msgid "Search"
+msgstr "Ara"
+
+msgid "Search failed."
+msgstr "Arama başarısız oldu."
+
+msgid "Search keywords"
+msgstr "Arama sözcükleri"
+
+msgid "Search results"
+msgstr "Arama sonuçları"
+
+msgid "Searching repositories: %s…"
+msgstr "Depolar aranıyor: %s…"
+
+msgid "Source and target branches cannot be the same."
+msgstr "Kaynak ve hedef dallar aynı olamaz."
+
+msgid "Source branch"
+msgstr "Kaynak dal"
+
+msgid "Star operation failed."
+msgstr "Yıldız işlemi başarısız oldu."
+
+msgid "Star removed: %s"
+msgstr "Yıldız kaldırıldı: %s"
+
+msgid "Stars"
+msgstr "Yıldızlar"
+
+msgid "Stars:"
+msgstr "Yıldızlar:"
+
+msgid "State:"
+msgstr "Durum:"
+
+msgid "The default branch '%s' cannot be deleted."
+msgstr "Varsayılan '%s' dalı silinemez."
+
+msgid "To confirm deletion, please type the repository name (%s) below:"
+msgstr "Silme işlemini onaylamak için lütfen aşağıya depo adını (%s) yazın:"
+
+msgid "Updating repository settings…"
+msgstr "Depo ayarları güncelleniyor…"
+
+msgid "Warning: This action cannot be undone. This will permanently delete the repository '%s', its code, branches, issues, and releases."
+msgstr "Uyarı: Bu işlem geri alınamaz. Bu işlem '%s' deposunu, kodlarını, dallarını, sorunlarını ve sürümlerini kalıcı olarak silecektir."
+
+msgid "Web Address:"
+msgstr "Web Adresi:"
+
+msgid "A branch with this name already exists or the branch name is invalid."
+msgstr "Bu adda bir dal zaten var veya dal adı geçersiz."
+
+msgid "A pull request may already exist between these branches, or there are no changes to merge."
+msgstr "Bu dallar arasında zaten bir çekme isteği olabilir veya birleştirilecek değişiklik yok."
+
+msgid "This pull request cannot be merged. It may have conflicts or require approval."
+msgstr "Bu çekme isteği birleştirilemez. Çakışmalar içerebilir veya onay gerektirebilir."
+
+msgid "This pull request cannot be merged due to merge conflicts."
+msgstr "Bu çekme isteği birleştirme çakışmaları nedeniyle birleştirilemez."
+
+msgid "A release with this tag already exists or the version tag is invalid."
+msgstr "Bu etikete sahip bir sürüm zaten var veya sürüm etiketi geçersiz."
+
+msgid "This repository is empty."
+msgstr "Bu depo boş."
+
+msgid "Authorization on GitHub failed. Start the connection again."
+msgstr "GitHub yetkilendirmesi başarısız oldu. Bağlantıyı yeniden başlatın."
+
+msgid "Your account does not have permission for this operation. Reconnecting with the required permissions may be required."
+msgstr "Hesabınızın bu işlem için izni yok. Gerekli izinlerle yeniden bağlanmanız gerekebilir."
+
+msgid "The search query is invalid. Check the search keywords and try again."
+msgstr "Arama sorgusu geçersiz. Arama sözcüklerini kontrol edip yeniden deneyin."
+
+msgid "At least two branches are required to create a pull request."
+msgstr "Çekme isteği oluşturmak için en az iki dal gereklidir."
+
+msgid "(Could not load file changes.)"
+msgstr "(Dosya değişiklikleri yüklenemedi.)"
+
+msgid "(Could not load comments.)"
+msgstr "(Yorumlar yüklenemedi.)"
+
+msgid "&License (optional):"
+msgstr "&Lisans (isteğe bağlı):"
+
+msgid "License (optional)"
+msgstr "Lisans (isteğe bağlı)"
+
+msgid "None"
+msgstr "Yok"
+
+msgid "Confirmation Required"
+msgstr "Onay Gerekli"
+
+msgid "To confirm deletion, please type the repository name '%s' exactly."
+msgstr "Depoyu silmeyi onaylamak için lütfen depo adını (%s) tam olarak yazın."
+
+msgid "&Refresh branches"
+msgstr "&Dalları yenile"
+
+msgid "&Branch"
+msgstr "&Dal"
+
+msgid "&File"
+msgstr "&Dosya"
+
+msgid "&Tools"
+msgstr "&Araçlar"
+
+msgid "Copy download &link"
+msgstr "İndirme &bağlantısını kopyala"
+
+msgid "Download link copied to clipboard."
+msgstr "İndirme bağlantısı panoya kopyalandı."
+
+msgid "No download link available for this file."
+msgstr "Bu dosya için bir indirme bağlantısı bulunamadı."
+
+msgid "&Upload file(s) from computer…"
+msgstr "Bilgisayardan &dosya(lar) yükle…"
+
+msgid "Upload &folder from computer…"
+msgstr "Bilgisayardan &klasör yükle…"
+
+msgid "Select file(s) to upload"
+msgstr "Yüklenecek dosya(ları) seçin"
+
+msgid "Select folder to upload"
+msgstr "Yüklenecek klasörü seçin"
+
+msgid "Upload files — %s"
+msgstr "Dosyaları yükle — %s"
+
+msgid "Upload folder — %s"
+msgstr "Klasör yükle — %s"
+
+msgid "Uploading %d files to folder: /%s"
+msgstr "%d dosya /%s klasörüne yükleniyor"
+
+msgid "Upload %d files"
+msgstr "%d dosyayı yükle"
+
+msgid "Uploading %d files…"
+msgstr "%d dosya yükleniyor…"
+
+msgid "Uploading file (%d of %d): %s…"
+msgstr "Dosya yükleniyor (%d / %d): %s…"
+
+msgid "%d files uploaded successfully."
+msgstr "%d dosya başarıyla yüklendi."
+
+msgid "Uploading folder '%s' (%d files) to: /%s"
+msgstr "'%s' klasörü (%d dosya) /%s konumuna yükleniyor"
+
+msgid "Upload folder %s"
+msgstr "%s klasörünü yükle"
+
+msgid "The selected folder contains no files."
+msgstr "Seçilen klasörde hiç dosya bulunamadı."
+
+msgid "File '%s' exceeds 50 MB limit."
+msgstr "'%s' dosyası 50 MB sınırını aşıyor."
+
+msgid "Uploading folder '%s' (%d files)…"
+msgstr "'%s' klasörü yükleniyor (%d dosya)…"
+
+msgid "Uploading folder '%s' (%d of %d): %s…"
+msgstr "'%s' klasörü yükleniyor (%d / %d): %s…"
+
+msgid "Folder '%s' uploaded successfully (%d files)."
+msgstr "'%s' klasörü başarıyla yüklendi (%d dosya)."
+
+msgid "&New file name or path:"
+msgstr "&Yeni dosya adı veya yolu:"
+
+msgid "&Rename / Move"
+msgstr "&Yeniden Adlandır / Taşı"
+
+msgid "Creating file at new path: %s…"
+msgstr "Yeni konumda dosya oluşturuluyor: %s…"
+
+msgid "Current path: /%s"
+msgstr "Geçerli yol: /%s"
+
+msgid "Fetching file content: %s…"
+msgstr "Dosya içeriği alınıyor: %s…"
+
+msgid "File moved successfully: %s -> %s"
+msgstr "Dosya başarıyla taşındı: %s -> %s"
+
+msgid "Hint: Enter a new file name to rename, or include folders (e.g. 'folder/file.txt') to move."
+msgstr "İpucu: Yeniden adlandırmak için dosya adını yazın; taşımak için klasör yolunu da ekleyin (örn: 'klasor/dosya.txt')."
+
+msgid "Move %s to %s"
+msgstr "%s dosyasını %s konumuna taşı"
+
+msgid "New file name or path"
+msgstr "Yeni dosya adı veya yolu"
+
+msgid "Please enter a new file name or path."
+msgstr "Lütfen yeni bir dosya adı veya yolu girin."
+
+msgid "Please enter a valid file path."
+msgstr "Lütfen geçerli bir dosya yolu girin."
+
+msgid "Please select a file to rename or move."
+msgstr "Lütfen yeniden adlandırılacak veya taşınacak bir dosya seçin."
+
+msgid "Removing file from old path: %s…"
+msgstr "Eski yoldaki dosya kaldırılıyor: %s…"
+
+msgid "Rename %s to %s"
+msgstr "%s dosyasını %s olarak yeniden adlandır"
+
+msgid "Rename / &move file…"
+msgstr "Dosyayı yeniden adlandır / &taşı…"
+
+msgid "Rename / Move File — %s"
+msgstr "Dosyayı Yeniden Adlandır / Taşı — %s"
+
+msgid "Rename / move %s"
+msgstr "%s dosyasını yeniden adlandır / taşı"
+
+msgid "Renaming / moving file: %s…"
+msgstr "Dosya yeniden adlandırılıyor / taşınıyor: %s…"
+
+msgid "The new path is identical to the current path."
+msgstr "Yeni yol geçerli yol ile tamamen aynı."
+
+msgid "Cancelling upload…"
+msgstr "Yükleme iptal ediliyor…"
+
+msgid "Upload cancelled by user."
+msgstr "Yükleme kullanıcı tarafından iptal edildi."
+
+msgid "Upload complete. %d files have been uploaded to: %s."
+msgstr "Yükleme tamamlandı. %d dosya %s konumuna başarıyla yüklenmiştir."
+
+msgid "Upload complete. File '%s' has been uploaded to: %s."
+msgstr "Yükleme tamamlandı. '%s' dosyası %s konumuna başarıyla yüklenmiştir."
+
+msgid "Upload complete. Folder '%s' (%d files) has been uploaded to: %s."
+msgstr "Yükleme tamamlandı. '%s' klasörü (%d dosya) %s konumuna başarıyla yüklenmiştir."
+
+msgid "Upload failed: %s"
+msgstr "Yükleme başarısız oldu: %s"
+
+msgid "Upload progress"
+msgstr "Yükleme ilerlemesi"
+
+msgid "Upload status"
+msgstr "Yükleme durumu"
+
+msgid "Uploading files…"
+msgstr "Dosyalar yükleniyor…"
+
+msgid "&New folder name or path:"
+msgstr "&Yeni klasör adı veya yolu:"
+
+msgid "&Rename or move…"
+msgstr "&Ad veya yol değiştir…"
+
+msgid "Cannot move a folder into itself or its subfolder."
+msgstr "Bir klasör kendi içine veya alt klasörüne taşınamaz."
+
+msgid "Current path: /%s (folder)"
+msgstr "Geçerli yol: /%s (klasör)"
+
+msgid "Folder moved successfully: %s -> %s (%d files)"
+msgstr "Klasör başarıyla taşındı: %s -> %s (%d dosya)"
+
+msgid "Hint: Enter a new folder name to rename, or change the directory path to move."
+msgstr "İpucu: Yeniden adlandırmak için yeni bir klasör adı girin veya taşımak için dizin yolunu değiştirin."
+
+msgid "Moving file (%d of %d): %s…"
+msgstr "Dosya taşınıyor (%d / %d): %s…"
+
+msgid "New folder name or path"
+msgstr "Yeni klasör adı veya yolu"
+
+msgid "Only files and folders can be renamed or moved."
+msgstr "Yalnızca dosyalar ve klasörler yeniden adlandırılabilir veya taşınabilir."
+
+msgid "Please enter a new folder name or path."
+msgstr "Lütfen yeni bir klasör adı veya yolu girin."
+
+msgid "Please enter a valid folder path."
+msgstr "Lütfen geçerli bir klasör yolu girin."
+
+msgid "Please select a file or folder to rename or move."
+msgstr "Lütfen yeniden adlandırılacak veya taşınacak bir dosya veya klasör seçin."
+
+msgid "Rename / Move Folder — %s"
+msgstr "Klasörü Yeniden Adlandır / Taşı — %s"
+
+msgid "Rename / move folder %s"
+msgstr "%s klasörünü yeniden adlandır / taşı"
+
+msgid "Renaming / moving folder: %s…"
+msgstr "Klasör yeniden adlandırılıyor / taşınıyor: %s…"
+
+msgid "Scanning folder contents: %s…"
+msgstr "Klasör içeriği taranıyor: %s…"
+
+msgid "&Copy"
+msgstr "&Kopyala"
+
+msgid "&Copy file or folder…"
+msgstr "Dosyayı veya klasörü &kopyala…"
+
+msgid "&Destination file path:"
+msgstr "&Hedef dosya yolu:"
+
+msgid "&Destination folder path:"
+msgstr "&Hedef klasör yolu:"
+
+msgid "Cannot copy a folder into itself or its subfolder."
+msgstr "Bir klasör kendi içine veya alt klasörüne kopyalanamaz."
+
+msgid "Copy %s"
+msgstr "%s dosyasını kopyala"
+
+msgid "Copy %s to %s"
+msgstr "%s dosyasını %s konumuna kopyala"
+
+msgid "Copy File — %s"
+msgstr "Dosyayı Kopyala — %s"
+
+msgid "Copy Folder — %s"
+msgstr "Klasörü Kopyala — %s"
+
+msgid "Copy folder %s to %s"
+msgstr "%s klasörünü %s konumuna kopyala"
+
+msgid "Copying file (%d of %d): %s…"
+msgstr "Dosya kopyalanıyor (%d / %d): %s…"
+
+msgid "Copying file: %s…"
+msgstr "Dosya kopyalanıyor: %s…"
+
+msgid "Copying folder: %s…"
+msgstr "Klasör kopyalanıyor: %s…"
+
+msgid "Creating copy at: %s…"
+msgstr "Kopya oluşturuluyor: %s…"
+
+msgid "Destination file path"
+msgstr "Hedef dosya yolu"
+
+msgid "Destination folder path"
+msgstr "Hedef klasör yolu"
+
+msgid "File copied successfully: %s -> %s"
+msgstr "Dosya başarıyla kopyalandı: %s -> %s"
+
+msgid "Folder copied successfully: %s -> %s (%d files)"
+msgstr "Klasör başarıyla kopyalandı: %s -> %s (%d dosya)"
+
+msgid "Hint: Enter a destination file path (e.g. 'addon/file.txt')."
+msgstr "İpucu: Bir hedef dosya yolu girin (ör. 'addon/dosya.txt')."
+
+msgid "Hint: Enter a destination folder path (e.g. 'addon/doc')."
+msgstr "İpucu: Bir hedef klasör yolu girin (ör. 'addon/doc')."
+
+msgid "Only files and folders can be copied."
+msgstr "Yalnızca dosyalar ve klasörler kopyalanabilir."
+
+msgid "Please enter a destination file path."
+msgstr "Lütfen bir hedef dosya yolu girin."
+
+msgid "Please enter a destination folder path."
+msgstr "Lütfen bir hedef klasör yolu girin."
+
+msgid "Please select a file or folder to copy."
+msgstr "Lütfen kopyalanacak bir dosya veya klasör seçin."
+
+msgid "The destination path is identical to the current path."
+msgstr "Hedef yol geçerli yolla aynı."
+
+msgid "Calculating SHA256: %s…"
+msgstr "SHA256 hesaplanıyor: %s…"
+
+msgid "Copy &SHA256 hash"
+msgstr "&SHA256 değerini kopyala"
+
+msgid "Could not calculate SHA256."
+msgstr "SHA256 hesaplanamadı."
+
+msgid "SHA256 hash copied to clipboard."
+msgstr "SHA256 değeri panoya kopyalandı."
