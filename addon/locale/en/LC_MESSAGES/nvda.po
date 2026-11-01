@@ -1,0 +1,1785 @@
+msgid ""
+msgstr "Project-Id-Version: GitHub\nLanguage: en\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n"
+
+msgid "%s items listed."
+msgstr "%s items listed."
+
+msgid "%s repositories listed."
+msgstr "%s repositories listed."
+
+msgid "&Account"
+msgstr "&Account"
+
+msgid "&Cancel"
+msgstr "&Cancel"
+
+msgid "&Close"
+msgstr "&Close"
+
+msgid "&Connect account"
+msgstr "&Connect account"
+
+msgid "&Copy code"
+msgstr "Cop&y code"
+
+msgid "&Copy repository address"
+msgstr "Copy repository &address"
+
+msgid "&Go to contents"
+msgstr "&Go to contents"
+
+msgid "&Menu"
+msgstr "&Menu"
+
+msgid "&No"
+msgstr "&No"
+
+msgid "&OK"
+msgstr "&OK"
+
+msgid "&Open GitHub approval page"
+msgstr "&Open GitHub approval page"
+
+msgid "&Open repository on GitHub"
+msgstr "&Open repository on GitHub"
+
+msgid "&Reconnect account"
+msgstr "Reconnec&t account"
+
+msgid "&Refresh contents"
+msgstr "&Refresh contents"
+
+msgid "&Refresh repositories"
+msgstr "Re&fresh repositories"
+
+msgid "&Remove local connection"
+msgstr "&Remove local connection"
+
+msgid "&Repository"
+msgstr "&Repository"
+
+msgid "&Start connection"
+msgstr "&Start connection"
+
+msgid "&Yes"
+msgstr "&Yes"
+
+msgid "Client ID (public application identifier)"
+msgstr "Client ID (public application identifier)"
+
+msgid "Connect GitHub account"
+msgstr "Connect GitHub account"
+
+msgid "Connected account: %s"
+msgstr "Connected account: %s"
+
+msgid "Connection cancelled."
+msgstr "Connection cancelled."
+
+msgid "Connection status"
+msgstr "Connection status"
+
+msgid "Contents"
+msgstr "Contents"
+
+msgid "Contents: %s"
+msgstr "Contents: %s"
+
+msgid "Copy the code and enter it on the GitHub approval page. Waiting for your approval. The code is valid for %s minutes."
+msgstr "Copy the code and enter it on the GitHub approval page. Waiting for your approval. The code is valid for %s minutes."
+
+msgid "Could not reach GitHub. Check your internet connection and try again."
+msgstr "Could not reach GitHub. Check your internet connection and try again."
+
+msgid "Enable Device Flow in the GitHub application's settings before connecting."
+msgstr "Enable Device Flow in the GitHub application's settings before connecting."
+
+msgid "Enter the public Client ID from the GitHub application registration. Do not enter a client secret or access token."
+msgstr "Enter the public Client ID from the GitHub application registration. Do not enter a client secret or access token."
+
+msgid "File"
+msgstr "File"
+
+msgid "Folder"
+msgstr "Folder"
+
+msgid "GitHub could not complete the request. Try again later."
+msgstr "GitHub could not complete the request. Try again later."
+
+msgid "GitHub did not recognize the application ID. Check the Client ID and try again."
+msgstr "GitHub did not recognize the application ID. Check the Client ID and try again."
+
+msgid "GitHub returned an unexpected response. The operation could not be completed."
+msgstr "GitHub returned an unexpected response. The operation could not be completed."
+
+msgid "GitHub settings could not be read. Check the github folder in your NVDA user configuration. Existing settings have not been changed."
+msgstr "GitHub settings could not be read. Check the github folder in your NVDA user configuration. Existing settings have not been changed."
+
+msgid "GitHub settings could not be saved or read. Check access to the github configuration folder."
+msgstr "GitHub settings could not be saved or read. Check access to the github configuration folder."
+
+msgid "GitHub temporarily limited this request. Wait a while and try again."
+msgstr "GitHub temporarily limited this request. Wait a while and try again."
+
+msgid "Loading contents: %s"
+msgstr "Loading contents: %s"
+
+msgid "Loading repositories…"
+msgstr "Loading repositories…"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "No GitHub account has been added. Would you like to add an account now?"
+msgstr "No GitHub account has been added. Would you like to add an account now?"
+
+msgid "No account is connected."
+msgstr "No account is connected."
+
+msgid "No repositories are visible with the current account permissions."
+msgstr "No repositories are visible with the current account permissions."
+
+msgid "One-time setup: register this add-on as an OAuth application on GitHub and enable Device Flow. Enter its public Client ID below, not a client secret or access token."
+msgstr "One-time setup: register this add-on as an OAuth application on GitHub and enable Device Flow. Enter its public Client ID below, not a client secret or access token."
+
+msgid "Only folders can be opened in this step."
+msgstr "Only folders can be opened in this step."
+
+msgid "Open GitHub"
+msgstr "Open GitHub"
+
+msgid "Open application &registration page"
+msgstr "Open application &registration page"
+
+msgid "Ready to connect."
+msgstr "Ready to connect."
+
+msgid "Remove this account and its saved key from this computer? This does not delete the GitHub account or revoke the application's authorization on GitHub."
+msgstr "Remove this account and its saved key from this computer? This does not delete the GitHub account or revoke the application's authorization on GitHub."
+
+msgid "Repositories"
+msgstr "Repositories"
+
+msgid "Repository address copied."
+msgstr "Repository address copied."
+
+msgid "Requesting a verification code from GitHub…"
+msgstr "Requesting a verification code from GitHub…"
+
+msgid "Saved account: %s"
+msgstr "Saved account: %s"
+
+msgid "Submodule"
+msgstr "Submodule"
+
+msgid "Symbolic link"
+msgstr "Symbolic link"
+
+msgid "The browser could not be opened. Open this address manually: "
+msgstr "The browser could not be opened. Open this address manually: "
+
+msgid "The code could not be copied. Select the verification code field and press Control+C."
+msgstr "The code could not be copied. Select the verification code field and press Control+C."
+
+msgid "The connection could not be completed. Try again."
+msgstr "The connection could not be completed. Try again."
+
+msgid "The connection was declined on GitHub. You can try again."
+msgstr "The connection was declined on GitHub. You can try again."
+
+msgid "The local account connection was removed."
+msgstr "The local account connection was removed."
+
+msgid "The previously loaded list is still shown."
+msgstr "The previously loaded list is still shown."
+
+msgid "The repository address could not be copied."
+msgstr "The repository address could not be copied."
+
+msgid "The repository or folder was not found, or your account does not have access."
+msgstr "The repository or folder was not found, or your account does not have access."
+
+msgid "The saved session belongs to a different account. Remove the local connection and sign in again."
+msgstr "The saved session belongs to a different account. Remove the local connection and sign in again."
+
+msgid "The saved session is missing or expired. Connect your account again."
+msgstr "The saved session is missing or expired. Connect your account again."
+
+msgid "The saved session is no longer valid. Connect your account again."
+msgstr "The saved session is no longer valid. Connect your account again."
+
+msgid "The session could not be renewed. Connect your account again."
+msgstr "The session could not be renewed. Connect your account again."
+
+msgid "The verification code expired. Start the connection again for a new code."
+msgstr "The verification code expired. Start the connection again for a new code."
+
+msgid "This folder is empty."
+msgstr "This folder is empty."
+
+msgid "This folder reaches GitHub's 1,000-item listing limit. A complete listing is not supported in this step."
+msgstr "This folder reaches GitHub's 1,000-item listing limit. A complete listing is not supported in this step."
+
+msgid "This item is not a folder. Refresh its parent folder."
+msgstr "This item is not a folder. Refresh its parent folder."
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Verification code"
+msgstr "Verification code"
+
+msgid "Verification code copied."
+msgstr "Verification code copied."
+
+msgid "Windows could not read or save the account key. No key will be saved in a plain text file."
+msgstr "Windows could not read or save the account key. No key will be saved in a plain text file."
+
+msgid "You are already at the repository root."
+msgstr "You are already at the repository root."
+
+msgid "&Download repository (ZIP)…"
+msgstr "Download repository (&ZIP)…"
+
+msgid "Save repository as ZIP"
+msgstr "Save repository as ZIP"
+
+msgid "ZIP files (*.zip)|*.zip|All files (*.*)|*.*"
+msgstr "ZIP files (*.zip)|*.zip|All files (*.*)|*.*"
+
+msgid "All files (*.*)|*.*"
+msgstr "All files (*.*)|*.*"
+
+msgid "Downloading repository: %s…"
+msgstr "Downloading repository: %s…"
+
+msgid "Downloading repository %s…"
+msgstr "Downloading repository %s…"
+
+msgid "Repository successfully saved: %s"
+msgstr "Repository successfully saved: %s"
+
+msgid "Repository saved: %s"
+msgstr "Repository saved: %s"
+
+msgid "Save folder as ZIP"
+msgstr "Save folder as ZIP"
+
+msgid "Packaging and downloading folder %s…"
+msgstr "Packaging and downloading folder %s…"
+
+msgid "Folder successfully saved: %s"
+msgstr "Folder successfully saved: %s"
+
+msgid "Save file"
+msgstr "Save file"
+
+msgid "Downloading file %s…"
+msgstr "Downloading file %s…"
+
+msgid "File successfully saved: %s"
+msgstr "File successfully saved: %s"
+
+msgid "&Open folder"
+msgstr "&Open folder"
+
+msgid "&Download folder as ZIP…\tCtrl+S"
+msgstr "&Download folder as ZIP…\tCtrl+S"
+
+msgid "&Download file…\tCtrl+S"
+msgstr "&Download file…\tCtrl+S"
+
+msgid "&Copy item path"
+msgstr "&Copy item path"
+
+msgid "Path copied: %s"
+msgstr "Path copied: %s"
+
+msgid "The path could not be copied."
+msgstr "The path could not be copied."
+
+msgid "GitHub — %s (%s)"
+msgstr "GitHub — %s (%s)"
+
+msgid "Content of file: %s"
+msgstr "Content of file: %s"
+
+msgid "File content"
+msgstr "File content"
+
+msgid "&Copy all content"
+msgstr "Copy &all content"
+
+msgid "All content copied to clipboard."
+msgstr "All content copied to clipboard."
+
+msgid "Clipboard could not be opened."
+msgstr "Clipboard could not be opened."
+
+msgid "Loading file content: %s…"
+msgstr "Loading file content: %s…"
+
+msgid "%s açılıyor…"
+msgstr "Opening %s…"
+
+msgid "'%s' is a binary file and cannot be viewed as text. Would you like to download it?"
+msgstr "'%s' is a binary file and cannot be viewed as text. Would you like to download it?"
+
+msgid "&View file\tEnter"
+msgstr "&View file\tEnter"
+
+msgid "This file is too large to display directly (limit is 5 MB). You can download it instead."
+msgstr "This file is too large to display directly (limit is 5 MB). You can download it instead."
+
+msgid "&Download file…"
+msgstr "&Download file…"
+
+msgid "&Download folder as ZIP…"
+msgstr "&Download folder as ZIP…"
+
+msgid "&View file"
+msgstr "&View file"
+
+msgid "&Commit message:"
+msgstr "Co&mmit message:"
+
+msgid "&Delete"
+msgstr "&Delete"
+
+msgid "&Delete file…"
+msgstr "Dele&te file…"
+
+msgid "&File content:"
+msgstr "File c&ontent:"
+
+msgid "&File name:"
+msgstr "&File name:"
+
+msgid "&New file…"
+msgstr "New &file…"
+
+msgid "&Save"
+msgstr "&Save"
+
+msgid "&Upload"
+msgstr "&Upload"
+
+msgid "&Upload file from computer…"
+msgstr "&Upload file from computer…"
+
+msgid "A file with this name already exists or has been modified on GitHub."
+msgstr "A file with this name already exists or has been modified on GitHub."
+
+msgid "Are you sure you want to delete '%s'?"
+msgstr "Are you sure you want to delete '%s'?"
+
+msgid "Commit message"
+msgstr "Commit message"
+
+msgid "Could not read local file."
+msgstr "Could not read local file."
+
+msgid "Create new file"
+msgstr "Create new file"
+
+msgid "Create new file — %s"
+msgstr "Create new file — %s"
+
+msgid "Creating file %s…"
+msgstr "Creating file %s…"
+
+msgid "Creating file: %s…"
+msgstr "Creating file: %s…"
+
+msgid "Delete file — %s"
+msgstr "Delete file — %s"
+
+msgid "Deleting file %s…"
+msgstr "Deleting file %s…"
+
+msgid "Deleting file: %s…"
+msgstr "Deleting file: %s…"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "File created successfully: %s"
+msgstr "File created successfully: %s"
+
+msgid "File deleted successfully: %s"
+msgstr "File deleted successfully: %s"
+
+msgid "File name"
+msgstr "File name"
+
+msgid "File name cannot contain slashes."
+msgstr "File name cannot contain slashes."
+
+msgid "File uploaded successfully: %s"
+msgstr "File uploaded successfully: %s"
+
+msgid "Only files can be deleted in this step."
+msgstr "Only files can be deleted in this step."
+
+msgid "Please enter a file name."
+msgstr "Please enter a file name."
+
+msgid "Select file to upload"
+msgstr "Select file to upload"
+
+msgid "Upload file — %s"
+msgstr "Upload file — %s"
+
+msgid "Uploading '%s' to folder: /%s"
+msgstr "Uploading '%s' to folder: /%s"
+
+msgid "Uploading file %s…"
+msgstr "Uploading file %s…"
+
+msgid "Uploading file: %s…"
+msgstr "Uploading file: %s…"
+
+msgid "&Create repository"
+msgstr "Cr&eate repository"
+
+msgid "&Description (optional):"
+msgstr "&Description (optional):"
+
+msgid "&Initialize this repository with a README.md"
+msgstr "&Initialize this repository with a README.md"
+
+msgid "&New repository…"
+msgstr "&New repository…"
+
+msgid "&New repository…\tCtrl+Shift+N"
+msgstr "&New repository…\tCtrl+Shift+N"
+
+msgid "&Repository name:"
+msgstr "&Repository name:"
+
+msgid "A repository with this name already exists, or the name contains invalid characters."
+msgstr "A repository with this name already exists, or the name contains invalid characters."
+
+msgid "Creating repository %s…"
+msgstr "Creating repository %s…"
+
+msgid "Creating repository: %s…"
+msgstr "Creating repository: %s…"
+
+msgid "Description (optional)"
+msgstr "Description (optional)"
+
+msgid "GitHub — Create New Repository"
+msgstr "GitHub — Create New Repository"
+
+msgid "Initialize with README"
+msgstr "Initialize with README"
+
+msgid "Please enter a repository name."
+msgstr "Please enter a repository name."
+
+msgid "Private"
+msgstr "Private"
+
+msgid "Public"
+msgstr "Public"
+
+msgid "Repository created successfully: %s"
+msgstr "Repository created successfully: %s"
+
+msgid "Repository name"
+msgstr "Repository name"
+
+msgid "Repository name can only contain letters, numbers, hyphens, underscores, and dots."
+msgstr "Repository name can only contain letters, numbers, hyphens, underscores, and dots."
+
+msgid "The repository name is invalid."
+msgstr "The repository name is invalid."
+
+msgid "Visibility"
+msgstr "Visibility"
+
+msgid "Visibility:"
+msgstr "Visibility:"
+
+msgid "%s repositories found."
+msgstr "%s repositories found."
+
+msgid "&Search repositories…"
+msgstr "&Search repositories…"
+
+msgid "&Search repositories…\tCtrl+F"
+msgstr "&Search repositories…\tCtrl+F"
+
+msgid "No repositories match '%s'."
+msgstr "No repositories match '%s'."
+
+msgid "Search &repositories:"
+msgstr "&Search repositories:"
+
+msgid "Search cleared."
+msgstr "Search cleared."
+
+msgid "Search repositories"
+msgstr "Search repositories"
+
+msgid "&Branch:"
+msgstr "&Branch:"
+
+msgid "Branch"
+msgstr "Branch"
+
+msgid "Branch switched: %s"
+msgstr "Branch switched: %s"
+
+msgid "&Go to branch"
+msgstr "Go to &branch"
+
+msgid "Loading branches…"
+msgstr "Loading branches…"
+
+msgid "No branches found."
+msgstr "No branches found."
+
+msgid "No repository selected."
+msgstr "No repository selected."
+
+msgid "Opening %s…"
+msgstr "Opening %s…"
+
+msgid "Create %s"
+msgstr "Create %s"
+
+msgid "Delete %s"
+msgstr "Delete %s"
+
+msgid "Update %s"
+msgstr "Update %s"
+
+msgid "Upload %s"
+msgstr "Upload %s"
+
+msgid "%s issues listed."
+msgstr "%s issues listed."
+
+msgid "&Add comment"
+msgstr "&Add comment"
+
+msgid "&Add comment…"
+msgstr "&Add comment…"
+
+msgid "&Close issue"
+msgstr "Cl&ose issue"
+
+msgid "&Comment:"
+msgstr "Co&mment:"
+
+msgid "&Copy text"
+msgstr "Copy &text"
+
+msgid "&Filter:"
+msgstr "&Filter:"
+
+msgid "&Issues…"
+msgstr "&Issues…"
+
+msgid "&New issue…"
+msgstr "Ne&w issue…"
+
+msgid "&Reopen issue"
+msgstr "&Reopen issue"
+
+msgid "&Submit new issue"
+msgstr "&Submit new issue"
+
+msgid "&Title:"
+msgstr "&Title:"
+
+msgid "&View issue…"
+msgstr "&View issue…"
+
+msgid "(No description provided.)"
+msgstr "(No description provided.)"
+
+msgid "Add comment — %s"
+msgstr "Add comment — %s"
+
+msgid "All"
+msgstr "All"
+
+msgid "Author"
+msgstr "Author"
+
+msgid "Author:"
+msgstr "Author:"
+
+msgid "Closed"
+msgstr "Closed"
+
+msgid "Comment"
+msgstr "Comment"
+
+msgid "Comment #%s"
+msgstr "Comment #%s"
+
+msgid "Comment added successfully."
+msgstr "Comment added successfully."
+
+msgid "Comments"
+msgstr "Comments"
+
+msgid "Could not load issues."
+msgstr "Could not load issues."
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Failed to add comment."
+msgstr "Failed to add comment."
+
+msgid "Failed to change issue state."
+msgstr "Failed to change issue state."
+
+msgid "Failed to create issue."
+msgstr "Failed to create issue."
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Issue #%s: %s"
+msgstr "Issue #%s: %s"
+
+msgid "Issue closed."
+msgstr "Issue closed."
+
+msgid "Issue created successfully."
+msgstr "Issue created successfully."
+
+msgid "Issue details and comments"
+msgstr "Issue details and comments"
+
+msgid "Issue details copied to clipboard."
+msgstr "Issue details copied to clipboard."
+
+msgid "Issue reopened."
+msgstr "Issue reopened."
+
+msgid "Issues"
+msgstr "Issues"
+
+msgid "Issues — %s"
+msgstr "Issues — %s"
+
+msgid "Loading issues…"
+msgstr "Loading issues…"
+
+msgid "New issue — %s"
+msgstr "New issue — %s"
+
+msgid "No comments yet."
+msgstr "No comments yet."
+
+msgid "No issues found."
+msgstr "No issues found."
+
+msgid "Number"
+msgstr "Number"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Please enter an issue title."
+msgstr "Please enter an issue title."
+
+msgid "Please enter comment text."
+msgstr "Please enter comment text."
+
+msgid "State: %s | Author: %s | Comments: %s"
+msgstr "State: %s | Author: %s | Comments: %s"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "&Releases…"
+msgstr "R&eleases…"
+
+msgid "Release"
+msgstr "Release"
+
+msgid "Release Details — %s"
+msgstr "Release Details — %s"
+
+msgid "&Release notes:"
+msgstr "Release &notes:"
+
+msgid "Release notes"
+msgstr "Release notes"
+
+msgid "&Downloadable files (%s):"
+msgstr "Downloadable &files (%s):"
+
+msgid "Downloadable files"
+msgstr "Downloadable files"
+
+msgid "Size"
+msgstr "Size"
+
+msgid "Downloads"
+msgstr "Downloads"
+
+msgid "Version:"
+msgstr "Version:"
+
+msgid "Pre-release"
+msgstr "Pre-release"
+
+msgid "(No release notes provided.)"
+msgstr "(No release notes provided.)"
+
+msgid "Release details copied to clipboard."
+msgstr "Release details copied to clipboard."
+
+msgid "Downloading: %s…"
+msgstr "Downloading: %s…"
+
+msgid "File successfully downloaded: %s"
+msgstr "File successfully downloaded: %s"
+
+msgid "Download failed."
+msgstr "Download failed."
+
+msgid "Releases — %s"
+msgstr "Releases — %s"
+
+msgid "Releases"
+msgstr "Releases"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Tag"
+msgstr "Tag"
+
+msgid "Files"
+msgstr "Files"
+
+msgid "&Release details…"
+msgstr "&Release details…"
+
+msgid "Loading releases…"
+msgstr "Loading releases…"
+
+msgid "%s releases listed."
+msgstr "%s releases listed."
+
+msgid "No releases found."
+msgstr "No releases found."
+
+msgid "Could not load releases."
+msgstr "Could not load releases."
+
+msgid "Date:"
+msgstr "Date:"
+
+msgid "&New release…"
+msgstr "New re&lease…"
+
+msgid "Create New Release — %s"
+msgstr "Create New Release — %s"
+
+msgid "&Version tag (e.g. v1.0):"
+msgstr "&Version tag (e.g. v1.0):"
+
+msgid "Version tag"
+msgstr "Version tag"
+
+msgid "&Release title (optional):"
+msgstr "&Release title (optional):"
+
+msgid "Release title"
+msgstr "Release title"
+
+msgid "&Target branch:"
+msgstr "&Target branch:"
+
+msgid "Target branch"
+msgstr "Target branch"
+
+msgid "&Mark as pre-release"
+msgstr "&Mark as pre-release"
+
+msgid "Mark as pre-release"
+msgstr "Mark as pre-release"
+
+msgid "&Release notes (optional):"
+msgstr "Release &notes (optional):"
+
+msgid "&Attach package file (optional):"
+msgstr "&Attach package file (optional):"
+
+msgid "Package file path"
+msgstr "Package file path"
+
+msgid "&Browse…"
+msgstr "&Browse…"
+
+msgid "&Publish release"
+msgstr "&Publish release"
+
+msgid "Select package file"
+msgstr "Select package file"
+
+msgid "All files (*.*)|*.*|NVDA Add-on (*.nvda-addon)|*.nvda-addon|ZIP files (*.zip)|*.zip"
+msgstr "All files (*.*)|*.*|NVDA Add-on (*.nvda-addon)|*.nvda-addon|ZIP files (*.zip)|*.zip"
+
+msgid "Please enter a version tag."
+msgstr "Please enter a version tag."
+
+msgid "Selected package file does not exist."
+msgstr "Selected package file does not exist."
+
+msgid "Release published successfully."
+msgstr "Release published successfully."
+
+msgid "Failed to publish release."
+msgstr "Failed to publish release."
+
+msgid "&Notifications…"
+msgstr "&Notifications…"
+
+msgid "Mention"
+msgstr "Mention"
+
+msgid "Subscribed"
+msgstr "Subscribed"
+
+msgid "Assigned"
+msgstr "Assigned"
+
+msgid "State change"
+msgstr "State change"
+
+msgid "Review requested"
+msgstr "Review requested"
+
+msgid "Automatic activity"
+msgstr "Automatic activity"
+
+msgid "Issue"
+msgstr "Issue"
+
+msgid "Pull Request"
+msgstr "Pull Request"
+
+msgid "Commit"
+msgstr "Commit"
+
+msgid "GitHub Notifications"
+msgstr "GitHub Notifications"
+
+msgid "Only unread"
+msgstr "Only unread"
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "Repository"
+msgstr "Repository"
+
+msgid "Reason"
+msgstr "Reason"
+
+msgid "&View notification…"
+msgstr "&View notification…"
+
+msgid "&Mark as read"
+msgstr "&Mark as read"
+
+msgid "Mark &all as read"
+msgstr "Mark &all as read"
+
+msgid "&Open on web"
+msgstr "&Open on web"
+
+msgid "Loading notifications…"
+msgstr "Loading notifications…"
+
+msgid "%s notifications listed."
+msgstr "%s notifications listed."
+
+msgid "No notifications found."
+msgstr "No notifications found."
+
+msgid "Could not load notifications."
+msgstr "Could not load notifications."
+
+msgid "Notification marked as read."
+msgstr "Notification marked as read."
+
+msgid "Failed to mark notification as read."
+msgstr "Failed to mark notification as read."
+
+msgid "All notifications marked as read."
+msgstr "All notifications marked as read."
+
+msgid "Failed to mark all notifications as read."
+msgstr "Failed to mark all notifications as read."
+
+msgid "Loading issue…"
+msgstr "Loading issue…"
+
+msgid "Loading release…"
+msgstr "Loading release…"
+
+msgid "Your password stays on GitHub. You will authorize repository access on GitHub's official verification page using a one-time device code."
+msgstr "Your password stays on GitHub. You will authorize repository access on GitHub's official verification page using a one-time device code."
+
+msgid "This file is too large to upload through the Contents API (limit is 50 MB)."
+msgstr "This file is too large to upload through the Contents API (limit is 50 MB)."
+
+msgid "Release was created on GitHub, but uploading the package file failed."
+msgstr "Release was created on GitHub, but uploading the package file failed."
+
+msgid "'%s' is too large to display directly (over 5 MB). Would you like to download it instead?"
+msgstr "'%s' is too large to display directly (over 5 MB). Would you like to download it instead?"
+
+msgid "Another repository modification is already in progress. Please wait."
+msgstr "Another repository modification is already in progress. Please wait."
+
+msgid "Could not open notification address."
+msgstr "Could not open notification address."
+
+msgid "Draft"
+msgstr "Draft"
+
+msgid "Please wait until folder contents finish loading."
+msgstr "Please wait until folder contents finish loading."
+
+msgid "Read"
+msgstr "Read"
+
+msgid "State"
+msgstr "State"
+
+msgid "Submodules cannot be viewed or downloaded directly as files."
+msgstr "Submodules cannot be viewed or downloaded directly as files."
+
+msgid "Unread"
+msgstr "Unread"
+
+
+msgid "Creating issue…"
+msgstr "Creating issue…"
+
+msgid "No downloadable files available."
+msgstr "No downloadable files available."
+
+msgid "Publishing release: %s…"
+msgstr "Publishing release: %s…"
+
+msgid "%s commits listed."
+msgstr "%s commits listed."
+
+msgid "%s pull requests listed."
+msgstr "%s pull requests listed."
+
+msgid "&Archive this repository (make it read-only)"
+msgstr "&Archive this repository (make it read-only)"
+
+msgid "&Close pull request"
+msgstr "Close pull &request"
+
+msgid "&Commit details…"
+msgstr "Commit &details…"
+
+msgid "&Commit history…"
+msgstr "&Commit history…"
+
+msgid "&Commit information:"
+msgstr "Commit &information:"
+
+msgid "&Copy details"
+msgstr "Co&py details"
+
+msgid "&Create branch"
+msgstr "Create &branch"
+
+msgid "&Create pull request"
+msgstr "Create &pull request"
+
+msgid "&Delete current branch…"
+msgstr "&Delete current branch…"
+
+msgid "&Delete release…"
+msgstr "&Delete release…"
+
+msgid "&Delete repository…"
+msgstr "Delete &repository…"
+
+msgid "&Edit file…"
+msgstr "&Edit file…"
+
+msgid "&Edit release…"
+msgstr "&Edit release…"
+
+msgid "&Explore GitHub repositories…"
+msgstr "&Explore GitHub repositories…"
+
+msgid "&File content (%s):"
+msgstr "&File content (%s):"
+
+msgid "&Fork to my account…"
+msgstr "&Fork to my account…"
+
+msgid "&Merge pull request…"
+msgstr "&Merge pull request…"
+
+msgid "&New branch name:"
+msgstr "&New branch name:"
+
+msgid "&New branch…"
+msgstr "New branc&h…"
+
+msgid "&New pull request…"
+msgstr "&New pull request…"
+
+msgid "&Pull request details and changes:"
+msgstr "Pull request &details and changes:"
+
+msgid "&Pull requests…"
+msgstr "&Pull requests…"
+
+msgid "&Release title:"
+msgstr "&Release title:"
+
+msgid "&Reopen pull request"
+msgstr "&Reopen pull request"
+
+msgid "&Repository details…"
+msgstr "&Repository details…"
+
+msgid "&Repository information:"
+msgstr "&Repository information:"
+
+msgid "&Repository settings…"
+msgstr "Repositor&y settings…"
+
+msgid "&Save changes"
+msgstr "&Save changes"
+
+msgid "&Search"
+msgstr "&Search"
+
+msgid "&Search keywords:"
+msgstr "Search &keywords:"
+
+msgid "&Source branch (Head):"
+msgstr "&Source branch (Head):"
+
+msgid "&Source branch:"
+msgstr "&Source branch:"
+
+msgid "&Star / Unstar"
+msgstr "S&tar / Unstar"
+
+msgid "&Target branch (Base):"
+msgstr "Target &branch (Base):"
+
+msgid "&Version tag:"
+msgstr "&Version tag:"
+
+msgid "&View pull request…"
+msgstr "&View pull request…"
+
+msgid "'%s' is a binary file and cannot be edited as text."
+msgstr "'%s' is a binary file and cannot be edited as text."
+
+msgid "(No comments yet.)"
+msgstr "(No comments yet.)"
+
+msgid "(No file changes recorded.)"
+msgstr "(No file changes recorded.)"
+
+msgid "(No files changed.)"
+msgstr "(No files changed.)"
+
+msgid "(Not specified)"
+msgstr "(Not specified)"
+
+msgid "A branch with this name already exists."
+msgstr "A branch with this name already exists."
+
+msgid "Archive repository"
+msgstr "Archive repository"
+
+msgid "Are you sure you want to delete branch '%s' from repository '%s'?"
+msgstr "Are you sure you want to delete branch '%s' from repository '%s'?"
+
+msgid "Are you sure you want to delete the release '%s'? This action cannot be undone."
+msgstr "Are you sure you want to delete the release '%s'? This action cannot be undone."
+
+msgid "Are you sure you want to merge pull request #%s into '%s'?"
+msgstr "Are you sure you want to merge pull request #%s into '%s'?"
+
+msgid "Branch created successfully: %s"
+msgstr "Branch created successfully: %s"
+
+msgid "Branch deleted successfully: %s"
+msgstr "Branch deleted successfully: %s"
+
+msgid "Branch name contains invalid characters. Use letters, numbers, hyphens, and slashes."
+msgstr "Branch name contains invalid characters. Use letters, numbers, hyphens, and slashes."
+
+msgid "Branches"
+msgstr "Branches"
+
+msgid "Branches:"
+msgstr "Branches:"
+
+msgid "Changed Files (%s):"
+msgstr "Changed Files (%s):"
+
+msgid "Changed Files:"
+msgstr "Changed Files:"
+
+msgid "Changes:"
+msgstr "Changes:"
+
+msgid "Comments (%s):"
+msgstr "Comments (%s):"
+
+msgid "Commit Details — %s"
+msgstr "Commit Details — %s"
+
+msgid "Commit History — %s%s"
+msgstr "Commit History — %s%s"
+
+msgid "Commit details copied to clipboard."
+msgstr "Commit details copied to clipboard."
+
+msgid "Commit information"
+msgstr "Commit information"
+
+msgid "Commit:"
+msgstr "Commit:"
+
+msgid "Commits"
+msgstr "Commits"
+
+msgid "Could not load commit details."
+msgstr "Could not load commit details."
+
+msgid "Could not load commits."
+msgstr "Could not load commits."
+
+msgid "Could not load pull requests."
+msgstr "Could not load pull requests."
+
+msgid "Could not open repository address."
+msgstr "Could not open repository address."
+
+msgid "Create New Branch — %s"
+msgstr "Create New Branch — %s"
+
+msgid "Creating branch: %s…"
+msgstr "Creating branch: %s…"
+
+msgid "Creating pull request…"
+msgstr "Creating pull request…"
+
+msgid "Danger Zone"
+msgstr "Danger Zone"
+
+msgid "Default branch:"
+msgstr "Default branch:"
+
+msgid "Delete Release"
+msgstr "Delete Release"
+
+msgid "Delete Repository — Confirmation"
+msgstr "Delete Repository — Confirmation"
+
+msgid "Deleting branch: %s…"
+msgstr "Deleting branch: %s…"
+
+msgid "Deleting repository: %s…"
+msgstr "Deleting repository: %s…"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Description:"
+msgstr "Description:"
+
+msgid "Do you want to fork '%s' to your GitHub account?"
+msgstr "Do you want to fork '%s' to your GitHub account?"
+
+msgid "Edit File — %s (%s)"
+msgstr "Edit File — %s (%s)"
+
+msgid "Edit Release — %s"
+msgstr "Edit Release — %s"
+
+msgid "Explore GitHub Repositories"
+msgstr "Explore GitHub Repositories"
+
+msgid "Failed to change pull request state."
+msgstr "Failed to change pull request state."
+
+msgid "Failed to create pull request."
+msgstr "Failed to create pull request."
+
+msgid "Failed to delete release."
+msgstr "Failed to delete release."
+
+msgid "Failed to fork repository."
+msgstr "Failed to fork repository."
+
+msgid "Failed to merge pull request."
+msgstr "Failed to merge pull request."
+
+msgid "Failed to update release."
+msgstr "Failed to update release."
+
+msgid "File updated successfully: %s"
+msgstr "File updated successfully: %s"
+
+msgid "Fork Repository"
+msgstr "Fork Repository"
+
+msgid "Forking repository: %s…"
+msgstr "Forking repository: %s…"
+
+msgid "Forks"
+msgstr "Forks"
+
+msgid "Forks:"
+msgstr "Forks:"
+
+msgid "I understand, &delete this repository"
+msgstr "I understand, &delete this repository"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Language:"
+msgstr "Language:"
+
+msgid "Loading commit details…"
+msgstr "Loading commit details…"
+
+msgid "Loading commits…"
+msgstr "Loading commits…"
+
+msgid "Loading pull requests…"
+msgstr "Loading pull requests…"
+
+msgid "Loading pull request…"
+msgstr "Loading pull request…"
+
+msgid "Merge Pull Request"
+msgstr "Merge Pull Request"
+
+msgid "Merged"
+msgstr "Merged"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "New branch name"
+msgstr "New branch name"
+
+msgid "No branch selected."
+msgstr "No branch selected."
+
+msgid "No commits found."
+msgstr "No commits found."
+
+msgid "No pull requests found."
+msgstr "No pull requests found."
+
+msgid "Open New Pull Request — %s"
+msgstr "Open New Pull Request — %s"
+
+msgid "Please enter a branch name."
+msgstr "Please enter a branch name."
+
+msgid "Please enter a commit message."
+msgstr "Please enter a commit message."
+
+msgid "Please enter a search keyword."
+msgstr "Please enter a search keyword."
+
+msgid "Please enter a title for the pull request."
+msgstr "Please enter a title for the pull request."
+
+msgid "Please select a file to edit."
+msgstr "Please select a file to edit."
+
+msgid "Pull Request #%s — %s"
+msgstr "Pull Request #%s — %s"
+
+msgid "Pull Request:"
+msgstr "Pull Request:"
+
+msgid "Pull Requests"
+msgstr "Pull Requests"
+
+msgid "Pull Requests — %s"
+msgstr "Pull Requests — %s"
+
+msgid "Pull request closed."
+msgstr "Pull request closed."
+
+msgid "Pull request created successfully."
+msgstr "Pull request created successfully."
+
+msgid "Pull request details"
+msgstr "Pull request details"
+
+msgid "Pull request details copied to clipboard."
+msgstr "Pull request details copied to clipboard."
+
+msgid "Pull request merged successfully."
+msgstr "Pull request merged successfully."
+
+msgid "Pull request reopened."
+msgstr "Pull request reopened."
+
+msgid "Release deleted successfully."
+msgstr "Release deleted successfully."
+
+msgid "Release updated successfully."
+msgstr "Release updated successfully."
+
+msgid "Repository Details — %s"
+msgstr "Repository Details — %s"
+
+msgid "Repository Settings — %s"
+msgstr "Repository Settings — %s"
+
+msgid "Repository confirmation name"
+msgstr "Repository confirmation name"
+
+msgid "Repository deleted successfully: %s"
+msgstr "Repository deleted successfully: %s"
+
+msgid "Repository details copied to clipboard."
+msgstr "Repository details copied to clipboard."
+
+msgid "Repository information"
+msgstr "Repository information"
+
+msgid "Repository settings updated successfully."
+msgstr "Repository settings updated successfully."
+
+msgid "Repository starred: %s"
+msgstr "Repository starred: %s"
+
+msgid "Repository successfully forked: %s"
+msgstr "Repository successfully forked: %s"
+
+msgid "Repository:"
+msgstr "Repository:"
+
+msgid "Repository: %s"
+msgstr "Repository: %s"
+
+msgid "Saving file: %s…"
+msgstr "Saving file: %s…"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Search failed."
+msgstr "Search failed."
+
+msgid "Search keywords"
+msgstr "Search keywords"
+
+msgid "Search results"
+msgstr "Search results"
+
+msgid "Searching repositories: %s…"
+msgstr "Searching repositories: %s…"
+
+msgid "Source and target branches cannot be the same."
+msgstr "Source and target branches cannot be the same."
+
+msgid "Source branch"
+msgstr "Source branch"
+
+msgid "Star operation failed."
+msgstr "Star operation failed."
+
+msgid "Star removed: %s"
+msgstr "Star removed: %s"
+
+msgid "Stars"
+msgstr "Stars"
+
+msgid "Stars:"
+msgstr "Stars:"
+
+msgid "State:"
+msgstr "State:"
+
+msgid "The default branch '%s' cannot be deleted."
+msgstr "The default branch '%s' cannot be deleted."
+
+msgid "To confirm deletion, please type the repository name (%s) below:"
+msgstr "To confirm deletion, please type the repository name (%s) below:"
+
+msgid "Updating repository settings…"
+msgstr "Updating repository settings…"
+
+msgid "Warning: This action cannot be undone. This will permanently delete the repository '%s', its code, branches, issues, and releases."
+msgstr "Warning: This action cannot be undone. This will permanently delete the repository '%s', its code, branches, issues, and releases."
+
+msgid "Web Address:"
+msgstr "Web Address:"
+
+msgid "(Could not load comments.)"
+msgstr "(Could not load comments.)"
+
+msgid "(Could not load file changes.)"
+msgstr "(Could not load file changes.)"
+
+msgid "A branch with this name already exists or the branch name is invalid."
+msgstr "A branch with this name already exists or the branch name is invalid."
+
+msgid "A pull request may already exist between these branches, or there are no changes to merge."
+msgstr "A pull request may already exist between these branches, or there are no changes to merge."
+
+msgid "A release with this tag already exists or the version tag is invalid."
+msgstr "A release with this tag already exists or the version tag is invalid."
+
+msgid "At least two branches are required to create a pull request."
+msgstr "At least two branches are required to create a pull request."
+
+msgid "Authorization on GitHub failed. Start the connection again."
+msgstr "Authorization on GitHub failed. Start the connection again."
+
+msgid "The search query is invalid. Check the search keywords and try again."
+msgstr "The search query is invalid. Check the search keywords and try again."
+
+msgid "This pull request cannot be merged due to merge conflicts."
+msgstr "This pull request cannot be merged due to merge conflicts."
+
+msgid "This pull request cannot be merged. It may have conflicts or require approval."
+msgstr "This pull request cannot be merged. It may have conflicts or require approval."
+
+msgid "This repository is empty."
+msgstr "This repository is empty."
+
+msgid "Your account does not have permission for this operation. Reconnecting with the required permissions may be required."
+msgstr "Your account does not have permission for this operation. Reconnecting with the required permissions may be required."
+
+msgid "&License (optional):"
+msgstr "&License (optional):"
+
+msgid "License (optional)"
+msgstr "License (optional)"
+
+msgid "None"
+msgstr "None"
+
+msgid "Confirmation Required"
+msgstr "Confirmation Required"
+
+msgid "To confirm deletion, please type the repository name '%s' exactly."
+msgstr "To confirm deletion, please type the repository name '%s' exactly."
+
+msgid "&Refresh branches"
+msgstr "&Refresh branches"
+
+msgid "&Branch"
+msgstr "&Branch"
+
+msgid "&File"
+msgstr "&File"
+
+msgid "&Tools"
+msgstr "&Tools"
+
+msgid "Copy download &link"
+msgstr "Copy download &link"
+
+msgid "Download link copied to clipboard."
+msgstr "Download link copied to clipboard."
+
+msgid "No download link available for this file."
+msgstr "No download link available for this file."
+
+msgid "&Upload file(s) from computer…"
+msgstr "&Upload file(s) from computer…"
+
+msgid "Upload &folder from computer…"
+msgstr "Upload &folder from computer…"
+
+msgid "Select file(s) to upload"
+msgstr "Select file(s) to upload"
+
+msgid "Select folder to upload"
+msgstr "Select folder to upload"
+
+msgid "Upload files — %s"
+msgstr "Upload files — %s"
+
+msgid "Upload folder — %s"
+msgstr "Upload folder — %s"
+
+msgid "Uploading %d files to folder: /%s"
+msgstr "Uploading %d files to folder: /%s"
+
+msgid "Upload %d files"
+msgstr "Upload %d files"
+
+msgid "Uploading %d files…"
+msgstr "Uploading %d files…"
+
+msgid "Uploading file (%d of %d): %s…"
+msgstr "Uploading file (%d of %d): %s…"
+
+msgid "%d files uploaded successfully."
+msgstr "%d files uploaded successfully."
+
+msgid "Uploading folder '%s' (%d files) to: /%s"
+msgstr "Uploading folder '%s' (%d files) to: /%s"
+
+msgid "Upload folder %s"
+msgstr "Upload folder %s"
+
+msgid "The selected folder contains no files."
+msgstr "The selected folder contains no files."
+
+msgid "File '%s' exceeds 50 MB limit."
+msgstr "File '%s' exceeds 50 MB limit."
+
+msgid "Uploading folder '%s' (%d files)…"
+msgstr "Uploading folder '%s' (%d files)…"
+
+msgid "Uploading folder '%s' (%d of %d): %s…"
+msgstr "Uploading folder '%s' (%d of %d): %s…"
+
+msgid "Folder '%s' uploaded successfully (%d files)."
+msgstr "Folder '%s' uploaded successfully (%d files)."
+
+msgid "&New file name or path:"
+msgstr "&New file name or path:"
+
+msgid "&Rename / Move"
+msgstr "&Rename / Move"
+
+msgid "Creating file at new path: %s…"
+msgstr "Creating file at new path: %s…"
+
+msgid "Current path: /%s"
+msgstr "Current path: /%s"
+
+msgid "Fetching file content: %s…"
+msgstr "Fetching file content: %s…"
+
+msgid "File moved successfully: %s -> %s"
+msgstr "File moved successfully: %s -> %s"
+
+msgid "Hint: Enter a new file name to rename, or include folders (e.g. 'folder/file.txt') to move."
+msgstr "Hint: Enter a new file name to rename, or include folders (e.g. 'folder/file.txt') to move."
+
+msgid "Move %s to %s"
+msgstr "Move %s to %s"
+
+msgid "New file name or path"
+msgstr "New file name or path"
+
+msgid "Please enter a new file name or path."
+msgstr "Please enter a new file name or path."
+
+msgid "Please enter a valid file path."
+msgstr "Please enter a valid file path."
+
+msgid "Please select a file to rename or move."
+msgstr "Please select a file to rename or move."
+
+msgid "Removing file from old path: %s…"
+msgstr "Removing file from old path: %s…"
+
+msgid "Rename %s to %s"
+msgstr "Rename %s to %s"
+
+msgid "Rename / &move file…"
+msgstr "Rename / &move file…"
+
+msgid "Rename / Move File — %s"
+msgstr "Rename / Move File — %s"
+
+msgid "Rename / move %s"
+msgstr "Rename / move %s"
+
+msgid "Renaming / moving file: %s…"
+msgstr "Renaming / moving file: %s…"
+
+msgid "The new path is identical to the current path."
+msgstr "The new path is identical to the current path."
+
+msgid "Cancelling upload…"
+msgstr "Cancelling upload…"
+
+msgid "Upload cancelled by user."
+msgstr "Upload cancelled by user."
+
+msgid "Upload complete. %d files have been uploaded to: %s."
+msgstr "Upload complete. %d files have been uploaded to: %s."
+
+msgid "Upload complete. File '%s' has been uploaded to: %s."
+msgstr "Upload complete. File '%s' has been uploaded to: %s."
+
+msgid "Upload complete. Folder '%s' (%d files) has been uploaded to: %s."
+msgstr "Upload complete. Folder '%s' (%d files) has been uploaded to: %s."
+
+msgid "Upload failed: %s"
+msgstr "Upload failed: %s"
+
+msgid "Upload progress"
+msgstr "Upload progress"
+
+msgid "Upload status"
+msgstr "Upload status"
+
+msgid "Uploading files…"
+msgstr "Uploading files…"
+
+msgid "&New folder name or path:"
+msgstr "&New folder name or path:"
+
+msgid "&Rename or move…"
+msgstr "&Rename or move…"
+
+msgid "Cannot move a folder into itself or its subfolder."
+msgstr "Cannot move a folder into itself or its subfolder."
+
+msgid "Current path: /%s (folder)"
+msgstr "Current path: /%s (folder)"
+
+msgid "Folder moved successfully: %s -> %s (%d files)"
+msgstr "Folder moved successfully: %s -> %s (%d files)"
+
+msgid "Hint: Enter a new folder name to rename, or change the directory path to move."
+msgstr "Hint: Enter a new folder name to rename, or change the directory path to move."
+
+msgid "Moving file (%d of %d): %s…"
+msgstr "Moving file (%d of %d): %s…"
+
+msgid "New folder name or path"
+msgstr "New folder name or path"
+
+msgid "Only files and folders can be renamed or moved."
+msgstr "Only files and folders can be renamed or moved."
+
+msgid "Please enter a new folder name or path."
+msgstr "Please enter a new folder name or path."
+
+msgid "Please enter a valid folder path."
+msgstr "Please enter a valid folder path."
+
+msgid "Please select a file or folder to rename or move."
+msgstr "Please select a file or folder to rename or move."
+
+msgid "Rename / Move Folder — %s"
+msgstr "Rename / Move Folder — %s"
+
+msgid "Rename / move folder %s"
+msgstr "Rename / move folder %s"
+
+msgid "Renaming / moving folder: %s…"
+msgstr "Renaming / moving folder: %s…"
+
+msgid "Scanning folder contents: %s…"
+msgstr "Scanning folder contents: %s…"
+
+msgid "&Copy"
+msgstr "&Copy"
+
+msgid "&Copy file or folder…"
+msgstr "&Copy file or folder…"
+
+msgid "&Destination file path:"
+msgstr "&Destination file path:"
+
+msgid "&Destination folder path:"
+msgstr "&Destination folder path:"
+
+msgid "Cannot copy a folder into itself or its subfolder."
+msgstr "Cannot copy a folder into itself or its subfolder."
+
+msgid "Copy %s"
+msgstr "Copy %s"
+
+msgid "Copy %s to %s"
+msgstr "Copy %s to %s"
+
+msgid "Copy File — %s"
+msgstr "Copy File — %s"
+
+msgid "Copy Folder — %s"
+msgstr "Copy Folder — %s"
+
+msgid "Copy folder %s to %s"
+msgstr "Copy folder %s to %s"
+
+msgid "Copying file (%d of %d): %s…"
+msgstr "Copying file (%d of %d): %s…"
+
+msgid "Copying file: %s…"
+msgstr "Copying file: %s…"
+
+msgid "Copying folder: %s…"
+msgstr "Copying folder: %s…"
+
+msgid "Creating copy at: %s…"
+msgstr "Creating copy at: %s…"
+
+msgid "Destination file path"
+msgstr "Destination file path"
+
+msgid "Destination folder path"
+msgstr "Destination folder path"
+
+msgid "File copied successfully: %s -> %s"
+msgstr "File copied successfully: %s -> %s"
+
+msgid "Folder copied successfully: %s -> %s (%d files)"
+msgstr "Folder copied successfully: %s -> %s (%d files)"
+
+msgid "Hint: Enter a destination file path (e.g. 'addon/file.txt')."
+msgstr "Hint: Enter a destination file path (e.g. 'addon/file.txt')."
+
+msgid "Hint: Enter a destination folder path (e.g. 'addon/doc')."
+msgstr "Hint: Enter a destination folder path (e.g. 'addon/doc')."
+
+msgid "Only files and folders can be copied."
+msgstr "Only files and folders can be copied."
+
+msgid "Please enter a destination file path."
+msgstr "Please enter a destination file path."
+
+msgid "Please enter a destination folder path."
+msgstr "Please enter a destination folder path."
+
+msgid "Please select a file or folder to copy."
+msgstr "Please select a file or folder to copy."
+
+msgid "The destination path is identical to the current path."
+msgstr "The destination path is identical to the current path."
+
+msgid "Calculating SHA256: %s…"
+msgstr "Calculating SHA256: %s…"
+
+msgid "Copy &SHA256 hash"
+msgstr "Copy &SHA256 hash"
+
+msgid "Could not calculate SHA256."
+msgstr "Could not calculate SHA256."
+
+msgid "SHA256 hash copied to clipboard."
+msgstr "SHA256 hash copied to clipboard."
