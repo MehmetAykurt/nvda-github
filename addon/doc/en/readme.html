@@ -1,112 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GitHub NVDA Add-on User Guide</title>
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.7;
-    color: #24292f;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  h1 {
-    color: #0969da;
-    border-bottom: 2px solid #eaecef;
-    padding-bottom: 12px;
-    margin-bottom: 20px;
-  }
-  h2 {
-    color: #1f2328;
-    border-bottom: 1px solid #d0d7de;
-    padding-bottom: 8px;
-    margin-top: 36px;
-  }
-  h3 {
-    color: #32383f;
-    margin-top: 24px;
-  }
-  .meta-box {
-    background-color: #f6f8fa;
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
-    padding: 16px 20px;
-    margin-bottom: 30px;
-  }
-  .meta-box ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  .meta-box li {
-    margin-bottom: 8px;
-  }
-  .meta-box li:last-child {
-    margin-bottom: 0;
-  }
-  .meta-label {
-    font-weight: 600;
-    color: #24292f;
-    display: inline-block;
-    width: 170px;
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 20px 0;
-  }
-  th, td {
-    border: 1px solid #d0d7de;
-    padding: 10px 14px;
-    text-align: left;
-  }
-  th {
-    background-color: #f6f8fa;
-    font-weight: 600;
-  }
-  code {
-    background-color: #f2f4f7;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.95em;
-  }
-  .license-box {
-    background-color: #fff8c5;
-    border: 1px solid #d4a72c;
-    border-left: 5px solid #9a6700;
-    border-radius: 6px;
-    padding: 18px 20px;
-    margin-top: 40px;
-  }
+body { max-width: 52rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; line-height: 1.7; color: #202020; background: #fff; }
+h1, h2, h3 { line-height: 1.35; } h2 { margin-top: 2rem; }
+a { color: #00478f; text-underline-offset: .2em; }
+a:focus-visible { outline: 3px solid #202020; outline-offset: 4px; }
+li { margin-bottom: .6rem; } kbd { font-family: inherit; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+caption { text-align: left; font-weight: bold; margin-bottom: .6rem; }
+th, td { text-align: left; vertical-align: top; padding: .65rem; border: 1px solid #777; }
+th { background: #f1f1f1; } section { scroll-margin-top: 1rem; }
+code { background-color: #f2f4f7; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+.license-box { background-color: #fff8c5; border: 1px solid #d4a72c; border-left: 5px solid #9a6700; border-radius: 6px; padding: 18px 20px; margin-top: 40px; }
+@media print { body { max-width: none; margin: 0; color: #000; } h2, h3 { break-after: avoid; } }
 </style>
 </head>
 <body>
-
+<header>
 <h1>GitHub NVDA Add-on User Guide</h1>
-
-<div class="meta-box" role="region" aria-label="Add-on Identity Information">
-  <ul>
-    <li><span class="meta-label">Add-on Name:</span> <strong>GitHub</strong></li>
-    <li><span class="meta-label">Version:</span> <strong>2026.11.01</strong></li>
-    <li><span class="meta-label">Repository:</span> <a href="https://github.com/mehmetaykurt/nvda-github" target="_blank" rel="noopener noreferrer">https://github.com/mehmetaykurt/nvda-github</a></li>
-    <li><span class="meta-label">NVDA Compatibility:</span> <strong>2026.2 and later</strong> (Tested with: 2026.3)</li>
-    <li><span class="meta-label">Developer:</span> <a href="https://mehmetaykurt.com.tr" target="_blank" rel="noopener noreferrer"><strong>Mehmet Aykurt</strong></a></li>
-    <li><span class="meta-label">E-mail Address:</span> <a href="mailto:m.aykurt38@gmail.com">m.aykurt38@gmail.com</a></li>
-  </ul>
-</div>
-
-<h2>About and Introduction</h2>
-<p><strong>What is GitHub?</strong><br>
-GitHub is the world's leading cloud platform where software developers, open-source creators, and researchers securely store projects, track code changes step-by-step over time (version control), and collaborate with communities worldwide.</p>
-
-<p><strong>What Does This Add-on Provide for Screen Reader Users?</strong><br>
-Web interfaces, packed with dense visual elements and dynamic layouts, can often be exhausting and cluttered with accessibility hurdles for blind users. Command-line tools, on the other hand, require deep terminal knowledge and memorization.</p>
-
-<p>Developed by Mehmet Aykurt, the <strong>GitHub NVDA Add-on</strong> eliminates these barriers entirely. It embeds GitHub's core, essential capabilities directly inside the NVDA screen reader, wrapped in fast, accessible, desktop dialogs controlled effortlessly with the keyboard. Browse repositories with a single shortcut, inspect code line-by-line, edit and commit files in-addon, create files and upload local documents, create and delete branches, inspect commit history with unified diffs, manage and merge pull requests, publish and manage releases with downloadable binaries, search public GitHub repositories to star and fork them, configure repository settings safely, and review notifications without ever leaving NVDA.</p>
-
-<h2>Account Connection and Security Architecture</h2>
+<p>Add-on version: 2026.11.07<br>NVDA Version: 2026.3</p>
+<p><strong>Developer</strong><br>
+<a href="https://mehmetaykurt.com.tr">Mehmet Aykurt</a></p>
+<p>For suggestions, feedback and comments:<br>
+Email: <a href="mailto:m.aykurt38@gmail.com">m.aykurt38@gmail.com</a><br>
+Telegram: <a href="https://t.me/mehmetaykurt">@mehmetaykurt</a></p>
+<h2>About</h2>
+<p>This add-on:<br>
+<br>
+Completely eliminates the complex, cluttered, and difficult-to-navigate web interface of GitHub to deliver a seamless desktop experience for screen reader users.<br>
+<br>
+Secure Account Connection (OAuth Device Flow),<br>
+Repository Management (Search, Create, Archive, Safe Deletion),<br>
+Branch Management (Switch, Create, Delete),<br>
+File and Folder Operations (View, In-addon Editing, ZIP Download, Upload Files and Folders, Rename, Move, Copy, Delete),<br>
+Commit History and Diff Review,<br>
+Pull Requests Hub and Merging,<br>
+Issue and Task Tracking (Templates, Attachments, Direct Actions, Copy Link),<br>
+Releases and Asset Distribution,<br>
+Exploring Public Repositories (Star, Fork, Direct Issue Reporting),<br>
+Notification Center,<br>
+Brings these and other essential GitHub capabilities directly to NVDA.<br>
+<br>
+You can open the add-on via NVDA Menu / Tools / GitHub or the NVDA+G shortcut;<br>
+For feature requests or feedback, please contact m.aykurt38@gmail.com.</p>
+<p><a href="../tr/readme.html" lang="tr" hreflang="tr">Türkçe kullanım kılavuzu</a></p>
+</header>
+<nav aria-label="Contents">
+<h2>Contents</h2>
+<ul>
+<li><a href="#security">1. Account Connection and Security Architecture</a></li>
+<li><a href="#main-window">2. Main Window and General Navigation</a></li>
+<li><a href="#chapter-1">3. Chapter 1: Repository, Branch, and Settings Management</a></li>
+<li><a href="#chapter-2">4. Chapter 2: File and Folder Operations</a></li>
+<li><a href="#chapter-3">5. Chapter 3: Commit History and Unified Diff Review (Ctrl+H)</a></li>
+<li><a href="#chapter-4">6. Chapter 4: Pull Requests Hub and Merging (Ctrl+P)</a></li>
+<li><a href="#chapter-5">7. Chapter 5: Issues and Task Tracking (Ctrl+I)</a></li>
+<li><a href="#chapter-6">8. Chapter 6: Releases and Package Distribution (Ctrl+R)</a></li>
+<li><a href="#chapter-7">9. Chapter 7: Explore GitHub Repositories, Starring, and Forking (Ctrl+Shift+F)</a></li>
+<li><a href="#chapter-8">10. Chapter 8: GitHub Notifications (Ctrl+Shift+B)</a></li>
+<li><a href="#shortcuts">11. Keyboard Shortcuts Summary</a></li>
+<li><a href="#license">12. Copyright and License</a></li>
+</ul>
+</nav>
+<main>
+<h2 id="security">Account Connection and Security Architecture</h2>
 <p>The add-on implements GitHub's official <strong>OAuth Device Authorization Flow</strong> standard:</p>
 <ul>
   <li><strong>No Password Sharing:</strong> You never type your GitHub password into the add-on.</li>
@@ -127,7 +88,7 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
   <li><strong>Setup Complete and Repositories Loaded:</strong> The browser announces <em>"Congratulations, you're all set! Your device is now connected."</em> and can be closed. In the background, the add-on immediately detects the authorization and automatically closes the connection dialog. The main window title bar updates to <em>"GitHub — Connected account: &lt;Username&gt;"</em>. NVDA announces <em>"Loading repositories…"</em> followed by <em>"X repositories listed."</em>, and focus lands directly in the instant search box. The add-on is fully operational.</li>
 </ol>
 
-<h2>Main Window and General Navigation</h2>
+<h2 id="main-window">Main Window and General Navigation</h2>
 <p>Open or focus the add-on from anywhere in Windows with:</p>
 <p><code>NVDA + G</code> (or <em>NVDA Menu &gt; Tools &gt; GitHub…</em>)</p>
 
@@ -152,7 +113,7 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
   <li><strong>Applications Key (or Shift+F10):</strong> Opens a clean, context-specific menu scoped to the current focus (repository actions on repositories, branch operations on the branch selector, file/folder actions on contents).</li>
 </ul>
 
-<h2>Chapter 1: Repository, Branch, and Settings Management</h2>
+<h2 id="chapter-1">Chapter 1: Repository, Branch, and Settings Management</h2>
 <p>Manage your repositories with complete control from the tree view or the main menu:</p>
 
 <h3>1. Instant Repository Search (Ctrl+F)</h3>
@@ -186,7 +147,7 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
   <li><strong>Delete Branch:</strong> Select <em>Delete current branch…</em> from the branch context menu (Shift+F10) or from the <em>Branch</em> menu to remove a branch. The default repository branch is strictly protected from deletion.</li>
 </ul>
 
-<h2>Chapter 2: File and Folder Operations</h2>
+<h2 id="chapter-2">Chapter 2: File and Folder Operations</h2>
 <p>Perform direct file management on the selected repository branch:</p>
 
 <h3>1. Viewing and Reading File Content (Enter)</h3>
@@ -233,7 +194,7 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
 <h3>10. Deleting a File (Delete)</h3>
 <p>Press <strong>Delete</strong> on any file to open the deletion confirmation dialog and commit its removal.</p>
 
-<h2>Chapter 3: Commit History and Unified Diff Review (Ctrl+H)</h2>
+<h2 id="chapter-3">Chapter 3: Commit History and Unified Diff Review (Ctrl+H)</h2>
 <p>Track all code changes and project history directly inside NVDA:</p>
 <ul>
   <li><strong>Browsing Commits (Ctrl+H):</strong> Press <code>Ctrl+H</code> or select <em>Tools &gt; Commit history…</em> to list commits on the selected branch with short SHA, commit message, author, and date. Press <strong>F5</strong> to refresh.</li>
@@ -241,7 +202,7 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
   <li><strong>Copy Details:</strong> Click <em>Copy details</em> to copy the entire diff patch and metadata to your clipboard.</li>
 </ul>
 
-<h2>Chapter 4: Pull Requests Hub and Merging (Ctrl+P)</h2>
+<h2 id="chapter-4">Chapter 4: Pull Requests Hub and Merging (Ctrl+P)</h2>
 <p>Complete collaboration workflow without a web browser:</p>
 <ul>
   <li><strong>Listing Pull Requests (Ctrl+P):</strong> Press <code>Ctrl+P</code> or select <em>Tools &gt; Pull requests…</em> to view pull requests with status (Open, Closed, Merged), author, branches, and creation date. Filter by Open, Closed, or All. Press <strong>F5</strong> to refresh.</li>
@@ -251,16 +212,19 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
   <li><strong>Merging Pull Requests:</strong> Click <em>Merge pull request…</em> on any open PR to merge contributions directly into your target branch with user-friendly conflict detection.</li>
 </ul>
 
-<h2>Chapter 5: Issues and Task Tracking (Ctrl+I)</h2>
+<h2 id="chapter-5">Chapter 5: Issues and Task Tracking (Ctrl+I)</h2>
 <p>Track issues, feedback, and milestones:</p>
 <ul>
-  <li><strong>Listing Issues (Ctrl+I):</strong> Press <code>Ctrl+I</code> or select <em>Tools &gt; Issues…</em> to list open or closed issues with instant filtering. Press <strong>F5</strong> to refresh.</li>
-  <li><strong>Opening a New Issue (Ctrl+Shift+I or Ctrl+N in dialog):</strong> Quickly submit a new task or bug report with a title and body.</li>
-  <li><strong>Viewing Issue Details and Comments (Enter):</strong> View author info, creation date, issue description, and complete comment history.</li>
-  <li><strong>Adding Comments and Toggling State:</strong> Post new comments, close open issues, or reopen resolved issues directly.</li>
+  <li><strong>Listing Issues and Direct State Toggling (Ctrl+I):</strong> Press <code>Ctrl+I</code> or select <em>Tools &gt; Issues…</em> to list open or closed issues with instant filtering. Directly close an open issue or reopen a closed issue from the list without entering the details dialog using the <strong>"Close issue"</strong> / <strong>"Reopen issue"</strong> button. Press <strong>F5</strong> to refresh.</li>
+  <li><strong>Copying Issue Link (Ctrl+Shift+C):</strong> Instantly copies the selected issue's GitHub web URL to your clipboard.</li>
+  <li><strong>Issues Context Menu (Shift+F10 or Applications Key):</strong> Opens a contextual menu for the selected issue offering: View issue, Close / Reopen issue, Copy issue link (<code>Ctrl+Shift+C</code>), and Open on web.</li>
+  <li><strong>Opening a New Issue and Template Support (Ctrl+Shift+I or Ctrl+N in dialog):</strong> Creating a new issue automatically discovers repository issue templates (both Markdown and GitHub YAML forms) and populates the body cleanly.</li>
+  <li><strong>Collapsible File and Log Attachments:</strong> Attach logs, crash dumps, or text files directly via the <em>"Add file…"</em> button; files are embedded as accessible collapsible (<code>&lt;details&gt;&lt;summary&gt;</code>) Markdown blocks.</li>
+  <li><strong>Viewing Issue Details and Comments (Enter):</strong> View author info, creation date, issue description, and complete comment history in an accessible text box.</li>
+  <li><strong>Adding Comments and State Toggling in Details:</strong> Post new comments and update issue state directly from the details view.</li>
 </ul>
 
-<h2>Chapter 6: Releases and Package Distribution (Ctrl+R)</h2>
+<h2 id="chapter-6">Chapter 6: Releases and Package Distribution (Ctrl+R)</h2>
 <p>Designed for NVDA add-on authors and open-source releases:</p>
 <ul>
   <li><strong>Browsing Releases (Ctrl+R):</strong> Press <code>Ctrl+R</code> or select <em>Tools &gt; Releases…</em> to inspect published releases, release tags, and changelogs. Press <strong>F5</strong> to refresh.</li>
@@ -269,16 +233,18 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
   <li><strong>Editing and Deleting Releases:</strong> Update tag, title, and release notes via <em>Edit release…</em>, or delete obsolete releases via <em>Delete release…</em>.</li>
 </ul>
 
-<h2>Chapter 7: Explore GitHub Repositories, Starring, and Forking (Ctrl+Shift+F)</h2>
+<h2 id="chapter-7">Chapter 7: Explore GitHub Repositories, Starring, and Forking (Ctrl+Shift+F)</h2>
 <p>Explore the entire public GitHub universe:</p>
 <ul>
   <li><strong>Global Repository Search (Ctrl+Shift+F):</strong> Search all public GitHub repositories by keywords via <em>Tools &gt; Explore GitHub repositories…</em> or <code>Ctrl+Shift+F</code>.</li>
   <li><strong>Inspecting Repositories (Enter):</strong> Review repository names, star counts, fork counts, primary programming languages, and descriptions. Press Enter to view full details and clone URLs.</li>
+  <li><strong>Directly Report an Issue (Ctrl+N) or View Issues (Ctrl+I):</strong> Click <strong>"New issue…"</strong> (<code>Ctrl+N</code>) to submit a bug report directly to any explored repository without visiting the website, complete with templates and attachment support. Click <strong>"Issues…"</strong> (<code>Ctrl+I</code>) to explore its existing issues.</li>
+  <li><strong>Search Results Context Menu (Shift+F10 or Applications Key):</strong> Context menu on any search result providing quick access to Repository details, Issues, New issue, Star/Unstar, Fork, and Open on web.</li>
   <li><strong>Star / Unstar:</strong> Star interesting projects or toggle star status with one click.</li>
   <li><strong>Forking:</strong> Click <em>Fork to my account…</em> to clone any open-source project directly to your GitHub profile.</li>
 </ul>
 
-<h2>Chapter 8: GitHub Notifications (Ctrl+Shift+B)</h2>
+<h2 id="chapter-8">Chapter 8: GitHub Notifications (Ctrl+Shift+B)</h2>
 <p>Stay updated with all activity on your repositories:</p>
 <ul>
   <li><strong>Opening Notifications (Ctrl+Shift+B):</strong> Select <em>Tools &gt; Notifications…</em> or press <code>Ctrl+Shift+B</code> to list incoming notifications with filters for <em>Only unread</em> or <em>All</em>. Press <strong>F5</strong> to refresh.</li>
@@ -287,7 +253,7 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
   <li><strong>Open on Web:</strong> Open the discussion on GitHub in your web browser if desired.</li>
 </ul>
 
-<h2>Keyboard Shortcuts Summary</h2>
+<h2 id="shortcuts">Keyboard Shortcuts Summary</h2>
 
 <table>
   <thead>
@@ -429,9 +395,19 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
       <td>Main Window</td>
     </tr>
     <tr>
+      <td><strong>Ctrl + Shift + C</strong></td>
+      <td>Copies selected issue's GitHub web link to clipboard</td>
+      <td>Issues List</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + I</strong></td>
+      <td>Opens issues list for selected repository</td>
+      <td>Explore Repositories Window</td>
+    </tr>
+    <tr>
       <td><strong>Applications (or Shift + F10)</strong></td>
-      <td>Opens context-specific menu for selected repository, branch selector, or file/folder</td>
-      <td>Repositories Tree / Contents List</td>
+      <td>Opens context-specific menu for selected repository, branch, file, issue, or search result</td>
+      <td>Repositories Tree / Contents List / Issues List / Explore Repositories</td>
     </tr>
     <tr>
       <td><strong>Space</strong></td>
@@ -447,10 +423,11 @@ Web interfaces, packed with dense visual elements and dynamic layouts, can often
 </table>
 
 <div class="license-box" role="region" aria-label="Copyright and License Notice">
-  <h2>Copyright and License</h2>
+  <h2 id="license">Copyright and License</h2>
   <p>Developed by Mehmet Aykurt.</p>
   <p><strong>Copyright &copy; 2026 Mehmet Aykurt &lt;m.aykurt38@gmail.com&gt;. All rights reserved.</strong></p>
 </div>
 
+</main>
 </body>
 </html>
