@@ -18,7 +18,7 @@ from .downloader import (
     downloadRepositoryZip,
 )
 from .file_ops import createOrUpdateFile, deleteFile, getFileSha, getRawFileContent
-from .issue_ops import addIssueComment, createIssue, getIssueComments, listIssues, setIssueState
+from .issue_ops import addIssueComment, createIssue, getIssueComments, getIssueTemplates, listIssues, setIssueState
 from .notification_ops import fetchResource, listNotifications, markAllNotificationsRead, markNotificationRead
 from .pr_ops import createPullRequest, getPullRequest, getPullRequestFiles, listPullRequests, mergePullRequest, setPullRequestState
 from .release_ops import createRelease, deleteRelease, listReleases, updateRelease, uploadReleaseAsset
@@ -265,6 +265,12 @@ class AccountService:
         return self._runWithToken(
             cancel,
             lambda bundle: getIssueComments(bundle["access_token"], fullName, issueNumber, cancel=cancel),
+        )
+
+    def getIssueTemplates(self, fullName, cancel=None):
+        return self._runWithToken(
+            cancel,
+            lambda bundle: getIssueTemplates(bundle["access_token"], fullName, cancel=cancel),
         )
 
     def createIssue(self, fullName, title, body="", cancel=None):
