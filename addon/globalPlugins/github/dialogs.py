@@ -1115,7 +1115,7 @@ class GitHubDialog(MessageMixin, wx.Dialog):
         repo = self._selectedRepository()
         if not repo:
             return
-        dlg = NewIssueDialog(self, repo["full_name"])
+        dlg = NewIssueDialog(self, repo["full_name"], service=self.service)
         data = None
         self._child = dlg
         try:
