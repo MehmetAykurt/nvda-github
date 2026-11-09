@@ -1,112 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GitHub NVDA Eklentisi Kullanım Kılavuzu</title>
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.7;
-    color: #24292f;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  h1 {
-    color: #0969da;
-    border-bottom: 2px solid #eaecef;
-    padding-bottom: 12px;
-    margin-bottom: 20px;
-  }
-  h2 {
-    color: #1f2328;
-    border-bottom: 1px solid #d0d7de;
-    padding-bottom: 8px;
-    margin-top: 36px;
-  }
-  h3 {
-    color: #32383f;
-    margin-top: 24px;
-  }
-  .meta-box {
-    background-color: #f6f8fa;
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
-    padding: 16px 20px;
-    margin-bottom: 30px;
-  }
-  .meta-box ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  .meta-box li {
-    margin-bottom: 8px;
-  }
-  .meta-box li:last-child {
-    margin-bottom: 0;
-  }
-  .meta-label {
-    font-weight: 600;
-    color: #24292f;
-    display: inline-block;
-    width: 170px;
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 20px 0;
-  }
-  th, td {
-    border: 1px solid #d0d7de;
-    padding: 10px 14px;
-    text-align: left;
-  }
-  th {
-    background-color: #f6f8fa;
-    font-weight: 600;
-  }
-  code {
-    background-color: #f2f4f7;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.95em;
-  }
-  .license-box {
-    background-color: #fff8c5;
-    border: 1px solid #d4a72c;
-    border-left: 5px solid #9a6700;
-    border-radius: 6px;
-    padding: 18px 20px;
-    margin-top: 40px;
-  }
+body { max-width: 52rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; line-height: 1.7; color: #202020; background: #fff; }
+h1, h2, h3 { line-height: 1.35; } h2 { margin-top: 2rem; }
+a { color: #00478f; text-underline-offset: .2em; }
+a:focus-visible { outline: 3px solid #202020; outline-offset: 4px; }
+li { margin-bottom: .6rem; } kbd { font-family: inherit; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+caption { text-align: left; font-weight: bold; margin-bottom: .6rem; }
+th, td { text-align: left; vertical-align: top; padding: .65rem; border: 1px solid #777; }
+th { background: #f1f1f1; } section { scroll-margin-top: 1rem; }
+code { background-color: #f2f4f7; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+.license-box { background-color: #fff8c5; border: 1px solid #d4a72c; border-left: 5px solid #9a6700; border-radius: 6px; padding: 18px 20px; margin-top: 40px; }
+@media print { body { max-width: none; margin: 0; color: #000; } h2, h3 { break-after: avoid; } }
 </style>
 </head>
 <body>
-
+<header>
 <h1>GitHub NVDA Eklentisi Kullanım Kılavuzu</h1>
-
-<div class="meta-box" role="region" aria-label="Eklenti Kimlik Bilgileri">
-  <ul>
-    <li><span class="meta-label">Eklentinin Adı:</span> <strong>GitHub</strong></li>
-    <li><span class="meta-label">Sürümü:</span> <strong>2026.11.01</strong></li>
-    <li><span class="meta-label">Depo Adresi:</span> <a href="https://github.com/mehmetaykurt/nvda-github" target="_blank" rel="noopener noreferrer">https://github.com/mehmetaykurt/nvda-github</a></li>
-    <li><span class="meta-label">NVDA Uyumluluğu:</span> <strong>2026.2 ve üzeri</strong> (Test Edilen: 2026.3)</li>
-    <li><span class="meta-label">Geliştirici:</span> <a href="https://mehmetaykurt.com.tr" target="_blank" rel="noopener noreferrer"><strong>Mehmet Aykurt</strong></a></li>
-    <li><span class="meta-label">E-posta Adresi:</span> <a href="mailto:m.aykurt38@gmail.com">m.aykurt38@gmail.com</a></li>
-  </ul>
-</div>
-
-<h2>Hakkında ve Giriş</h2>
-<p><strong>GitHub Nedir?</strong><br>
-GitHub; dünyanın dört bir yanındaki yazılım geliştiricilerin, açık kaynak üreticilerinin ve araştırmacıların projelerini bulutta güvenle sakladığı, her bir kod değişikliğini zaman içinde adım adım takip ettiği (sürüm kontrolü) ve dünya genelindeki topluluklarla ortaklaşa yazılım ürettiği küresel bir bilişim ekosistemidir.</p>
-
-<p><strong>Bu Eklenti Görme Engelli Kullanıcıya Ne Sağlar?</strong><br>
-Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle ekran okuyucu kullanıcıları için kimi zaman yorucu, karmaşık ve erişilebilirlik engelleriyle dolu olabilmektedir. Komut satırı araçları ise derin terminal bilgisi ve ezber gerektirir.</p>
-
-<p>Mehmet Aykurt tarafından geliştirilen <strong>GitHub NVDA Eklentisi</strong>, bu engelleri bütünüyle ortadan kaldırır. GitHub'ın en temel ve güçlü işlevlerini; doğrudan NVDA ekran okuyucusunun içine, sade, klavye ile kusursuz yönetilebilen, duyarlı ve kristal netliğinde masaüstü pencerelerine taşır. Tek bir kısayol tuşuyla depolarınızı gezebilir, kaynak kod ve metin dosyalarını satır satır okuyabilir, doğrudan eklenti içinde dosyaları düzenleyip kaydedebilir, yeni dosyalar oluşturup bilgisayarınızdan dosya yükleyebilir, yeni dallar oluşturup silebilir, deponun işleme (commit) geçmişini ve farklarını (diff) inceleyebilir, çekme isteklerini (Pull Requests) yönetip birleştirebilir (merge), yeni sürümler yayınlayıp var olanları güncelleyebilir veya silebilir, küresel GitHub deposu araması yapıp projeleri yıldızlayabilir ve çatallayabilir (fork), depo ayarlarını yapılandırıp güvenle silebilir ve tüm bildirimlerinizi tarayıcıya muhtaç kalmadan doğrudan eklenti içinde görüntüleyebilirsiniz.</p>
-
-<h2>Hesap Bağlama ve Güvenlik Altyapısı</h2>
+<p>Eklenti sürümü: 2026.11.07<br>NVDA Sürümü: 2026.3</p>
+<p><strong>Geliştirici</strong><br>
+<a href="https://mehmetaykurt.com.tr">Mehmet Aykurt</a></p>
+<p>Her türlü öneri, görüş ve düşünceleriniz için:<br>
+E-posta: <a href="mailto:m.aykurt38@gmail.com">m.aykurt38@gmail.com</a><br>
+Telegram: <a href="https://t.me/mehmetaykurt">@mehmetaykurt</a></p>
+<h2>Hakkında</h2>
+<p>Bu eklenti:<br>
+<br>
+GitHub'ın web sitesindeki karmaşık, dağınık ve ekran okuyucuyla takibi zor olan yapısını tamamen ortadan kaldırarak görme engelli kullanıcılara kusursuz bir masaüstü deneyimi sunar.<br>
+<br>
+Hesaba Güvenli Bağlanma (OAuth Cihaz Akışı),<br>
+Depo Yönetimi (Arama, Yeni Depo Oluşturma, Arşivleme, Güvenli Silme),<br>
+Çalışma Dalları Yönetimi (Dallar Arası Geçiş, Yeni Dal Oluşturma ve Silme),<br>
+Dosya ve Klasör İşlemleri (Görüntüleme, Dahili Düzenleyiciyle Düzenleme, ZIP İndirme, Dosya ve Klasör Yükleme, Yeniden Adlandırma, Taşıma, Kopyalama, Silme),<br>
+İşleme (Commit) Geçmişi ve Değişiklik İnceleme (Fark/Diff İnceleme),<br>
+Çekme İstekleri (Pull Requests) Merkezi ve Kod Birleştirme,<br>
+Sorun, Hata ve Görev Takibi (Şablonlar, Dosya/Günlük İliştirme, Doğrudan Kapatma/Açma, Bağlantı Kopyalama),<br>
+Sürümler ve Kurulum Paketi Dağıtımı (Releases),<br>
+Açık Kaynak Projeleri Keşfetme, Yıldızlama, Çatallama ve Doğrudan Sorun Bildirme,<br>
+GitHub Bildirim Merkezi gibi en çok ihtiyaç duyulan tüm GitHub özelliklerini doğrudan NVDA'ya kazandırmaktadır.<br>
+<br>
+NVDA menüsü / Araçlar / GitHub seçeneği veya NVDA+G kısayol tuşuyla eklentiye ulaşabilir;<br>
+Eklenmesini istediğiniz özellikler veya geri bildirimleriniz için m.aykurt38@gmail.com adresine bildirimde bulunabilirsiniz.</p>
+<p><a href="../en/readme.html" lang="en" hreflang="en">English user guide</a></p>
+</header>
+<nav aria-label="İçindekiler">
+<h2>İçindekiler</h2>
+<ul>
+<li><a href="#guvenlik">1. Hesap Bağlama ve Güvenlik Altyapısı</a></li>
+<li><a href="#ana-pencere">2. Ana Pencere ve Genel Gezinme</a></li>
+<li><a href="#depo-yonetimi">3. Bölüm 1: Depo, Dal ve Ayar Yönetimi</a></li>
+<li><a href="#dosya-islemleri">4. Bölüm 2: Dosya ve Klasör İşlemleri</a></li>
+<li><a href="#isleme-gecmisi">5. Bölüm 3: İşleme (Commit) Geçmişi ve Değişiklik İnceleme (Ctrl+H)</a></li>
+<li><a href="#cekme-istekleri">6. Bölüm 4: Çekme İstekleri (Pull Requests) Merkezi (Ctrl+P)</a></li>
+<li><a href="#sorun-takibi">7. Bölüm 5: Sorunlar / Hata ve Görev Takibi (Issues - Ctrl+I)</a></li>
+<li><a href="#surum-yonetimi">8. Bölüm 6: Sürümler ve Paket Yayınlama (Releases - Ctrl+R)</a></li>
+<li><a href="#depo-kesfetme">9. Bölüm 7: GitHub Depolarını Keşfetme, Yıldızlama ve Çatallama (Ctrl+Shift+F)</a></li>
+<li><a href="#bildirimler">10. Bölüm 8: GitHub Bildirimleri (Notifications - Ctrl+Shift+B)</a></li>
+<li><a href="#kisayollar">11. Kısayol Tuşları Tablosu</a></li>
+<li><a href="#lisans">12. Telif Hakkı ve Lisans</a></li>
+</ul>
+</nav>
+<main>
+<h2 id="guvenlik">Hesap Bağlama ve Güvenlik Altyapısı</h2>
 <p>Eklenti, GitHub'ın resmi ve modern <strong>Cihaz Yetkilendirme Akışı (OAuth Device Authorization Flow)</strong> standardını kullanır:</p>
 <ul>
   <li><strong>Parola Paylaşılmaz:</strong> GitHub kullanıcı adınızı veya şifrenizi asla eklentiye girmeniz gerekmez.</li>
@@ -127,7 +87,7 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
   <li><strong>Kurulumun Tamamlanması ve Depoların Yüklenmesi:</strong> Tarayıcıda <em>"Tebrikler, her şey tamam! Cihazınız artık bağlı."</em> (<em>Congratulations, you're all set!</em>) bildirimi görüntülenir; tarayıcı sekmesi kapatılabilir. Arka planda bekleyen eklenti yetkilendirmeyi anında algılar ve bağlantı penceresini kendiliğinden kapatır. Ana pencere başlığı <em>"GitHub — Bağlı hesap: &lt;Kullanıcı Adınız&gt;"</em> olarak güncellenir. NVDA <em>"Depolar yükleniyor…"</em> anonsunu yapar ve birkaç saniye içinde tüm depolar taranarak <em>"X depo listelendi."</em> uyarısıyla odak doğrudan canlı arama kutusuna yerleşir. Eklenti kullanıma bütünüyle hazır duruma gelir.</li>
 </ol>
 
-<h2>Ana Pencere ve Genel Gezinme</h2>
+<h2 id="ana-pencere">Ana Pencere ve Genel Gezinme</h2>
 <p>Eklentiyi bilgisayarınızın her yerinden başlatmak için tek bir evrensel kısayol kullanılır:</p>
 <p><code>NVDA + G</code> (veya <em>NVDA Menüsü &gt; Araçlar &gt; GitHub…</em>)</p>
 
@@ -152,7 +112,7 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
   <li><strong>Uygulamalar Tuşu (veya Shift+F10):</strong> Bulunduğunuz alana göre (Depolar ağacında depoya özel, Dal seçim kutusunda dala özel, İçerik listesinde dosya/klasöre özel) temiz ve hedefe yönelik bağlam menüsünü açar.</li>
 </ul>
 
-<h2>Bölüm 1: Depo, Dal ve Ayar Yönetimi</h2>
+<h2 id="depo-yonetimi">Bölüm 1: Depo, Dal ve Ayar Yönetimi</h2>
 <p>Depo ağacı üzerinde veya ana menü aracılığıyla depolarınızı tam kontrolle yönetebilirsiniz:</p>
 
 <h3>1. Depolarda Canlı Arama (Ctrl+F)</h3>
@@ -194,7 +154,7 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
   <li><strong>Geçerli Dalı Silme:</strong> Dal bağlam menüsünden veya ana menüdeki <em>Dal</em> menüsünden <em>Geçerli dalı sil…</em> seçeneğiyle üzerinde çalıştığınız dalı silebilirsiniz. Yanlışlıkla ana yapının bozulmasını önlemek için GitHub varsayılan dalı (default branch) eklenti tarafından kesin koruma altındadır ve silinemez.</li>
 </ul>
 
-<h2>Bölüm 2: Dosya ve Klasör İşlemleri</h2>
+<h2 id="dosya-islemleri">Bölüm 2: Dosya ve Klasör İşlemleri</h2>
 <p>İçerik listesindeyken deponuzdaki dosyalar üzerinde doğrudan işlem yapabilirsiniz:</p>
 
 <h3>1. Dosya İçeriğini Okuma ve Görüntüleme (Enter)</h3>
@@ -241,7 +201,7 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
 <h3>10. Dosya Silme (Delete)</h3>
 <p>Seçili dosya üzerindeyken <strong>Delete</strong> tuşuna basıldığında silme onay penceresi açılır. İşleme mesajını onayladığınızda dosya depodan güvenle kaldırılır.</p>
 
-<h2>Bölüm 3: İşleme (Commit) Geçmişi ve Değişiklik İnceleme (Ctrl+H)</h2>
+<h2 id="isleme-gecmisi">Bölüm 3: İşleme (Commit) Geçmişi ve Değişiklik İnceleme (Ctrl+H)</h2>
 <p>Depodaki tüm geliştirme adımlarını, kimin ne zaman hangi değişikliği yaptığını adım adım takip edebilirsiniz:</p>
 <ul>
   <li><strong>İşleme Geçmişini Açma (Ctrl+H):</strong> <code>Ctrl+H</code> kısayolu veya ana menüdeki <em>Araçlar &gt; İşleme geçmişi…</em> seçeneğiyle seçili dalın işleme geçmişini SHA özeti, işleme iletisi, yazar ve tarih bilgileriyle listeler. <strong>F5</strong> tuşuyla liste anında tazelenir.</li>
@@ -249,7 +209,7 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
   <li><strong>Panoya Kopyalama:</strong> <em>Ayrıntıları kopyala</em> düğmesiyle tüm işleme bilgisi ve yama metni panoya aktarılabilir.</li>
 </ul>
 
-<h2>Bölüm 4: Çekme İstekleri (Pull Requests) Merkezi (Ctrl+P)</h2>
+<h2 id="cekme-istekleri">Bölüm 4: Çekme İstekleri (Pull Requests) Merkezi (Ctrl+P)</h2>
 <p>Ortak projelerde kod katkılarını incelemek, tartışmak ve ana projeye dahil etmek için eksiksiz PR yönetim merkezi:</p>
 <ul>
   <li><strong>Çekme İsteklerini Listeleme (Ctrl+P):</strong> <code>Ctrl+P</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Çekme istekleri…</em> seçeneğiyle deponun çekme isteklerini numarası, durumu (Açık, Kapalı, Birleştirildi), başlığı, yazarı ve kaynak/hedef dallarıyla listeler. Filtre kutusuyla <em>Açık</em>, <em>Kapalı</em> veya <em>Tümü</em> seçilebilir. <strong>F5</strong> ile liste sunucudan yenilenir.</li>
@@ -259,16 +219,19 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
   <li><strong>Doğrudan Eklenti İçinden Birleştirme (Merge):</strong> Açık bir çekme isteğinde <em>Çekme isteğini birleştir…</em> düğmesiyle katkıyı güvenle hedef dala birleştirebilirsiniz. Olası birleştirme çakışmaları (conflict) eklenti tarafından kullanıcı dostu biçimde bildirilir.</li>
 </ul>
 
-<h2>Bölüm 5: Sorunlar / Hata ve Görev Takibi (Issues - Ctrl+I)</h2>
+<h2 id="sorun-takibi">Bölüm 5: Sorunlar / Hata ve Görev Takibi (Issues - Ctrl+I)</h2>
 <p>Projelerinizdeki geri bildirimleri, yapılacak işleri ve hata raporlarını takip etmek için:</p>
 <ul>
-  <li><strong>Sorunları Listeleme (Ctrl+I):</strong> <code>Ctrl+I</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Sorunlar…</em> seçeneğiyle deponun açık veya kapalı tüm sorunlarını listeler. Durum filtre kutusuyla açık/kapalı sorunlar arasında filtreleme yapılabilir. <strong>F5</strong> ile liste yenilenir.</li>
-  <li><strong>Yeni Sorun Açma (Ctrl+Shift+I veya diyalogda Ctrl+N):</strong> Başlık ve açıklama girilerek saniyeler içinde yeni bir sorun veya görev kaydı oluşturulur.</li>
+  <li><strong>Sorunları Listeleme ve Durum Değiştirme (Ctrl+I):</strong> <code>Ctrl+I</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Sorunlar…</em> seçeneğiyle deponun açık veya kapalı tüm sorunlarını listeler. Durum filtre kutusuyla açık/kapalı sorunlar arasında filtreleme yapılabilir. Seçili bir sorunu detay penceresine girmeden doğrudan listeden kapatmak veya yeniden açmak için <strong>"Sorunu kapat"</strong> / <strong>"Sorunu tekrar aç"</strong> düğmesi kullanılabilir. <strong>F5</strong> ile liste yenilenir.</li>
+  <li><strong>Sorun Bağlantısını Kopyalama (Ctrl+Shift+C):</strong> Sorunlar listesinde seçili sorunun GitHub web bağlantısını tek hamlede panoya kopyalar.</li>
+  <li><strong>Sorunlar Bağlam Menüsü (Shift+F10 veya Uygulama Tuşu):</strong> Sorunlar listesindeyken basıldığında; sorunu görüntüleme, kapatma/açma, bağlantıyı kopyalama (<code>Ctrl+Shift+C</code>) ve web üzerinde açma seçeneklerini sunan pratik bir bağlam menüsü açılır.</li>
+  <li><strong>Yeni Sorun Açma ve Şablonlar Desteği (Ctrl+Shift+I veya diyalogda Ctrl+N):</strong> Yeni bir sorun açarken deponun resmi sorun şablonları (Markdown ve GitHub YAML formları) otomatik olarak algılanıp listelenir. Şablon seçildiğinde form alanları anında hazır metne dönüşür.</li>
+  <li><strong>Dosya ve Günlük (Log) İliştirme Desteği:</strong> Yeni sorun penceresindeki <em>"Dosya ekle…"</em> düğmesiyle bilgisayarınızdan hata günlüğü, ekran görüntüsü veya yapılandırma dosyası seçebilirsiniz. Dosya içeriği sorunun gövdesine ekran okuyucu dostu daraltılabilir (<code>&lt;details&gt;&lt;summary&gt;</code>) bloklar hâlinde yerleştirilir.</li>
   <li><strong>Sorun Detaylarını İnceleme (Enter):</strong> Sorunun yazarı, açılış tarihi, açıklama metni ve tüm yorum geçmişi kronolojik olarak ayrıntılı bir metin kutusunda okunabilir.</li>
-  <li><strong>Yorum Ekleme ve Durum Değiştirme:</strong> Sorun penceresinden tek tuşla yeni yorum yazabilir, açık bir sorunu kapatabilir veya kapalı bir sorunu tekrar açabilirsiniz.</li>
+  <li><strong>Yorum Ekleme ve Detaydan Durum Değiştirme:</strong> Sorun detay penceresinden de tek tuşla yeni yorum yazabilir, sorunun durumunu değiştirebilirsiniz.</li>
 </ul>
 
-<h2>Bölüm 6: Sürümler ve Paket Yayınlama (Releases - Ctrl+R)</h2>
+<h2 id="surum-yonetimi">Bölüm 6: Sürümler ve Paket Yayınlama (Releases - Ctrl+R)</h2>
 <p>Özellikle NVDA eklentisi veya açık kaynak yazılım geliştiren kullanıcılar için tasarlanan sürüm yönetim merkezi:</p>
 <ul>
   <li><strong>Sürümleri Listeleme (Ctrl+R):</strong> <code>Ctrl+R</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Sürümler…</em> seçeneğiyle depoda yayınlanmış tüm sürümleri listeler. <strong>F5</strong> ile liste yenilenir.</li>
@@ -277,16 +240,18 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
   <li><strong>Sürüm Düzenleme ve Silme:</strong> Sürüm listesindeki <em>Sürümü düzenle…</em> seçeneğiyle sürüm etiketini, başlığını ve notlarını güncelleyebilir; <em>Sürümü sil…</em> seçeneğiyle eski sürümleri onay vererek kaldırabilirsiniz.</li>
 </ul>
 
-<h2>Bölüm 7: GitHub Depolarını Keşfetme, Yıldızlama ve Çatallama (Ctrl+Shift+F)</h2>
+<h2 id="depo-kesfetme">Bölüm 7: GitHub Depolarını Keşfetme, Yıldızlama ve Çatallama (Ctrl+Shift+F)</h2>
 <p>Kendi depolarınızın dışına çıkıp tüm GitHub evrenini keşfedin:</p>
 <ul>
   <li><strong>Küresel Depo Araması (Ctrl+Shift+F):</strong> Ana menüdeki <em>Araçlar &gt; GitHub depolarını keşfet…</em> seçeneği veya <code>Ctrl+Shift+F</code> kısayoluyla tüm açık GitHub depolarında anahtar sözcüklerle arama yapabilirsiniz.</li>
   <li><strong>Sonuçları ve Depo Detaylarını İnceleme (Enter):</strong> Arama sonuçlarında depoların adı, yıldız sayısı, çatal (fork) sayısı, birincil yazılım dili ve açıklama metni listelenir. Enter ile tam depo detayları açılır.</li>
+  <li><strong>Doğrudan Yeni Sorun Bildirme (Ctrl+N) ve Sorunları Açma (Ctrl+I):</strong> Arama sonuçlarında seçtiğiniz herhangi bir açık depoya web sitesine gitmeden <strong>"Yeni sorun…"</strong> (<code>Ctrl+N</code>) düğmesiyle anında hata veya istek bildirebilir; <strong>"Sorunlar…"</strong> (<code>Ctrl+I</code>) düğmesiyle var olan sorunlarını inceleyebilirsiniz.</li>
+  <li><strong>Arama Bağlam Menüsü (Shift+F10 veya Uygulama Tuşu):</strong> Arama sonuçlarında seçili depo üzerinde hızlıca detayları görme, sorunları açma, yeni sorun bildirme, yıldızlama, çatallama veya web'de açma menüsünü sunar.</li>
   <li><strong>Yıldızlama (Star / Unstar):</strong> Beğendiğiniz bir projeyi tek tıkla yıldızlayabilir veya daha önce verdiğiniz yıldızı geri alabilirsiniz.</li>
   <li><strong>Hesabınıza Çatallama (Fork):</strong> Bir açık kaynak projeyi tek tıkla kendi GitHub hesabınıza kopyalayarak (fork ederek) üzerinde özgürce geliştirmeye başlayabilirsiniz.</li>
 </ul>
 
-<h2>Bölüm 8: GitHub Bildirimleri (Notifications - Ctrl+Shift+B)</h2>
+<h2 id="bildirimler">Bölüm 8: GitHub Bildirimleri (Notifications - Ctrl+Shift+B)</h2>
 <p>GitHub hesabınıza gelen tüm güncellemelerden anında haberdar olun:</p>
 <ul>
   <li><strong>Bildirimleri Açma (Ctrl+Shift+B):</strong> <code>Ctrl+Shift+B</code> kısayolu veya ana menüdeki <em>Araçlar &gt; Bildirimler…</em> seçeneğiyle gelen kutunuzdaki bildirimleri listeler. Filtre kutusuyla <em>Sadece okunmamışlar</em> veya <em>Tümü</em> seçilebilir. <strong>F5</strong> ile liste yenilenir.</li>
@@ -295,7 +260,7 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
   <li><strong>Web'de Aç:</strong> İhtiyaç duyulursa bildirim web tarayıcısında da görüntülenebilir.</li>
 </ul>
 
-<h2>Kısayol Tuşları Tablosu</h2>
+<h2 id="kisayollar">Kısayol Tuşları Tablosu</h2>
 
 <table>
   <thead>
@@ -437,9 +402,19 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
       <td>Ana Pencere</td>
     </tr>
     <tr>
+      <td><strong>Ctrl + Shift + C</strong></td>
+      <td>Seçili sorunun GitHub web bağlantısını panoya kopyalar</td>
+      <td>Sorunlar Listesi</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + I</strong></td>
+      <td>Seçili deponun sorunlarını listeler</td>
+      <td>Depo Keşfetme Penceresi</td>
+    </tr>
+    <tr>
       <td><strong>Uygulamalar (veya Shift + F10)</strong></td>
-      <td>Bulunulan alana göre (Depo, Dal veya Dosya) bağlam menüsünü açar</td>
-      <td>Depolar Ağacı / İçerik Listesi</td>
+      <td>Bulunulan alana göre (Depo, Dal, Dosya, Sorun veya Arama Sonucu) bağlam menüsünü açar</td>
+      <td>Depolar Ağacı / İçerik Listesi / Sorunlar Listesi / Depo Keşfetme</td>
     </tr>
     <tr>
       <td><strong>Boşluk (Space)</strong></td>
@@ -455,10 +430,11 @@ Web arayüzleri, yoğun görsel öğeler ve dinamik sayfa yapıları nedeniyle e
 </table>
 
 <div class="license-box" role="region" aria-label="Telif Hakkı ve Lisans Bildirimi">
-  <h2>Telif Hakkı ve Lisans</h2>
+  <h2 id="lisans">Telif Hakkı ve Lisans</h2>
   <p>Mehmet Aykurt tarafından geliştirilmiştir.</p>
   <p><strong>Telif Hakkı &copy; 2026 Mehmet Aykurt &lt;m.aykurt38@gmail.com&gt;. Tüm hakları saklıdır.</strong></p>
 </div>
 
+</main>
 </body>
 </html>
