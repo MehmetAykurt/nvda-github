@@ -1783,3 +1783,63 @@ msgstr "SHA256 hesaplanamadı."
 
 msgid "SHA256 hash copied to clipboard."
 msgstr "SHA256 değeri panoya kopyalandı."
+
+msgid "&Template:"
+msgstr "&Şablon:"
+
+msgid "Template"
+msgstr "Şablon"
+
+msgid "Blank / Default form"
+msgstr "Boş / Standart form"
+
+msgid "Unnamed template"
+msgstr "İsimsiz şablon"
+
+msgid "&Add file…"
+msgstr "&Dosya ekle…"
+
+msgid "Add file"
+msgstr "Dosya ekle"
+
+msgid "All files (*.*)"
+msgstr "Tüm dosyalar (*.*)"
+
+msgid "All supported files (*.log;*.txt;*.json;*.md;*.py;*.ini;*.diff;*.patch)"
+msgstr "Desteklenen tüm dosyalar (*.log;*.txt;*.json;*.md;*.py;*.ini;*.diff;*.patch)"
+
+msgid "Attachment: %s"
+msgstr "Ek: %s"
+
+msgid "Could not read file."
+msgstr "Dosya okunamadı."
+
+msgid "File '%s' attached."
+msgstr "'%s' dosyası eklendi."
+
+msgid "Log and text files (*.log;*.txt)"
+msgstr "Günlük ve metin dosyaları (*.log;*.txt)"
+
+msgid "Select file to attach"
+msgstr "Eklenecek dosyayı seçin"
+
+msgid "The selected file is too large (%s MB). Maximum attachment size is 1 MB."
+msgstr "Seçilen dosya çok büyük (%s MB). En fazla ek boyutu 1 MB'tır."
+
+msgid "&Copy issue link"
+msgstr "&Sorun bağlantısını kopyala"
+
+msgid "Closing issue…"
+msgstr "Sorun kapatılıyor…"
+
+msgid "Issue link copied to clipboard."
+msgstr "Sorun bağlantısı panoya kopyalandı."
+
+msgid "Opening issue on web…"
+msgstr "Sorun web'de açılıyor…"
+
+msgid "Please select an issue first."
+msgstr "Lütfen önce bir sorun seçin."
+
+msgid "Reopening issue…"
+msgstr "Sorun yeniden açılıyor…"
