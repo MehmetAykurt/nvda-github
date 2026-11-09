@@ -8,8 +8,10 @@ import addonHandler
 addonHandler.initTranslation()
 
 import json
+import os
 import re
 import socket
+import threading
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -256,21 +258,202 @@ def setIssueState(token, full_name, issue_number, state="closed", cancel=None):
         raise AuthError("network") from None
 
 
-class NewIssueDialog(wx.Dialog):
-    """Accessible dialog for creating a new issue."""
+def _strip_quotes(s):
+    s = s.strip()
+    if len(s) >= 2 and ((s[0] == '"' and s[-1] == '"') or (s[0] == "'" and s[-1] == "'")):
+        return s[1:-1]
+    return s
 
-    def __init__(self, parent, repo_name):
+
+def _parse_issue_template(filename, raw_content):
+    """Parses a Markdown or YAML issue template into a dict with name, title, about, and body."""
+    raw_content = raw_content or ""
+    lower_fn = filename.lower()
+
+    if lower_fn.endswith((".yml", ".yaml")):
+        name = ""
+        about = ""
+        title = ""
+        sections = []
+
+        for line in raw_content.splitlines():
+            line_str = line.strip()
+            if line_str.startswith("name:"):
+                name = _strip_quotes(line_str.split("name:", 1)[1])
+            elif line_str.startswith("description:") or line_str.startswith("about:"):
+                about = _strip_quotes(line_str.split(":", 1)[1])
+            elif line_str.startswith("title:"):
+                title = _strip_quotes(line_str.split("title:", 1)[1])
+            elif line_str.startswith("body:"):
+                break
+
+        blocks = re.split(r"\n\s*-\s+type:\s*", raw_content)
+        for block in blocks[1:]:
+            lines = block.splitlines()
+            b_type = lines[0].strip() if lines else ""
+            label = ""
+            val = ""
+            m_label = re.search(r"label:\s*(.*)", block)
+            if m_label:
+                label = _strip_quotes(m_label.group(1))
+            if b_type == "markdown":
+                m_val = re.search(r"value:\s*\|\s*\n(.*?)(\n\s*[a-z_]+:|\Z)", block, re.DOTALL)
+                if m_val:
+                    val = m_val.group(1).strip()
+                else:
+                    m_val_single = re.search(r"value:\s*([^\n\r]+)", block)
+                    if m_val_single:
+                        val = m_val_single.group(1).strip()
+                    elif m_label:
+                        val = label
+                if val:
+                    sections.append(val)
+            elif label:
+                if b_type == "checkboxes":
+                    opts = re.findall(r"label:\s*([^\n\r]+)", block)
+                    opts_text = "\n".join(f"- [ ] {opt.strip(' \'"')}" for opt in opts[1:]) if len(opts) > 1 else ""
+                    sections.append(f"### {label}\n{opts_text}".rstrip())
+                else:
+                    sections.append(f"### {label}\n")
+
+        if not name:
+            name = filename.rsplit(".", 1)[0].replace("-", " ").replace("_", " ").title()
+        return {
+            "name": name,
+            "about": about,
+            "title": title,
+            "body": "\n\n".join(sections),
+            "filename": filename,
+        }
+
+    # Markdown template (.md)
+    name = ""
+    about = ""
+    title = ""
+    body = raw_content
+
+    m = re.match(r"^---\s*\n(.*?)\n---\s*\n(.*)$", raw_content, re.DOTALL)
+    if m:
+        fm, body = m.groups()
+        for line in fm.splitlines():
+            line_str = line.strip()
+            if line_str.startswith("name:"):
+                name = _strip_quotes(line_str.split("name:", 1)[1])
+            elif line_str.startswith("about:") or line_str.startswith("description:"):
+                about = _strip_quotes(line_str.split(":", 1)[1])
+            elif line_str.startswith("title:"):
+                title = _strip_quotes(line_str.split(":", 1)[1])
+
+    if not name:
+        name = filename.rsplit(".", 1)[0].replace("-", " ").replace("_", " ").title()
+
+    return {
+        "name": name,
+        "about": about,
+        "title": title,
+        "body": body.strip(),
+        "filename": filename,
+    }
+
+
+def getIssueTemplates(token, full_name, cancel=None):
+    """Fetches and parses issue templates for a repository."""
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", full_name):
+        return []
+    _check_cancelled(cancel)
+
+    opener = _build_opener()
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "application/vnd.github.v3+json",
+        "Authorization": f"Bearer {token}",
+    }
+
+    templates = []
+    dir_url = f"https://api.github.com/repos/{full_name}/contents/.github/ISSUE_TEMPLATE"
+    req = urllib.request.Request(dir_url, headers=headers)
+    items = None
+
+    try:
+        with opener.open(req, timeout=15) as response:
+            items = json.loads(response.read().decode("utf-8"))
+    except Exception:
+        items = None
+
+    _check_cancelled(cancel)
+
+    if isinstance(items, list):
+        for item in items:
+            _check_cancelled(cancel)
+            if not isinstance(item, dict) or item.get("type") != "file":
+                continue
+            fname = item.get("name", "")
+            lower_fname = fname.lower()
+            if not lower_fname.endswith((".md", ".yaml", ".yml")) or lower_fname.startswith("config."):
+                continue
+            path = item.get("path") or f".github/ISSUE_TEMPLATE/{fname}"
+            file_url = f"https://api.github.com/repos/{full_name}/contents/{path}"
+            raw_headers = dict(headers)
+            raw_headers["Accept"] = "application/vnd.github.raw+json"
+            raw_req = urllib.request.Request(file_url, headers=raw_headers)
+            try:
+                with opener.open(raw_req, timeout=15) as resp:
+                    raw_content = resp.read().decode("utf-8", errors="replace")
+                tmpl = _parse_issue_template(fname, raw_content)
+                if tmpl:
+                    templates.append(tmpl)
+            except Exception:
+                continue
+
+    if not templates:
+        for single_path in ("ISSUE_TEMPLATE.md", ".github/issue_template.md", "issue_template.md"):
+            _check_cancelled(cancel)
+            file_url = f"https://api.github.com/repos/{full_name}/contents/{single_path}"
+            raw_headers = dict(headers)
+            raw_headers["Accept"] = "application/vnd.github.raw+json"
+            raw_req = urllib.request.Request(file_url, headers=raw_headers)
+            try:
+                with opener.open(raw_req, timeout=15) as resp:
+                    raw_content = resp.read().decode("utf-8", errors="replace")
+                tmpl = _parse_issue_template(single_path.split("/")[-1], raw_content)
+                if tmpl:
+                    templates.append(tmpl)
+                    break
+            except Exception:
+                continue
+
+    return templates
+
+
+class NewIssueDialog(wx.Dialog):
+    """Accessible dialog for creating a new issue, with template support."""
+
+    def __init__(self, parent, repo_name, service=None, templates=None):
         super().__init__(
             parent,
             title=_("New issue — %s") % repo_name,
-            size=(600, 450),
+            size=(600, 500),
             style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
         )
+        self._repo_name = repo_name
+        self._service = service
+        self._templates = list(templates) if templates else []
+        self._closing = False
+        self._cancel = threading.Event()
 
         layout = wx.BoxSizer(wx.VERTICAL)
 
+        # Template selection
+        template_label = wx.StaticText(self, label=_("&Template:"))
+        layout.Add(template_label, 0, wx.LEFT | wx.RIGHT | wx.TOP, 10)
+        self.template_choice = wx.Choice(self, choices=[_("Blank / Default form")])
+        self.template_choice.SetName(_("Template"))
+        self.template_choice.SetSelection(0)
+        self.template_choice.Bind(wx.EVT_CHOICE, self._onTemplateChanged)
+        layout.Add(self.template_choice, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 6)
+
         title_label = wx.StaticText(self, label=_("&Title:"))
-        layout.Add(title_label, 0, wx.LEFT | wx.RIGHT | wx.TOP, 10)
+        layout.Add(title_label, 0, wx.LEFT | wx.RIGHT | wx.TOP, 5)
         self.title_ctrl = wx.TextCtrl(self)
         self.title_ctrl.SetName(_("Title"))
         layout.Add(self.title_ctrl, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
@@ -281,20 +464,159 @@ class NewIssueDialog(wx.Dialog):
         self.body_ctrl.SetName(_("Description (optional)"))
         layout.Add(self.body_ctrl, 1, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 10)
 
-        button_sizer = wx.BoxSizer(wx.HORIZONTAL)
+        action_sizer = wx.BoxSizer(wx.HORIZONTAL)
+        self.add_file_btn = wx.Button(self, label=_("&Add file…"))
+        self.add_file_btn.SetName(_("Add file"))
+        self.add_file_btn.Bind(wx.EVT_BUTTON, self._onAddFile)
+        action_sizer.Add(self.add_file_btn, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 10)
+
+        action_sizer.Add((0, 0), 1, wx.EXPAND)
+
         self.ok_btn = wx.Button(self, wx.ID_OK, _("&Submit new issue"))
         self.ok_btn.SetDefault()
         self.ok_btn.Bind(wx.EVT_BUTTON, self._onSubmit)
-        button_sizer.Add(self.ok_btn, 0, wx.RIGHT, 10)
+        action_sizer.Add(self.ok_btn, 0, wx.RIGHT, 10)
 
         self.cancel_btn = wx.Button(self, wx.ID_CANCEL, _("&Cancel"))
-        button_sizer.Add(self.cancel_btn, 0)
+        action_sizer.Add(self.cancel_btn, 0)
 
-        layout.Add(button_sizer, 0, wx.ALIGN_RIGHT | wx.RIGHT | wx.BOTTOM, 10)
+        layout.Add(action_sizer, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 10)
         self.SetSizer(layout)
-        self.SetMinSize((450, 350))
+        self.SetMinSize((450, 400))
         self.CentreOnScreen()
+
+        if self._templates:
+            self._setTemplates(self._templates)
+        elif self._service:
+            self._loadTemplatesAsync()
+
         wx.CallAfter(self.title_ctrl.SetFocus)
+
+    def _loadTemplatesAsync(self):
+        def worker():
+            try:
+                tmpls = self._service.getIssueTemplates(self._repo_name, cancel=self._cancel)
+                if not self._closing and tmpls:
+                    wx.CallAfter(self._setTemplates, tmpls)
+            except Exception:
+                pass
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _setTemplates(self, templates):
+        if self._closing or not self or not templates:
+            return
+        self._templates = templates
+        current_sel = self.template_choice.GetSelection()
+        self.template_choice.Clear()
+        self.template_choice.Append(_("Blank / Default form"))
+        for tmpl in templates:
+            name = tmpl.get("name") or tmpl.get("filename") or _("Unnamed template")
+            self.template_choice.Append(name)
+        if 0 <= current_sel < self.template_choice.GetCount():
+            self.template_choice.SetSelection(current_sel)
+        else:
+            self.template_choice.SetSelection(0)
+
+    def _onTemplateChanged(self, event=None):
+        sel = self.template_choice.GetSelection()
+        if sel <= 0 or not self._templates or sel > len(self._templates):
+            return
+        tmpl = self._templates[sel - 1]
+        body = tmpl.get("body", "")
+        if body:
+            self.body_ctrl.SetValue(body)
+        title_prefix = tmpl.get("title", "")
+        if title_prefix:
+            curr_title = self.title_ctrl.GetValue().strip()
+            if not curr_title:
+                self.title_ctrl.SetValue(title_prefix)
+
+    def _onAddFile(self, event=None, filePath=None):
+        if filePath is None:
+            wildcard = (
+                _("All supported files (*.log;*.txt;*.json;*.md;*.py;*.ini;*.diff;*.patch)")
+                + "|*.log;*.txt;*.json;*.md;*.py;*.ini;*.diff;*.patch|"
+                + _("Log and text files (*.log;*.txt)")
+                + "|*.log;*.txt|"
+                + _("All files (*.*)")
+                + "|*.*"
+            )
+            with wx.FileDialog(
+                self,
+                message=_("Select file to attach"),
+                wildcard=wildcard,
+                style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST,
+            ) as file_dlg:
+                if file_dlg.ShowModal() != wx.ID_OK:
+                    return
+                path = file_dlg.GetPath()
+        else:
+            path = filePath
+
+        if not path or not os.path.isfile(path):
+            return
+
+        try:
+            size = os.path.getsize(path)
+            if size > 1024 * 1024:
+                wx.MessageBox(
+                    _("The selected file is too large (%s MB). Maximum attachment size is 1 MB.") % round(size / (1024 * 1024), 2),
+                    _("Error"),
+                    wx.OK | wx.ICON_ERROR,
+                    self,
+                )
+                return
+        except Exception:
+            pass
+
+        filename = os.path.basename(path)
+        content = None
+        for enc in ("utf-8", "cp1254", "latin-1"):
+            try:
+                with open(path, "r", encoding=enc) as f:
+                    content = f.read()
+                break
+            except (UnicodeDecodeError, OSError):
+                continue
+
+        if content is None:
+            wx.MessageBox(_("Could not read file."), _("Error"), wx.OK | wx.ICON_ERROR, self)
+            return
+
+        ext = os.path.splitext(filename)[1].lower().lstrip(".")
+        lang_map = {
+            "log": "log",
+            "txt": "text",
+            "json": "json",
+            "py": "python",
+            "md": "markdown",
+            "ini": "ini",
+            "diff": "diff",
+            "patch": "diff",
+            "xml": "xml",
+            "html": "html",
+            "yaml": "yaml",
+            "yml": "yaml",
+        }
+        lang = lang_map.get(ext, "")
+
+        attachment_block = (
+            f"<details>\n"
+            f"<summary>{_('Attachment: %s') % filename}</summary>\n\n"
+            f"```{lang}\n"
+            f"{content.rstrip()}\n"
+            f"```\n"
+            f"</details>"
+        )
+
+        curr_body = self.body_ctrl.GetValue()
+        if curr_body.strip():
+            new_body = curr_body.rstrip() + "\n\n" + attachment_block + "\n"
+        else:
+            new_body = attachment_block + "\n"
+
+        self.body_ctrl.SetValue(new_body)
+        ui.message(_("File '%s' attached.") % filename)
 
     def _onSubmit(self, event):
         title = self.title_ctrl.GetValue().strip()
@@ -311,8 +633,12 @@ class NewIssueDialog(wx.Dialog):
         }
 
     def cancelAndClose(self):
+        self._closing = True
+        if self._cancel is not None:
+            self._cancel.set()
         if self.IsModal():
             self.EndModal(wx.ID_CANCEL)
+
 
 
 class NewCommentDialog(wx.Dialog):
@@ -348,6 +674,93 @@ class NewCommentDialog(wx.Dialog):
         self.SetMinSize((400, 250))
         self.CentreOnScreen()
         wx.CallAfter(self.comment_ctrl.SetFocus)
+
+    def _onAddFile(self, event=None, filePath=None):
+        if filePath is None:
+            wildcard = (
+                _("All supported files (*.log;*.txt;*.json;*.md;*.py;*.ini;*.diff;*.patch)")
+                + "|*.log;*.txt;*.json;*.md;*.py;*.ini;*.diff;*.patch|"
+                + _("Log and text files (*.log;*.txt)")
+                + "|*.log;*.txt|"
+                + _("All files (*.*)")
+                + "|*.*"
+            )
+            with wx.FileDialog(
+                self,
+                message=_("Select file to attach"),
+                wildcard=wildcard,
+                style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST,
+            ) as file_dlg:
+                if file_dlg.ShowModal() != wx.ID_OK:
+                    return
+                path = file_dlg.GetPath()
+        else:
+            path = filePath
+
+        if not path or not os.path.isfile(path):
+            return
+
+        try:
+            size = os.path.getsize(path)
+            if size > 1024 * 1024:
+                wx.MessageBox(
+                    _("The selected file is too large (%s MB). Maximum attachment size is 1 MB.") % round(size / (1024 * 1024), 2),
+                    _("Error"),
+                    wx.OK | wx.ICON_ERROR,
+                    self,
+                )
+                return
+        except Exception:
+            pass
+
+        filename = os.path.basename(path)
+        content = None
+        for enc in ("utf-8", "cp1254", "latin-1"):
+            try:
+                with open(path, "r", encoding=enc) as f:
+                    content = f.read()
+                break
+            except (UnicodeDecodeError, OSError):
+                continue
+
+        if content is None:
+            wx.MessageBox(_("Could not read file."), _("Error"), wx.OK | wx.ICON_ERROR, self)
+            return
+
+        ext = os.path.splitext(filename)[1].lower().lstrip(".")
+        lang_map = {
+            "log": "log",
+            "txt": "text",
+            "json": "json",
+            "py": "python",
+            "md": "markdown",
+            "ini": "ini",
+            "diff": "diff",
+            "patch": "diff",
+            "xml": "xml",
+            "html": "html",
+            "yaml": "yaml",
+            "yml": "yaml",
+        }
+        lang = lang_map.get(ext, "")
+
+        attachment_block = (
+            f"<details>\n"
+            f"<summary>{_('Attachment: %s') % filename}</summary>\n\n"
+            f"```{lang}\n"
+            f"{content.rstrip()}\n"
+            f"```\n"
+            f"</details>"
+        )
+
+        curr_body = self.body_ctrl.GetValue()
+        if curr_body.strip():
+            new_body = curr_body.rstrip() + "\n\n" + attachment_block + "\n"
+        else:
+            new_body = attachment_block + "\n"
+
+        self.body_ctrl.SetValue(new_body)
+        ui.message(_("File '%s' attached.") % filename)
 
     def _onSubmit(self, event):
         body = self.comment_ctrl.GetValue().strip()
@@ -556,6 +969,11 @@ class IssuesDialog(wx.Dialog):
 
         self.issues_list.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self._onViewIssue)
         self.issues_list.Bind(wx.EVT_KEY_DOWN, self._onListKey)
+        if hasattr(wx, 'EVT_LIST_ITEM_SELECTED'):
+            self.issues_list.Bind(wx.EVT_LIST_ITEM_SELECTED, self._onItemSelected)
+        if hasattr(wx, 'EVT_LIST_ITEM_DESELECTED'):
+            self.issues_list.Bind(wx.EVT_LIST_ITEM_DESELECTED, self._onItemDeselected)
+        self.issues_list.Bind(wx.EVT_CONTEXT_MENU, self._onContextMenu)
         layout.Add(self.issues_list, 1, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 10)
 
         # Status text
@@ -568,6 +986,11 @@ class IssuesDialog(wx.Dialog):
         self.view_btn = wx.Button(self, label=_("&View issue…"))
         self.view_btn.Bind(wx.EVT_BUTTON, self._onViewIssue)
         button_sizer.Add(self.view_btn, 0, wx.RIGHT, 10)
+
+        self.toggle_state_btn = wx.Button(self, label=_("&Close issue"))
+        self.toggle_state_btn.Bind(wx.EVT_BUTTON, self._onToggleState)
+        self.toggle_state_btn.Enable(False)
+        button_sizer.Add(self.toggle_state_btn, 0, wx.RIGHT, 10)
 
         self.new_btn = wx.Button(self, label=_("&New issue…"))
         self.new_btn.Bind(wx.EVT_BUTTON, self._onNewIssue)
@@ -647,6 +1070,9 @@ class IssuesDialog(wx.Dialog):
         if event.GetKeyCode() == ord("N") and event.ControlDown() and not event.ShiftDown():
             self._onNewIssue(None)
             return
+        if event.GetKeyCode() == ord("C") and event.ControlDown() and event.ShiftDown():
+            self._onToggleState(None)
+            return
         if event.GetKeyCode() == wx.WXK_F5:
             self.loadIssues()
             return
@@ -704,7 +1130,9 @@ class IssuesDialog(wx.Dialog):
             self.issues_list.Select(0)
             self.issues_list.Focus(0)
             self.issues_list.SetFocus()
+            self._onItemSelected()
         else:
+            self._onItemSelected()
             msg = _("No issues found.")
             self._setStatus(msg)
             ui.message(msg)
@@ -725,6 +1153,115 @@ class IssuesDialog(wx.Dialog):
         if 0 <= index < len(self.issues):
             return self.issues[index]
         return None
+
+    def _onItemSelected(self, event=None):
+        if not hasattr(self, "toggle_state_btn") or not self.toggle_state_btn:
+            return
+        issue = self._selectedIssue()
+        if not issue:
+            self.toggle_state_btn.SetLabel(_("&Close issue"))
+            self.toggle_state_btn.Enable(False)
+            return
+        self.toggle_state_btn.Enable(True)
+        if issue.get("state") == "closed":
+            self.toggle_state_btn.SetLabel(_("&Reopen issue"))
+        else:
+            self.toggle_state_btn.SetLabel(_("&Close issue"))
+
+    def _onItemDeselected(self, event=None):
+        wx.CallAfter(self._onItemSelected)
+
+    def _onToggleState(self, event=None):
+        if self._closing or not self or self._child_dlg is not None:
+            return
+        issue = self._selectedIssue()
+        if not issue:
+            ui.message(_("Please select an issue first."))
+            return
+
+        new_state = "open" if issue.get("state") == "closed" else "closed"
+        progress_msg = _("Closing issue…") if new_state == "closed" else _("Reopening issue…")
+        self._setStatus(progress_msg)
+        ui.message(progress_msg)
+        self.toggle_state_btn.Enable(False)
+
+        def worker():
+            try:
+                self.service.setIssueState(self.full_name, issue["number"], state=new_state)
+                issue["state"] = new_state
+
+                def on_ok():
+                    action_msg = _("Issue closed.") if new_state == "closed" else _("Issue reopened.")
+                    ui.message(action_msg)
+                    if not self._closing and self:
+                        self.loadIssues()
+
+                wx.CallAfter(on_ok)
+            except Exception as err:
+                def on_err():
+                    if not self._closing and self:
+                        self.toggle_state_btn.Enable(True)
+                    if isinstance(err, (AuthError, CredentialError, SettingsError, OSError)):
+                        ui.message(errorMessage(err))
+                    else:
+                        ui.message(_("Failed to change issue state."))
+
+                wx.CallAfter(on_err)
+
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _onContextMenu(self, event):
+        issue = self._selectedIssue()
+        if not issue:
+            return
+        menu = wx.Menu()
+
+        view_item = menu.Append(wx.ID_ANY, _("&View issue…") + "\tEnter")
+        menu.Bind(wx.EVT_MENU, self._onViewIssue, id=view_item.GetId())
+
+        state_label = _("&Reopen issue") if issue.get("state") == "closed" else _("&Close issue")
+        state_item = menu.Append(wx.ID_ANY, state_label + "\tCtrl+Shift+C")
+        menu.Bind(wx.EVT_MENU, self._onToggleState, id=state_item.GetId())
+
+        new_item = menu.Append(wx.ID_ANY, _("&New issue…") + "\tCtrl+N")
+        menu.Bind(wx.EVT_MENU, self._onNewIssue, id=new_item.GetId())
+
+        menu.AppendSeparator()
+
+        copy_item = menu.Append(wx.ID_ANY, _("&Copy issue link"))
+        menu.Bind(wx.EVT_MENU, lambda e: self._copyIssueLink(issue), id=copy_item.GetId())
+
+        web_item = menu.Append(wx.ID_ANY, _("&Open on web"))
+        menu.Bind(wx.EVT_MENU, lambda e: self._openIssueOnWeb(issue), id=web_item.GetId())
+
+        point = wx.DefaultPosition
+        idx = self.issues_list.GetFirstSelected()
+        if idx >= 0:
+            rect = self.issues_list.GetItemRect(idx)
+            if hasattr(rect, "x"):
+                point = wx.Point(rect.x, rect.y + rect.height)
+            elif hasattr(rect, "GetBottomLeft"):
+                point = rect.GetBottomLeft()
+        self.PopupMenu(menu, point)
+        menu.Destroy()
+
+    def _copyIssueLink(self, issue):
+        url = issue.get("html_url") or f"https://github.com/{self.full_name}/issues/{issue['number']}"
+        if wx.TheClipboard.Open():
+            try:
+                wx.TheClipboard.SetData(wx.TextDataObject(url))
+                ui.message(_("Issue link copied to clipboard."))
+            finally:
+                wx.TheClipboard.Close()
+        else:
+            ui.message(_("Clipboard could not be opened."))
+
+    def _openIssueOnWeb(self, issue):
+        import webbrowser
+        url = issue.get("html_url") or f"https://github.com/{self.full_name}/issues/{issue['number']}"
+        webbrowser.open(url)
+        ui.message(_("Opening issue on web…"))
+
 
     def _onViewIssue(self, event, target_issue=None):
         if self._closing or not self or self._loading_detail or self._child_dlg is not None:
@@ -838,7 +1375,7 @@ class IssuesDialog(wx.Dialog):
     def _onNewIssue(self, event):
         if self._closing or not self or self._child_dlg is not None:
             return
-        dlg = NewIssueDialog(self, self.full_name)
+        dlg = NewIssueDialog(self, self.full_name, service=self.service)
         data = None
         self._child_dlg = dlg
         try:
