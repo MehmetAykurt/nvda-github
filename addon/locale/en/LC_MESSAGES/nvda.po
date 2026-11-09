@@ -1783,3 +1783,63 @@ msgstr "Could not calculate SHA256."
 
 msgid "SHA256 hash copied to clipboard."
 msgstr "SHA256 hash copied to clipboard."
+
+msgid "&Template:"
+msgstr "&Template:"
+
+msgid "Template"
+msgstr "Template"
+
+msgid "Blank / Default form"
+msgstr "Blank / Default form"
+
+msgid "Unnamed template"
+msgstr "Unnamed template"
+
+msgid "&Add file…"
+msgstr "&Add file…"
+
+msgid "Add file"
+msgstr "Add file"
+
+msgid "All files (*.*)"
+msgstr "All files (*.*)"
+
+msgid "All supported files (*.log;*.txt;*.json;*.md;*.py;*.ini;*.diff;*.patch)"
+msgstr "All supported files (*.log;*.txt;*.json;*.md;*.py;*.ini;*.diff;*.patch)"
+
+msgid "Attachment: %s"
+msgstr "Attachment: %s"
+
+msgid "Could not read file."
+msgstr "Could not read file."
+
+msgid "File '%s' attached."
+msgstr "File '%s' attached."
+
+msgid "Log and text files (*.log;*.txt)"
+msgstr "Log and text files (*.log;*.txt)"
+
+msgid "Select file to attach"
+msgstr "Select file to attach"
+
+msgid "The selected file is too large (%s MB). Maximum attachment size is 1 MB."
+msgstr "The selected file is too large (%s MB). Maximum attachment size is 1 MB."
+
+msgid "&Copy issue link"
+msgstr "&Copy issue link"
+
+msgid "Closing issue…"
+msgstr "Closing issue…"
+
+msgid "Issue link copied to clipboard."
+msgstr "Issue link copied to clipboard."
+
+msgid "Opening issue on web…"
+msgstr "Opening issue on web…"
+
+msgid "Please select an issue first."
+msgstr "Please select an issue first."
+
+msgid "Reopening issue…"
+msgstr "Reopening issue…"
