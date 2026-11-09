@@ -309,6 +309,7 @@ class GlobalSearchDialog(wx.Dialog):
 
         self.results_list.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self._onViewDetail)
         self.results_list.Bind(wx.EVT_KEY_DOWN, self._onListKey)
+        self.results_list.Bind(wx.EVT_CONTEXT_MENU, self._onContextMenu)
         layout.Add(self.results_list, 1, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 10)
 
         # Status text
@@ -321,6 +322,14 @@ class GlobalSearchDialog(wx.Dialog):
         self.view_btn = wx.Button(self, label=_("&Repository details…"))
         self.view_btn.Bind(wx.EVT_BUTTON, self._onViewDetail)
         button_sizer.Add(self.view_btn, 0, wx.RIGHT, 8)
+
+        self.issues_btn = wx.Button(self, label=_("&Issues…"))
+        self.issues_btn.Bind(wx.EVT_BUTTON, self._onOpenIssues)
+        button_sizer.Add(self.issues_btn, 0, wx.RIGHT, 8)
+
+        self.new_issue_btn = wx.Button(self, label=_("&New issue…"))
+        self.new_issue_btn.Bind(wx.EVT_BUTTON, self._onNewIssue)
+        button_sizer.Add(self.new_issue_btn, 0, wx.RIGHT, 8)
 
         self.star_btn = wx.Button(self, label=_("&Star / Unstar"))
         self.star_btn.Bind(wx.EVT_BUTTON, self._onStarClick)
@@ -396,8 +405,15 @@ class GlobalSearchDialog(wx.Dialog):
         event.Skip()
 
     def _onListKey(self, event):
-        if event.GetKeyCode() == wx.WXK_RETURN:
+        kc = event.GetKeyCode()
+        if kc == wx.WXK_RETURN:
             self._onViewDetail(None)
+            return
+        elif kc == ord('I') and event.ControlDown():
+            self._onOpenIssues(None)
+            return
+        elif kc == ord('N') and event.ControlDown():
+            self._onNewIssue(None)
             return
         event.Skip()
 
@@ -484,6 +500,109 @@ class GlobalSearchDialog(wx.Dialog):
         if not repo:
             return
         self._runNestedModal(GlobalRepoDetailDialog(self, repo))
+
+    def _onOpenIssues(self, event=None):
+        if self._closing or self._child_dlg is not None:
+            return
+        repo = self._selectedRepo()
+        if not repo:
+            ui.message(_("No repository selected."))
+            return
+        full_name = repo.get("full_name")
+        if not full_name:
+            return
+        from .issue_ops import IssuesDialog
+        self._runNestedModal(IssuesDialog(self, full_name, self.service))
+
+    def _onNewIssue(self, event=None):
+        if self._closing or self._child_dlg is not None:
+            return
+        repo = self._selectedRepo()
+        if not repo:
+            ui.message(_("No repository selected."))
+            return
+        full_name = repo.get("full_name")
+        if not full_name:
+            return
+
+        from .issue_ops import NewIssueDialog, createIssue
+
+        dlg = NewIssueDialog(self, full_name, service=self.service)
+        data = None
+        self._child_dlg = dlg
+        try:
+            if dlg.ShowModal() == wx.ID_OK:
+                data = dlg.getData()
+        finally:
+            if hasattr(dlg, "cancelAndClose"):
+                dlg.cancelAndClose()
+            self._child_dlg = None
+            if dlg:
+                dlg.Destroy()
+
+        if not data or self._closing:
+            return
+
+        start_msg = _("Creating issue…")
+        self._setStatus(start_msg)
+        ui.message(start_msg)
+
+        import threading
+
+        def thread_target():
+            try:
+                if hasattr(self.service, "createIssue"):
+                    self.service.createIssue(full_name, data["title"], data.get("body", ""))
+                else:
+                    token = self.service.getAccessToken() if hasattr(self.service, "getAccessToken") else ""
+                    createIssue(token, full_name, data["title"], data.get("body", ""))
+
+                def on_ok():
+                    msg = _("Issue created successfully.")
+                    ui.message(msg)
+                    self._setStatus(msg)
+
+                wx.CallAfter(on_ok)
+            except Exception as e:
+                def on_err():
+                    if self._closing or not self:
+                        return
+                    if isinstance(e, (AuthError, CredentialError, SettingsError, OSError)):
+                        msg = errorMessage(e)
+                    else:
+                        msg = _("Failed to create issue.")
+                    ui.message(msg)
+                    self._setStatus(msg)
+
+                wx.CallAfter(on_err)
+
+        threading.Thread(target=thread_target, daemon=True).start()
+
+    def _onContextMenu(self, event=None):
+        if self._closing or self._child_dlg is not None:
+            return
+        repo = self._selectedRepo()
+        if not repo:
+            return
+
+        menu = wx.Menu()
+        view_item = menu.Append(wx.ID_ANY, _("&Repository details…"))
+        issues_item = menu.Append(wx.ID_ANY, _("&Issues…") + "	Ctrl+I")
+        new_issue_item = menu.Append(wx.ID_ANY, _("&New issue…") + "	Ctrl+N")
+        menu.AppendSeparator()
+        star_item = menu.Append(wx.ID_ANY, _("&Star / Unstar"))
+        fork_item = menu.Append(wx.ID_ANY, _("&Fork to my account…"))
+        web_item = menu.Append(wx.ID_ANY, _("&Open on web"))
+
+        menu.Bind(wx.EVT_MENU, self._onViewDetail, view_item)
+        menu.Bind(wx.EVT_MENU, self._onOpenIssues, issues_item)
+        menu.Bind(wx.EVT_MENU, self._onNewIssue, new_issue_item)
+        menu.Bind(wx.EVT_MENU, self._onStarClick, star_item)
+        menu.Bind(wx.EVT_MENU, self._onForkClick, fork_item)
+        menu.Bind(wx.EVT_MENU, self._onOpenWeb, web_item)
+
+        self.PopupMenu(menu)
+        menu.Destroy()
 
     def _onOpenWeb(self, event=None):
         repo = self._selectedRepo()
