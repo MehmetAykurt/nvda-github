@@ -332,10 +332,6 @@ class SubmitAddonDialog(wx.Dialog):
         self.web_btn.Bind(wx.EVT_BUTTON, self._onSubmitWeb)
         button_sizer.Add(self.web_btn, 0, wx.RIGHT, 8)
 
-        self.api_btn = wx.Button(self, wx.ID_ANY, _("Submit via &API"))
-        self.api_btn.Bind(wx.EVT_BUTTON, self._onSubmitApi)
-        button_sizer.Add(self.api_btn, 0, wx.RIGHT, 8)
-
         self.copy_btn = wx.Button(self, wx.ID_ANY, _("&Copy template"))
         self.copy_btn.Bind(wx.EVT_BUTTON, self._onCopyTemplate)
         button_sizer.Add(self.copy_btn, 0, wx.RIGHT, 8)
@@ -473,53 +469,6 @@ class SubmitAddonDialog(wx.Dialog):
 
         self._closing = True
         self.EndModal(wx.ID_OK)
-
-    def _onSubmitApi(self, event=None):
-        valid, data = self._validate()
-        if not valid:
-            return
-
-        ui.message(_("Submitting add-on to NVDA Store via API…"))
-        self.api_btn.Enable(False)
-        self.web_btn.Enable(False)
-
-        def worker():
-            try:
-                res = submitAddonViaApi(
-                    token=self.token,
-                    title=data["title"],
-                    download_url=data["download_url"],
-                    source_url=data["source_url"],
-                    publisher=data["publisher"],
-                    channel=data["channel"],
-                    license_name=data["license_name"],
-                    license_url=data["license_url"],
-                    cancel=self._cancel,
-                )
-                if not self._closing:
-                    wx.CallAfter(self._onApiSuccess, res)
-            except Exception as exc:
-                if not self._closing:
-                    wx.CallAfter(self._onApiError, exc)
-
-        threading.Thread(target=worker, daemon=True).start()
-
-    def _onApiSuccess(self, res):
-        issue_num = res.get("number", "")
-        html_url = res.get("html_url", "")
-        if html_url:
-            self._copyToClipboard(html_url)
-
-        ui.message(_("Add-on submitted successfully! Issue #%s created.") % issue_num)
-        self._closing = True
-        self.EndModal(wx.ID_OK)
-
-    def _onApiError(self, exc):
-        self.api_btn.Enable(True)
-        self.web_btn.Enable(True)
-        err_msg = str(exc)
-        ui.message(_("Failed to submit add-on to NVDA Store: %s") % err_msg)
-        wx.MessageBox(_("Failed to submit add-on to NVDA Store: %s") % err_msg, _("Error"), wx.OK | wx.ICON_ERROR, self)
 
     def _onCopyTemplate(self, event=None):
         data = self.getData()
