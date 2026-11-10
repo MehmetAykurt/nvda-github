@@ -4,7 +4,7 @@
 
 """Public OAuth application identity shared by all users; no client secret."""
 
-ADDON_VERSION = "2026.11.10"
+ADDON_VERSION = "2026.11.11"
 USER_AGENT = f"NVDA-GitHub/{ADDON_VERSION}"
 CLIENT_ID = "Ov23liN7Tk7bSV0MRRNA"
 
