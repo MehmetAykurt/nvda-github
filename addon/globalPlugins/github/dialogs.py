@@ -1215,12 +1215,12 @@ class GitHubDialog(MessageMixin, wx.Dialog):
 
                 wx.CallAfter(on_ok)
             except Exception as err:
-                def on_err():
+                def on_err(e=err):
                     self._mutating = False
                     if self._closing:
                         return
-                    if isinstance(err, (AuthError, CredentialError, SettingsError, OSError)):
-                        self._setStatus(errorMessage(err))
+                    if isinstance(e, (AuthError, CredentialError, SettingsError, OSError)):
+                        self._setStatus(errorMessage(e))
                     else:
                         self._setStatus(_("Failed to publish release."))
 
