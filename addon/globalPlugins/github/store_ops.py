@@ -77,7 +77,8 @@ def getLatestAddonRelease(token, full_name, cancel=None):
         raise AuthError("network") from None
 
     tag_name = data.get("tag_name", "").strip()
-    release_name = data.get("name", "").strip() or tag_name
+    raw_release_name = data.get("name", "").strip()
+    release_name = raw_release_name or tag_name
     assets = data.get("assets", [])
 
     addon_asset = None
@@ -93,15 +94,28 @@ def getLatestAddonRelease(token, full_name, cancel=None):
 
     version = tag_name.lstrip("vV") if tag_name else ""
     repo_short_name = full_name.split("/")[-1]
-    display_name = repo_short_name
-    if asset_name:
-        clean_asset = re.sub(r"\.nvda-addon$", "", asset_name, flags=re.IGNORECASE)
-        if "-" in clean_asset:
-            display_name = clean_asset.rsplit("-", 1)[0].replace("-", " ").strip()
-        else:
-            display_name = clean_asset.replace("-", " ").strip()
 
-    title = f"[Submit add-on]: {display_name} {version}".strip()
+    # Başlık (Title) oluşturma mantığı:
+    # 1. Öncelik: Sürümün (Release) kendi adı (Örn: "GitHub İçin NVDA Entegrasyonu 2026.11.10")
+    if raw_release_name and raw_release_name.lower().strip("v. ") != tag_name.lower().strip("v. "):
+        subject = raw_release_name
+        if version and version not in subject:
+            subject = f"{subject} {version}"
+        display_name = subject
+    else:
+        # 2. Öncelik: Dosya adından temizlenmiş eklenti adı veya depo adı + sürüm
+        display_name = repo_short_name
+        if asset_name:
+            clean_asset = re.sub(r"\.nvda-addon$", "", asset_name, flags=re.IGNORECASE)
+            if version and clean_asset.endswith(version):
+                clean_asset = clean_asset[:-len(version)].rstrip("-_.")
+            elif "-" in clean_asset:
+                clean_asset = clean_asset.rsplit("-", 1)[0]
+            if clean_asset:
+                display_name = clean_asset.replace("-", " ").replace("_", " ").strip()
+        subject = f"{display_name} {version}".strip() if version else display_name
+
+    title = f"[Submit add-on]: {subject}".strip()
 
     return {
         "tag_name": tag_name,
