@@ -15,6 +15,7 @@ Dünyanın en büyük kod ve dosya barındırma platformu olan GitHub'ın web si
 - Çekme İstekleri ve Kod Birleştirme
 - Sorun, Hata ve Görev Takibi
 - Sürümler ve Kurulum Paketi Dağıtımı
+- NVDA Eklenti Mağazası'na Eklenti Gönder
 - Bildirim Merkezi
 - Açık Kaynak Projeleri Keşfetme ve Arama
 
