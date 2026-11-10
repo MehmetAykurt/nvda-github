@@ -96,7 +96,7 @@ def getLatestAddonRelease(token, full_name, cancel=None):
     repo_short_name = full_name.split("/")[-1]
 
     # Başlık (Title) oluşturma mantığı:
-    # 1. Öncelik: Sürümün (Release) kendi adı (Örn: "GitHub İçin NVDA Entegrasyonu 2026.11.10")
+    # 1. Öncelik: Sürümün (Release) kendi adı (Örn: "GitHub İçin NVDA Entegrasyonu 2026.11.11")
     if raw_release_name and raw_release_name.lower().strip("v. ") != tag_name.lower().strip("v. "):
         subject = raw_release_name
         if version and version not in subject:
