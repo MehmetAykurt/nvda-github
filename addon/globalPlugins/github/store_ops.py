@@ -94,8 +94,12 @@ def getLatestAddonRelease(token, full_name, cancel=None):
     version = tag_name.lstrip("vV") if tag_name else ""
     repo_short_name = full_name.split("/")[-1]
     display_name = repo_short_name
-    if asset_name and "-" in asset_name:
-        display_name = asset_name.rsplit("-", 1)[0].replace("-", " ").strip()
+    if asset_name:
+        clean_asset = re.sub(r"\.nvda-addon$", "", asset_name, flags=re.IGNORECASE)
+        if "-" in clean_asset:
+            display_name = clean_asset.rsplit("-", 1)[0].replace("-", " ").strip()
+        else:
+            display_name = clean_asset.replace("-", " ").strip()
 
     title = f"[Submit add-on]: {display_name} {version}".strip()
 
