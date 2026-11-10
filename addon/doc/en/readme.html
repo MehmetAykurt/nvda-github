@@ -22,7 +22,7 @@ code { background-color: #f2f4f7; padding: 2px 6px; border-radius: 4px; font-siz
 <body>
 <header>
 <h1>GitHub NVDA Add-on User Guide</h1>
-<p>Add-on version: 2026.11.07<br>NVDA Version: 2026.3</p>
+<p>Add-on version: 2026.11.10<br>NVDA Version: 2026.3</p>
 <p><strong>Developer</strong><br>
 <a href="https://mehmetaykurt.com.tr">Mehmet Aykurt</a></p>
 <p>For suggestions, feedback and comments:<br>
@@ -231,6 +231,7 @@ For feature requests or feedback, please contact m.aykurt38@gmail.com.</p>
   <li><strong>Publishing a New Release (Ctrl+Shift+R or Ctrl+N in dialog):</strong> Specify release tag, title, description notes, and attach an add-on bundle (e.g. <code>.nvda-addon</code>) to publish on GitHub in a single step.</li>
   <li><strong>Release Details, Asset Downloads, and SHA256 Copy (Enter):</strong> Read full changelog notes, download compiled packages directly to your PC with <em>Download file…</em>, copy the direct file download URL with <em>Copy download link</em> (Ctrl+C), or compute and copy the file's SHA256 checksum in seconds with <em>Copy SHA256 hash</em> (Alt+S or Ctrl+Shift+S) without needing to download the file to disk—essential for registering add-ons in JSON submission manifests. A context menu (<strong>Shift+F10</strong>) is also available directly on the downloadable files list.</li>
   <li><strong>Editing and Deleting Releases:</strong> Update tag, title, and release notes via <em>Edit release…</em>, or delete obsolete releases via <em>Delete release…</em>.</li>
+  <li><strong>Submit Add-on to NVDA Store… (Ctrl+Shift+S):</strong> Submit your NVDA add-on or new version directly to the official NVDA Add-on Store (<code>nvaccess/addon-datastore</code>). Automatically discovers the <code>.nvda-addon</code> asset download link, source repository URL, and version from your latest release, prefilling the official issue template form. You can complete submission in your browser with automated approval or submit directly via API.</li>
 </ul>
 
 <h2 id="chapter-7">Chapter 7: Explore GitHub Repositories, Starring, and Forking (Ctrl+Shift+F)</h2>
@@ -383,6 +384,11 @@ For feature requests or feedback, please contact m.aykurt38@gmail.com.</p>
       <td><strong>Ctrl + Shift + R</strong></td>
       <td>Opens New Release publishing dialog directly</td>
       <td>Main Window</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + S</strong></td>
+      <td>Opens NVDA Add-on Store submission dialog for selected repository</td>
+      <td>Main Window / Repositories Tree</td>
     </tr>
     <tr>
       <td><strong>Ctrl + Shift + B</strong></td>
