@@ -22,7 +22,7 @@ code { background-color: #f2f4f7; padding: 2px 6px; border-radius: 4px; font-siz
 <body>
 <header>
 <h1>GitHub NVDA Eklentisi Kullanım Kılavuzu</h1>
-<p>Eklenti sürümü: 2026.11.07<br>NVDA Sürümü: 2026.3</p>
+<p>Eklenti sürümü: 2026.11.10<br>NVDA Sürümü: 2026.3</p>
 <p><strong>Geliştirici</strong><br>
 <a href="https://mehmetaykurt.com.tr">Mehmet Aykurt</a></p>
 <p>Her türlü öneri, görüş ve düşünceleriniz için:<br>
@@ -238,6 +238,7 @@ Eklenmesini istediğiniz özellikler veya geri bildirimleriniz için m.aykurt38@
   <li><strong>Yeni Sürüm Yayınlama (Ctrl+Shift+R veya diyalogda Ctrl+N):</strong> Sürüm etiketi (tag name, örn: <code>v1.0.0</code>), sürüm başlığı, sürüm açıklaması ve bilgisayarınızdaki kurulum paketi (eklenti dosyası) seçilerek tek tıkla resmi bir GitHub sürümü olarak yayınlanır. Paket dosyası otomatik olarak sürüme ek (asset) olarak yüklenir.</li>
   <li><strong>Sürüm Detayları, Dosya İndirme ve SHA256 Kopyalama (Enter):</strong> Sürüm notları okunabilir, sürümün altında yer alan hazır indirme paketleri (örneğin <code>.nvda-addon</code> veya kurulum dosyaları) <em>Dosya indir…</em> düğmesiyle doğrudan bilgisayara indirilebilir; <em>İndirme bağlantısını kopyala</em> (Ctrl+C) düğmesiyle dosya indirme bağlantısı panoya kopyalanabilir. Ayrıca özellikle NVDA Eklenti Mağazası (Add-on Store) veya güncelleme bildirimleri JSON dosyalarına eklerken gereken dosya doğrulama özeti, <em>SHA256 değerini kopyala</em> (Alt+S veya Ctrl+Shift+S) düğmesiyle dosyayı bilgisayara indirmeye gerek kalmadan saniyeler içinde hesaplanıp doğrudan panoya kopyalanabilir. İndirilebilir dosyalar listesinde <strong>Shift+F10</strong> ile açılan bağlam menüsünden de tüm bu işlemlere tek hamlede erişilebilir.</li>
   <li><strong>Sürüm Düzenleme ve Silme:</strong> Sürüm listesindeki <em>Sürümü düzenle…</em> seçeneğiyle sürüm etiketini, başlığını ve notlarını güncelleyebilir; <em>Sürümü sil…</em> seçeneğiyle eski sürümleri onay vererek kaldırabilirsiniz.</li>
+  <li><strong>NVDA Eklenti Mağazası'na Eklenti Gönder… (Ctrl+Shift+S):</strong> Geliştirdiğiniz NVDA eklentisini veya yeni bir sürümünü tek tuşla resmi NVDA Eklenti Mağazası'na (<code>nvaccess/addon-datastore</code>) iletir. Eklenti deponuzun son yayımlanan sürümünden <code>.nvda-addon</code> indirme bağlantısını, kaynak depo adresini ve sürüm bilgisini otomatik olarak algılar ve resmi başvuru şablonuna doldurur. İster tarayıcıda tek tıkla resmi şablonu tamamlayabilir, ister doğrudan API üzerinden başvurunuzu oluşturabilirsiniz.</li>
 </ul>
 
 <h2 id="depo-kesfetme">Bölüm 7: GitHub Depolarını Keşfetme, Yıldızlama ve Çatallama (Ctrl+Shift+F)</h2>
@@ -390,6 +391,11 @@ Eklenmesini istediğiniz özellikler veya geri bildirimleriniz için m.aykurt38@
       <td><strong>Ctrl + Shift + R</strong></td>
       <td>Yeni sürüm yayınlama ve paket yükleme penceresini açar</td>
       <td>Ana Pencere</td>
+    </tr>
+    <tr>
+      <td><strong>Ctrl + Shift + S</strong></td>
+      <td>Seçili eklentiyi resmi NVDA Eklenti Mağazası'na gönderme penceresini açar</td>
+      <td>Ana Pencere / Depolar Ağacı</td>
     </tr>
     <tr>
       <td><strong>Ctrl + Shift + B</strong></td>
