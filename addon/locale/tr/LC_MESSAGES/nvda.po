@@ -1843,3 +1843,94 @@ msgstr "Lütfen önce bir sorun seçin."
 
 msgid "Reopening issue…"
 msgstr "Sorun yeniden açılıyor…"
+
+msgid "&Channel:"
+msgstr "&Kanal:"
+
+msgid "&Copy template"
+msgstr "&Şablonu kopyala"
+
+msgid "&Download URL (.nvda-addon):"
+msgstr "&İndirme bağlantısı (.nvda-addon):"
+
+msgid "&License URL:"
+msgstr "&Lisans bağlantısı:"
+
+msgid "&License name:"
+msgstr "&Lisans adı:"
+
+msgid "&Publisher / Author:"
+msgstr "&Yayıncı / Geliştirici:"
+
+msgid "&Source repository URL:"
+msgstr "&Kaynak depo bağlantısı:"
+
+msgid "&Submit in browser (recommended)"
+msgstr "&Tarayıcıda gönder (önerilen)"
+
+msgid "Add-on submitted successfully! Issue #%s created."
+msgstr "Eklenti başarıyla gönderildi! #%s numaralı sorun oluşturuldu."
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Download URL (.nvda-addon)"
+msgstr "İndirme bağlantısı (.nvda-addon)"
+
+msgid "Download URL must start with 'https://' and end with '.nvda-addon'."
+msgstr "İndirme bağlantısı 'https://' ile başlamalı ve '.nvda-addon' ile bitmelidir."
+
+msgid "Failed to submit add-on to NVDA Store: %s"
+msgstr "Eklenti NVDA Mağazası'na gönderilemedi: %s"
+
+msgid "Form data copied to clipboard."
+msgstr "Form verileri panoya kopyalandı."
+
+msgid "License URL"
+msgstr "Lisans bağlantısı"
+
+msgid "License name"
+msgstr "Lisans adı"
+
+msgid "Please check required fields."
+msgstr "Lütfen zorunlu alanları kontrol edin."
+
+msgid "Please enter a publisher name."
+msgstr "Lütfen bir yayıncı adı girin."
+
+msgid "Publisher / Author"
+msgstr "Yayıncı / Geliştirici"
+
+msgid "Source URL must start with 'https://'."
+msgstr "Kaynak bağlantısı 'https://' ile başlamalıdır."
+
+msgid "Source repository URL"
+msgstr "Kaynak depo bağlantısı"
+
+msgid "Submission form opened in browser with prefilled data."
+msgstr "Gönderim formu önceden doldurulmuş bilgilerle tarayıcıda açıldı."
+
+msgid "Submit Add-on to NVDA Store"
+msgstr "NVDA Mağazası'na Eklenti Gönder"
+
+msgid "Submit Add-on to NVDA Store — %s"
+msgstr "NVDA Mağazası'na Eklenti Gönder — %s"
+
+msgid "Submit via &API"
+msgstr "&API ile gönder"
+
+msgid "Submitting add-on to NVDA Store via API…"
+msgstr "Eklenti API üzerinden NVDA Mağazası'na gönderiliyor…"
+
+msgid "beta"
+msgstr "beta"
+
+msgid "dev"
+msgstr "geliştirici"
+
+msgid "stable (recommended)"
+msgstr "kararlı (önerilen)"
+
+
+msgid "&Submit add-on to NVDA Store…"
+msgstr "&NVDA Mağazası'na eklenti gönder…"
