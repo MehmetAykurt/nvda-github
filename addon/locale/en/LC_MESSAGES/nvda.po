@@ -1843,3 +1843,94 @@ msgstr "Please select an issue first."
 
 msgid "Reopening issue…"
 msgstr "Reopening issue…"
+
+msgid "&Channel:"
+msgstr "&Channel:"
+
+msgid "&Copy template"
+msgstr "&Copy template"
+
+msgid "&Download URL (.nvda-addon):"
+msgstr "&Download URL (.nvda-addon):"
+
+msgid "&License URL:"
+msgstr "&License URL:"
+
+msgid "&License name:"
+msgstr "&License name:"
+
+msgid "&Publisher / Author:"
+msgstr "&Publisher / Author:"
+
+msgid "&Source repository URL:"
+msgstr "&Source repository URL:"
+
+msgid "&Submit in browser (recommended)"
+msgstr "&Submit in browser (recommended)"
+
+msgid "Add-on submitted successfully! Issue #%s created."
+msgstr "Add-on submitted successfully! Issue #%s created."
+
+msgid "Channel"
+msgstr "Channel"
+
+msgid "Download URL (.nvda-addon)"
+msgstr "Download URL (.nvda-addon)"
+
+msgid "Download URL must start with 'https://' and end with '.nvda-addon'."
+msgstr "Download URL must start with 'https://' and end with '.nvda-addon'."
+
+msgid "Failed to submit add-on to NVDA Store: %s"
+msgstr "Failed to submit add-on to NVDA Store: %s"
+
+msgid "Form data copied to clipboard."
+msgstr "Form data copied to clipboard."
+
+msgid "License URL"
+msgstr "License URL"
+
+msgid "License name"
+msgstr "License name"
+
+msgid "Please check required fields."
+msgstr "Please check required fields."
+
+msgid "Please enter a publisher name."
+msgstr "Please enter a publisher name."
+
+msgid "Publisher / Author"
+msgstr "Publisher / Author"
+
+msgid "Source URL must start with 'https://'."
+msgstr "Source URL must start with 'https://'."
+
+msgid "Source repository URL"
+msgstr "Source repository URL"
+
+msgid "Submission form opened in browser with prefilled data."
+msgstr "Submission form opened in browser with prefilled data."
+
+msgid "Submit Add-on to NVDA Store"
+msgstr "Submit Add-on to NVDA Store"
+
+msgid "Submit Add-on to NVDA Store — %s"
+msgstr "Submit Add-on to NVDA Store — %s"
+
+msgid "Submit via &API"
+msgstr "Submit via &API"
+
+msgid "Submitting add-on to NVDA Store via API…"
+msgstr "Submitting add-on to NVDA Store via API…"
+
+msgid "beta"
+msgstr "beta"
+
+msgid "dev"
+msgstr "dev"
+
+msgid "stable (recommended)"
+msgstr "stable (recommended)"
+
+
+msgid "&Submit add-on to NVDA Store…"
+msgstr "&Submit add-on to NVDA Store…"
