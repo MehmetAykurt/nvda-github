@@ -41,6 +41,7 @@ from .repo_ops import (
 )
 from .search_ops import GlobalSearchDialog
 from .settings import SettingsError
+from .store_ops import SubmitAddonDialog
 from .viewer import FileEditorDialog, FileViewerDialog
 
 
@@ -160,6 +161,7 @@ class GitHubDialog(MessageMixin, wx.Dialog):
             (_("&Delete repository…"), self._onDeleteRepository),
             (_("&Copy repository address"), self._copyRepository),
             (_("&Open repository on GitHub"), self._openRepository),
+            (_("&Submit add-on to NVDA Store…") + "\tCtrl+Shift+S", self._onSubmitStore),
         ):
             identifier = wx.NewIdRef()
             self._repositoryActionIds.append(identifier)
@@ -176,6 +178,7 @@ class GitHubDialog(MessageMixin, wx.Dialog):
             (_("&Delete repository…"), self._onDeleteRepository),
             (_("&Copy repository address"), self._copyRepository),
             (_("&Open repository on GitHub"), self._openRepository),
+            (_("&Submit add-on to NVDA Store…") + "\tCtrl+Shift+S", self._onSubmitStore),
         ):
             c_ident = wx.NewIdRef()
             c_item = self._repositoryContextMenu.Append(int(c_ident), label)
@@ -234,6 +237,7 @@ class GitHubDialog(MessageMixin, wx.Dialog):
             (_("&Pull requests…") + "\tCtrl+P", self._onOpenPullRequests),
             (_("&Releases…") + "\tCtrl+R", self._onOpenReleases),
             (_("&New release…") + "\tCtrl+Shift+R", self._onOpenNewRelease),
+            (_("&Submit add-on to NVDA Store…") + "\tCtrl+Shift+S", self._onSubmitStore),
             (_("&Commit history…") + "\tCtrl+H", self._onOpenCommits),
         ):
             t_ident = wx.NewIdRef()
@@ -273,6 +277,8 @@ class GitHubDialog(MessageMixin, wx.Dialog):
         self.Bind(wx.EVT_MENU, self._onOpenReleases, id=int(self._releasesAccId))
         self._newReleaseAccId = wx.NewIdRef()
         self.Bind(wx.EVT_MENU, self._onOpenNewRelease, id=int(self._newReleaseAccId))
+        self._submitStoreAccId = wx.NewIdRef()
+        self.Bind(wx.EVT_MENU, self._onSubmitStore, id=int(self._submitStoreAccId))
         self._newFileAccId = wx.NewIdRef()
         self.Bind(wx.EVT_MENU, self._onCreateFile, id=int(self._newFileAccId))
         self._uploadFileAccId = wx.NewIdRef()
@@ -295,6 +301,7 @@ class GitHubDialog(MessageMixin, wx.Dialog):
             (wx.ACCEL_CTRL | wx.ACCEL_SHIFT, ord("N"), int(self._newRepoAccId)),
             (wx.ACCEL_CTRL | wx.ACCEL_SHIFT, ord("I"), int(self._newIssueAccId)),
             (wx.ACCEL_CTRL | wx.ACCEL_SHIFT, ord("R"), int(self._newReleaseAccId)),
+            (wx.ACCEL_CTRL | wx.ACCEL_SHIFT, ord("S"), int(self._submitStoreAccId)),
             (wx.ACCEL_CTRL | wx.ACCEL_SHIFT, ord("C"), int(self._copyAccId)),
             (wx.ACCEL_CTRL, ord("N"), int(self._newFileAccId)),
             (wx.ACCEL_CTRL, ord("U"), int(self._uploadFileAccId)),
@@ -1220,6 +1227,19 @@ class GitHubDialog(MessageMixin, wx.Dialog):
                 wx.CallAfter(on_err)
 
         threading.Thread(target=worker, daemon=True).start()
+
+    def _onSubmitStore(self, event=None):
+        if self._closing or self._busy or self._child is not None:
+            return
+        account = self.service.settings.getAccount()
+        if not account:
+            return
+        repo = self._selectedRepository()
+        full_name = repo["full_name"] if repo else ""
+        token = self.service.getAccessToken() or ""
+        publisher = account.get("name") or account.get("login") or ""
+        dlg = SubmitAddonDialog(self, full_name=full_name, token=token, publisher=publisher)
+        self._runChildModal(dlg)
 
     def _onOpenNotifications(self, event=None):
         if self._closing or self._busy or self._child is not None:
