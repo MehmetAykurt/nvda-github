@@ -1185,16 +1185,16 @@ class ReleasesDialog(wx.Dialog):
 
                 wx.CallAfter(on_created)
             except AuthError as err:
-                def on_auth_err():
-                    ui.message(errorMessage(err))
-                    if getattr(err, "code", "") == "release_asset_failed" and not self._closing and self:
+                def on_auth_err(e=err):
+                    ui.message(errorMessage(e))
+                    if getattr(e, "code", "") == "release_asset_failed" and not self._closing and self:
                         self.loadReleases()
 
                 wx.CallAfter(on_auth_err)
             except Exception as err:
-                def on_generic_err():
-                    if isinstance(err, (CredentialError, SettingsError, OSError)):
-                        ui.message(errorMessage(err))
+                def on_generic_err(e=err):
+                    if isinstance(e, (CredentialError, SettingsError, OSError)):
+                        ui.message(errorMessage(e))
                     else:
                         ui.message(_("Failed to publish release."))
 
